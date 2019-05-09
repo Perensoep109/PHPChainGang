@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Wiebe
+ * DBUser: Wiebe
  * Date: 08/05/2019
  * Time: 11:23
  */
@@ -25,7 +25,7 @@ final class DBI
      */
     private static final function makeDBConn()
     {
-        $returnVal = new mysqli("", "", "", "");
+        $returnVal = new mysqli("localhost", "", "", "");
 
         if($returnVal->connect_error)
             self::logError("Connection failed, " . $returnVal->connect_error);
@@ -44,7 +44,7 @@ final class DBI
         echo "<h1 class='errorLog'>$error</h1>>";
     }
 
-    /*  This function exists, for the sole reason if a query needs to be executed on the datbase itself
+    /*  This function exists, for the sole reason if a query needs to be executed on the database itself
      *  String-$query stands for the query which will be executed on the database itself
      *  This function returns an array of database rows (The data is NOT transformed into the correct data type)
      *  This function is user executed and executed by every other query function in the DBI
@@ -89,7 +89,7 @@ final class DBI
             for($i = 0; $i < $rowAmount; $i++)
             {
                 $row = $data->fetch_assoc();
-                $returnValue[$i] = new Bike($row);
+                $returnValue[$i] = new DBBike($row);
             }
 
             return $returnValue;
@@ -123,7 +123,7 @@ final class DBI
             for($i = 0; $i < $rowAmount; $i++)
             {
                 $row = $data->fetch_assoc();
-                $returnValue[$i] = new User($row);
+                $returnValue[$i] = new DBUser($row);
             }
 
             return $returnValue;
@@ -157,7 +157,7 @@ final class DBI
             for($i = 0; $i < $rowAmount; $i++)
             {
                 $row = $data->fetch_assoc();
-                $returnValue[$i] = new Review($row);
+                $returnValue[$i] = new DBReview($row);
             }
 
             return $returnValue;

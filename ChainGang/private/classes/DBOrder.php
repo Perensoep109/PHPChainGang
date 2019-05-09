@@ -1,12 +1,12 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Wiebe
+ * DBUser: Wiebe
  * Date: 5/8/2019
  * Time: 3:38 PM
  */
 
-class Order
+class DBOrder
 {
 
 }

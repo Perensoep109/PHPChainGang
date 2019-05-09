@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Wiebe
+ * DBUser: Wiebe
  * Date: 5/8/2019
  * Time: 1:03 PM
  */
@@ -10,7 +10,7 @@
  * The basic bike class, this class is used everywhere in the application, this class is saved in the DB
  * This class is compatible with HTML Elements through interpreted rendering *If you don't know what Wiebe means with this, ask him*
  */
-class Bike
+class DBBike
 {
     //==Variables==//
     private $dbIndex;
