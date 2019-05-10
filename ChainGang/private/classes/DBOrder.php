@@ -14,7 +14,7 @@ class DBOrder
     private $dbIndex;
     private $userID;
     private $bikeArr, $state, $date;
-    private $streetName, $adressNumber, $postCode;
+    private $streetName, $adresNumber, $postCode;
 
     //==Functions==//
     public function __construct($args=[])
@@ -25,13 +25,55 @@ class DBOrder
         $this->state = $args['ORDER_STATE'];
         $this->date = $args['ORDER_DATE'];
         $this->streetName = $args['ORDER_STREETNAME'];
-        $this->adressNumber = $args['ORDER_ADRESS_NMBR'];
+        $this->adresNumber = $args['ORDER_ADRESS_NMBR'];
         $this->postCode = $args['ORDER_POST_CODE'];
     }
 
     private function convertBikeArr($bikeArray)
     {
         return DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID IN ($bikeArray)");
+    }
+
+    //=Getters & Setters=//
+    // Getters
+    public function getDbIndex()
+    {
+        return $this->dbIndex;
+    }
+
+    public function getUserID()
+    {
+        return $this->userID;
+    }
+
+    public function getBikeArr()
+    {
+        return $this->bikeArr;
+    }
+
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    public function getStreetName()
+    {
+        return $this->streetName;
+    }
+
+    public function getAdresNumber()
+    {
+        return $this->adresNumber;
+    }
+
+    public function getPostCode()
+    {
+        return $this->postCode;
     }
 }
 
