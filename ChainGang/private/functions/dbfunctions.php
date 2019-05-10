@@ -25,7 +25,7 @@ final class DBI
      */
     private static final function makeDBConn()
     {
-        $returnVal = new mysqli("localhost", "", "", "");
+        $returnVal = new mysqli("localhost", "root", "root", "waken_chaingangfietsen");
 
         if($returnVal->connect_error)
             self::logError("Connection failed, " . $returnVal->connect_error);
