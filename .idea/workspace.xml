@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8f91c26-7f60-4a0b-bee9-f518ad351b74" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ChainGang/private/classes/dbitest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChainGang/private/classes/DBBike.php" beforeDir="false" afterPath="$PROJECT_DIR$/ChainGang/private/classes/DBBike.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChainGang/private/classes/dbitest.php" beforeDir="false" afterPath="$PROJECT_DIR$/ChainGang/private/classes/dbitest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChainGang/private/functions/dbfunctions.php" beforeDir="false" afterPath="$PROJECT_DIR$/ChainGang/private/functions/dbfunctions.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,12 +58,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="10" />
+          <entry key="php" value="852" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="10" />
+          <entry key="PHP" value="852" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="php" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PHP" value="3" />
         </counts>
       </usages-collector>
     </session>
@@ -72,8 +83,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ChainGang/private/functions/dbfunctions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
+            <state relative-caret-position="102">
+              <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+              <folding>
+                <element signature="n#logError#0;n#DBI#0;n#!!top" />
+                <element signature="n#queryUsers#0;n#DBI#0;n#!!top" />
+                <element signature="n#queryReviews#0;n#DBI#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ChainGang/private/classes/DBBike.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="30" column="52" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -81,8 +106,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ChainGang/private/classes/dbitest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="14" column="162" selection-start-line="14" selection-start-column="162" selection-end-line="14" selection-end-column="162" />
+            <state relative-caret-position="425">
+              <caret line="30" column="44" lean-forward="true" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -112,6 +137,7 @@
         <option value="$PROJECT_DIR$/ChainGang/public/stylesheets/temp.css" />
         <option value="$PROJECT_DIR$/ChainGang/public/index.php" />
         <option value="$PROJECT_DIR$/ChainGang/private/functions/dbfunctions.php" />
+        <option value="$PROJECT_DIR$/ChainGang/private/classes/DBBike.php" />
         <option value="$PROJECT_DIR$/ChainGang/private/classes/dbitest.php" />
       </list>
     </option>
@@ -123,10 +149,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="241" />
-    <option name="y" value="-12" />
-    <option name="width" value="1400" />
-    <option name="height" value="1100" />
+    <option name="x" value="195" />
+    <option name="y" value="-20" />
+    <option name="width" value="980" />
+    <option name="height" value="1088" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -149,6 +175,35 @@
               <item name="PHPChainGang" type="b2602c69:ProjectViewProjectNode" />
               <item name="PHPChainGang" type="462c0819:PsiDirectoryNode" />
               <item name="ChainGang" type="462c0819:PsiDirectoryNode" />
+              <item name="plugins" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PHPChainGang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PHPChainGang" type="462c0819:PsiDirectoryNode" />
+              <item name="ChainGang" type="462c0819:PsiDirectoryNode" />
+              <item name="plugins" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap-4.3.1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PHPChainGang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PHPChainGang" type="462c0819:PsiDirectoryNode" />
+              <item name="ChainGang" type="462c0819:PsiDirectoryNode" />
+              <item name="plugins" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap-4.3.1" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PHPChainGang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PHPChainGang" type="462c0819:PsiDirectoryNode" />
+              <item name="ChainGang" type="462c0819:PsiDirectoryNode" />
+              <item name="plugins" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap-4.3.1" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PHPChainGang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PHPChainGang" type="462c0819:PsiDirectoryNode" />
+              <item name="ChainGang" type="462c0819:PsiDirectoryNode" />
               <item name="private" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -157,6 +212,13 @@
               <item name="ChainGang" type="462c0819:PsiDirectoryNode" />
               <item name="private" type="462c0819:PsiDirectoryNode" />
               <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PHPChainGang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PHPChainGang" type="462c0819:PsiDirectoryNode" />
+              <item name="ChainGang" type="462c0819:PsiDirectoryNode" />
+              <item name="private" type="462c0819:PsiDirectoryNode" />
+              <item name="functions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PHPChainGang" type="b2602c69:ProjectViewProjectNode" />
@@ -223,16 +285,17 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17538000" />
+    <option name="totallyTimeSpent" value="20300000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18443497" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.18255034" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32885906" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -280,39 +343,7 @@
     <entry file="file://$PROJECT_DIR$/ChainGang/private/classes/dbfunctions.php" />
     <entry file="file://$PROJECT_DIR$/ChainGang/public/html/BootstrapTest.html" />
     <entry file="file://$PROJECT_DIR$/ChainGang/public/stylesheets/temp.css" />
-    <entry file="file://$PROJECT_DIR$/ChainGang/private/classes/DBOrder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ChainGang/private/classes/User.php" />
-    <entry file="file://$PROJECT_DIR$/ChainGang/private/classes/DBReview.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChainGang/private/classes/DBBike.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
-          <folding>
-            <element signature="n#__construct#0;n#Bike#0;n#!!top" />
-            <element signature="n#getDbIndex#0;n#Bike#0;n#!!top" />
-            <element signature="n#getName#0;n#Bike#0;n#!!top" />
-            <element signature="n#getPrice#0;n#Bike#0;n#!!top" />
-            <element signature="n#getBrand#0;n#Bike#0;n#!!top" />
-            <element signature="n#getReleaseYear#0;n#Bike#0;n#!!top" />
-            <element signature="n#getFrameType#0;n#Bike#0;n#!!top" />
-            <element signature="n#getMaterial#0;n#Bike#0;n#!!top" />
-            <element signature="n#getColor#0;n#Bike#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ChainGang/public/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -320,17 +351,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ChainGang/private/classes/DBOrder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChainGang/private/classes/DBUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
+          <folding>
+            <element signature="n#getDbIndex#0;n#User#0;n#!!top" />
+            <element signature="n#getName#0;n#User#0;n#!!top" />
+            <element signature="n#getGender#0;n#User#0;n#!!top" />
+            <element signature="n#getAge#0;n#User#0;n#!!top" />
+            <element signature="n#getEmail#0;n#User#0;n#!!top" />
+            <element signature="n#getPassword#0;n#User#0;n#!!top" />
+            <element signature="n#getUsername#0;n#User#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChainGang/private/classes/DBReview.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ChainGang/private/functions/dbfunctions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
+        <state relative-caret-position="102">
+          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+          <folding>
+            <element signature="n#logError#0;n#DBI#0;n#!!top" />
+            <element signature="n#queryUsers#0;n#DBI#0;n#!!top" />
+            <element signature="n#queryReviews#0;n#DBI#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChainGang/private/classes/DBBike.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="30" column="52" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ChainGang/private/classes/dbitest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="162" selection-start-line="14" selection-start-column="162" selection-end-line="14" selection-end-column="162" />
+        <state relative-caret-position="425">
+          <caret line="30" column="44" lean-forward="true" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
         </state>
       </provider>
     </entry>

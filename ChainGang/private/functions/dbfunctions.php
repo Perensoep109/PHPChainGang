@@ -6,6 +6,11 @@
  * Time: 11:23
  */
 
+include_once("../classes/DBBike.php");
+include_once("../classes/DBOrder.php");
+include_once("../classes/DBReview.php");
+include_once("../classes/DBUser.php");
+
 /*  The DBI class stands for, Data Base Interface.
  *  This class holds a set of static functions, which can be executed from anywhere.
  *  This class manages all the interactions with the database, adding new bikes, querying bikes, adding & removing users
@@ -23,9 +28,9 @@ final class DBI
      *  This function returns an object of mysqli
      *  This function is only executed by this class, everytime a query is made
      */
-    private static final function makeDBConn()
+    public static final function makeDBConn()
     {
-        $returnVal = new mysqli("localhost", "root", "root", "waken_chaingangfietsen");
+        $returnVal = new mysqli("localhost", "root", "", "waken_chaingangfietsen");
 
         if($returnVal->connect_error)
             self::logError("Connection failed, " . $returnVal->connect_error);
@@ -53,7 +58,7 @@ final class DBI
     {
         $dbConn = self::makeDBConn();
 
-        if(is_null($dbConn))
+        if($dbConn->connect_error)
         {
             if(self::$logError)
                 self::logError("ERROR: Querying data from database created an error: $dbConn->error");
@@ -62,7 +67,12 @@ final class DBI
             return null;
         }
 
-        return $dbConn->query($query);
+        $val = $dbConn->query($query);
+
+        if(self::$logError)
+            self::logError($dbConn->error);
+
+        return $val;
     }
 
     /*  This function queries the database, then assembles the DB data into an array of bikes
@@ -83,13 +93,12 @@ final class DBI
         if($rowAmount > 0)
         {
             $returnValue = array();
-            array_pad($returnValue, $data->num_rows);
 
             // Construct the return value of bike[]
             for($i = 0; $i < $rowAmount; $i++)
             {
                 $row = $data->fetch_assoc();
-                $returnValue[$i] = new DBBike($row);
+                array_push($returnValue, new DBBike($row));
             }
 
             return $returnValue;
@@ -117,13 +126,12 @@ final class DBI
         if($rowAmount > 0)
         {
             $returnValue = array();
-            array_pad($returnValue, $data->num_rows);
 
             // Construct the return value of bike[]
             for($i = 0; $i < $rowAmount; $i++)
             {
                 $row = $data->fetch_assoc();
-                $returnValue[$i] = new DBUser($row);
+                array_push($returnValue, new DBBike($row));
             }
 
             return $returnValue;
@@ -151,13 +159,12 @@ final class DBI
         if($rowAmount > 0)
         {
             $returnValue = array();
-            array_pad($returnValue, $data->num_rows);
 
             // Construct the return value of bike[]
             for($i = 0; $i < $rowAmount; $i++)
             {
                 $row = $data->fetch_assoc();
-                $returnValue[$i] = new DBReview($row);
+                array_push($returnValue, new DBBike($row));
             }
 
             return $returnValue;

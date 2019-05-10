@@ -20,15 +20,15 @@ class DBBike
     //==Functions==//
     public function __construct($args=[])
     {
-        $this->dbIndex = $args[0];
-        $this->name = $args[2];
-        $this->price = $args[3];
-        $this->brand = $args[4];
-        $this->frameType = $args[5];
-        $this->material = $args[6];
-        $this->gender = $args[7];
-        $this->color = $args[8];
-        $this->releaseYear = $args[9];
+        $this->dbIndex = $args['BIKE_ID'];
+        $this->name = $args['BIKE_NAME'];
+        $this->price = $args['BIKE_PRICE'];
+        $this->brand = $args['BIKE_BRAND'];
+        $this->frameType = $args['BIKE_FRAMETYPE'];
+        $this->material = $args['BIKE_MATERIAL'];
+        $this->gender = $args['BIKE_GENDER'];
+        $this->color = $args['BIKE_COLOR'];
+        $this->releaseYear = $args['BIKE_RELEASEYEAR'];
     }
 
     //=Getters & Setters=//
