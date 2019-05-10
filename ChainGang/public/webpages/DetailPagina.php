@@ -21,7 +21,7 @@ $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 0")[0];
 </head>
 <body>
     <!--Include header here-->
-
+    <?php include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/static/header.php")?>
     <!--Page-->
     <div class="container" style="width: 1000px;">
         <h1></h1>

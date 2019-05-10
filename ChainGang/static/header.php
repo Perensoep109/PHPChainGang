@@ -1,3 +1,4 @@
+<!--Row 1, Help, Over ons, Contact, Inloggen-->
 <div class="row" id="header_nav">
     <div class="col-md-6"></div>
     <div class="col-md-1 text-center">
@@ -11,9 +12,11 @@
     </div>
     <div class="col-md-2 text-center">
         <button type="button" class="btn btn-link" data-toggle="modal" data-target=".login-modal">Login/Registeren</button>
-<!--        hier moet de login form komen-->
+            <!--hier moet de login form komen-->
     </div>
 </div>
+
+<!--Logo en zoekbalk-->
 <div class="row">
     <div class="col-md-2">
         <h1 id="header_logo">FietsShop</h1>
@@ -36,6 +39,8 @@
 
     </div>
 </div>
+
+<!--Knoppen-->
 <div class="row border" id="header_Bottom">
     <div class="col-md-2 border text-center">
         <button type="button" class="btn btn-link">Thuis</button>
@@ -48,8 +53,8 @@
     </div>
     <div class="col-md-2 border text-center">
         <button type="button" class="btn btn-link">Over ons</button>
-
     </div>
+
     <div class="col-md-3 border"></div>
     <div class="col-md-1 border">
         <div class="dropdown">
@@ -68,7 +73,8 @@
             </div>
         </div>
     </div>
-<!--    hieronder is de login form model-->
+
+    <!--    hieronder is de login form model-->
     <div class="modal fade login-modal" tabindex="-1" role="dialog" aria-labelledby="login-modal" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
