@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Wiebe
+ * DBUser: Wiebe
  * Date: 5/8/2019
  * Time: 1:03 PM
  */
@@ -10,7 +10,7 @@
  * The basic user class, this class is used everywhere in the application, this class is saved in the DB
  * This class is compatible with HTML Elements through interpreted rendering *If you don't know what Wiebe means with this, ask him*
  */
-class User
+class DBUser
 {
     //==Variables==//
     private $dbIndex;
@@ -20,13 +20,13 @@ class User
     //==Functions==//
     public function __construct($args=[])
     {
-        $this->dbIndex = $args[0];
-        $this->name = $args[1];
-        $this->email = $args[2];
-        $this->age = $args[3];
-        $this->gender = $args[4];
-        $this->password = $args[5];
-        $this->username = $args[6];
+        $this->dbIndex = $args['USER_ID'];
+        $this->name = $args['USER_NAME'];
+        $this->email = $args['USER_EMAIL'];
+        $this->age = $args['USER_AGE'];
+        $this->gender = $args['USER_GENDER'];
+        $this->password = $args['USER_PASSWORD'];
+        $this->username = $args['USER_USERNAME'];
     }
 
     //=Getters & Setters=//

@@ -1,11 +1,15 @@
 # PHPChainGang
 
 Few rules:
-Please write every comment, function. Everything. In English ples....
+Schrijf de functie naam, variabelenamen graag in het engels, de comments boven elke functie in het Nederlands.
+Om alles consistent te houden, maar ook makkelijk te begrijpen
 
-Hier is de link voor de FO
+Hier is de link voor het FO
 http://167.99.1.120
 
 
-Hier zijn de andere bestanden GO en de axure bestand
+Hier zijn de andere bestanden GO, het axure bestand en het SQL bestand van de database.
 http://167.99.1.120/Downloads/
+
+Gebruik de online includes van bootstrap, zet deze in de juiste volgorde. 
+Bootstrap is weer verwijderd van de server 10/05/19 -Wiebe
