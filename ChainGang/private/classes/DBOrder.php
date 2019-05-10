@@ -6,7 +6,7 @@
  * Time: 3:38 PM
  */
 
-include_once("$_SERVER[DOCUMENT_ROOT]/private/functions/dbfunctions.php");
+include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php");
 
 class DBOrder
 {

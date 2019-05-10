@@ -6,10 +6,10 @@
  * Time: 11:23
  */
 
-include_once("$_SERVER[DOCUMENT_ROOT]/private/classes/DBBike.php");
-include_once("$_SERVER[DOCUMENT_ROOT]/private/classes/DBUser.php");
-include_once("$_SERVER[DOCUMENT_ROOT]/private/classes/DBReview.php");
-include_once("$_SERVER[DOCUMENT_ROOT]/private/classes/DBOrder.php");
+include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/DBBike.php");
+include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/DBUser.php");
+include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/DBReview.php");
+include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/DBOrder.php");
 //include_once("../classes/DBOrder.php");
 //include_once("../classes/DBReview.php");
 //include_once("../classes/DBUser.php");
@@ -33,7 +33,7 @@ final class DBI
      */
     private static final function makeDBConn()
     {
-        $returnVal = new mysqli("localhost", "root", "", "waken_chaingangfietsen");
+        $returnVal = new mysqli("localhost", "root", "root", "waken_chaingangfietsen");
 
         if($returnVal->connect_error)
         {
@@ -52,7 +52,9 @@ final class DBI
      */
     private static final function logError($error)
     {
-        echo "<h1 class='errorLog'>$error</h1>>";
+        echo "<div class='alert alert-danger' role='alert'>
+                <h1 class='errorLog'>$error</h1>
+              </div>>";
     }
 
     /*  Deze functie vraagt informatie op uit de database, daarna zet hij deze data om in een array van orders
@@ -70,9 +72,11 @@ final class DBI
 
         $returnVal = $dbConn->query($query);
 
-        if(self::$logError)
+        if($dbConn->error)
         {
-            self::logError("ERROR: Querying data from DB threw an error: " . $dbConn->error);
+            if(self::$logError)
+                self::logError("ERROR: Querying data from DB threw an error: " . $dbConn->error);
+
             return null;
         }
 
