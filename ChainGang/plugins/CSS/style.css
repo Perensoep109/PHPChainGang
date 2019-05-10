@@ -35,5 +35,6 @@ body{
 }
 #searchBox{
     float:left;
-    width:300px
+    width:650px;
+    margin: 6px;
 }
