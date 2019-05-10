@@ -1,11 +1,20 @@
-#nav_header{
+/*elke pagina krijgt een eigen gedeelte met prefix*/
+
+/*De header*/
+#header_nav{
     border: black 1px solid;
-    background-color: lightgray;
+    background-color: #d3d3d3;
 }
-.nav_logo{
+#header_logo{
     font-family: "Harlow Solid SemiExpanded Italic Bold", "Harlow Solid";
 }
-#nav_SearchAndButton{
+#header_SearchAndButton{
     padding-top: 7px;
     height:55px;
 }
+#header_Bottom{
+    background-color: lightgray;
+}
+/*De footer*/
+
+/*de catogorie pagina*/
