@@ -9,7 +9,7 @@
 include_once("../functions/dbfunctions.php");
 
 DBI::$logError = true;
-$mode = 2;
+$mode = 3;
 
 if($mode == 0)
 {
@@ -42,6 +42,15 @@ if($mode == 2)
             echo $user->getName() . "<br>";
         }
     }
+}
+
+if($mode == 3)
+{
+    $string = "10,3,23,101";
+    $splittedStrings = explode(',', $string);
+
+    foreach ($splittedStrings as $val)
+        echo $val . "<br>";
 }
 
 echo "Ran";
