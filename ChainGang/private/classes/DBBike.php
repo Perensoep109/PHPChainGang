@@ -15,7 +15,7 @@ class DBBike
     //==Variables==//
     private $dbIndex;
     private $name, $price, $brand, $releaseYear;
-    private $frameType, $material, $color, $gender;
+    private $frameType, $material, $color, $category;
 
     //==Functions==//
     public function __construct($args=[])
@@ -26,9 +26,9 @@ class DBBike
         $this->brand = $args['BIKE_BRAND'];
         $this->frameType = $args['BIKE_FRAMETYPE'];
         $this->material = $args['BIKE_MATERIAL'];
-        $this->gender = $args['BIKE_GENDER'];
         $this->color = $args['BIKE_COLOR'];
         $this->releaseYear = $args['BIKE_RELEASEYEAR'];
+        $this->category = $args['BIKE_CATEGORY'];
     }
 
     //=Getters & Setters=//
@@ -73,9 +73,9 @@ class DBBike
         return $this->color;
     }
 
-    public function getGender()
+    public function getCategory()
     {
-        return $this->gender;
+        return $this->category;
     }
 }
 

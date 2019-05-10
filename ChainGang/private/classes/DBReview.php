@@ -14,21 +14,15 @@ class DBReview
 {
     //==Variables==//
     private $dbIndex;
-    private $name, $price, $brand, $releaseYear;
-    private $frameType, $material, $color, $gender;
+    private $userID, $text, $timePlaced;
 
     //==Functions==//
     public function __construct($args=[])
     {
-        $this->dbIndex = $args[0];
-        $this->name = $args[2];
-        $this->price = $args[3];
-        $this->brand = $args[4];
-        $this->frameType = $args[5];
-        $this->material = $args[6];
-        $this->gender = $args[7];
-        $this->color = $args[8];
-        $this->releaseYear = $args[9];
+        $this->dbIndex = $args['REVIEW_ID'];
+        $this->userID = $args['REVIEW_USER_ID'];
+        $this->text = $args['REVIEW_TEXt'];
+        $this->timePlaced = $args['REVIEW_TIME_PLACED'];
     }
 }
 

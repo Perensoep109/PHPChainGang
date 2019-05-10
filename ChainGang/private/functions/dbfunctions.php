@@ -6,10 +6,13 @@
  * Time: 11:23
  */
 
-include_once("../classes/DBBike.php");
-include_once("../classes/DBOrder.php");
-include_once("../classes/DBReview.php");
-include_once("../classes/DBUser.php");
+include_once("$_SERVER[DOCUMENT_ROOT]/private/classes/DBBike.php");
+include_once("$_SERVER[DOCUMENT_ROOT]/private/classes/DBUser.php");
+include_once("$_SERVER[DOCUMENT_ROOT]/private/classes/DBReview.php");
+include_once("$_SERVER[DOCUMENT_ROOT]/private/classes/DBOrder.php");
+//include_once("../classes/DBOrder.php");
+//include_once("../classes/DBReview.php");
+//include_once("../classes/DBUser.php");
 
 /* De DBI class staat voor, Data Base Interface
  * Deze klasse heeft een set aan statische functies, die overal uitgevoerd kunnen worden
@@ -33,7 +36,12 @@ final class DBI
         $returnVal = new mysqli("localhost", "root", "", "waken_chaingangfietsen");
 
         if($returnVal->connect_error)
-            self::logError("ERROR: Connection failed, " . $returnVal->connect_error);
+        {
+            if(self::$logError)
+                self::logError("ERROR: Connection failed, " . $returnVal->connect_error);
+
+            return null;
+        }
 
         return $returnVal;
     }
@@ -56,14 +64,17 @@ final class DBI
     {
         $dbConn = self::makeDBConn();
 
-        if($dbConn->connect_error)
+        if($dbConn == null)
             // The function crashed with an error, return nothing
             return null;
 
         $returnVal = $dbConn->query($query);
 
         if(self::$logError)
+        {
             self::logError("ERROR: Querying data from DB threw an error: " . $dbConn->error);
+            return null;
+        }
 
         return $returnVal;
     }
@@ -78,7 +89,7 @@ final class DBI
         $data = self::queryDB($query);
 
         // The data could not be pulled from the database
-        if(is_null($data))
+        if($data == null)
             return null;
 
         $rowAmount = $data->num_rows;
@@ -111,7 +122,7 @@ final class DBI
         $data = self::queryDB($query);
 
         // The data could not be pulled from the database
-        if(is_null($data))
+        if($data == null)
             return null;
 
         $rowAmount = $data->num_rows;
@@ -144,7 +155,7 @@ final class DBI
         $data = self::queryDB($query);
 
         // The data could not be pulled from the database
-        if(is_null($data))
+        if($data == null)
             return null;
 
         $rowAmount = $data->num_rows;
@@ -177,7 +188,7 @@ final class DBI
         $data = self::queryDB($query);
 
         // The data could not be pulled from the database
-        if(is_null($data))
+        if($data == null)
             return null;
 
         $rowAmount = $data->num_rows;
