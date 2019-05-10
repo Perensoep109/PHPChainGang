@@ -8,7 +8,7 @@ Hier is de link voor het FO
 http://167.99.1.120
 
 
-Hier zijn de andere bestanden GO en het axure bestand
+Hier zijn de andere bestanden GO, het axure bestand en het SQL bestand van de database.
 http://167.99.1.120/Downloads/
 
 Gebruik de online includes van bootstrap, zet deze in de juiste volgorde. 
