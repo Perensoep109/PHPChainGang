@@ -20,13 +20,13 @@ class DBUser
     //==Functions==//
     public function __construct($args=[])
     {
-        $this->dbIndex = $args[0];
-        $this->name = $args[1];
-        $this->email = $args[2];
-        $this->age = $args[3];
-        $this->gender = $args[4];
-        $this->password = $args[5];
-        $this->username = $args[6];
+        $this->dbIndex = $args['USER_ID'];
+        $this->name = $args['USER_NAME'];
+        $this->email = $args['USER_EMAIL'];
+        $this->age = $args['USER_AGE'];
+        $this->gender = $args['USER_GENDER'];
+        $this->password = $args['USER_PASSWORD'];
+        $this->username = $args['USER_USERNAME'];
     }
 
     //=Getters & Setters=//

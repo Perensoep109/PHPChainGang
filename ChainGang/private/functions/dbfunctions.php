@@ -28,7 +28,7 @@ final class DBI
      *  This function returns an object of mysqli
      *  This function is only executed by this class, everytime a query is made
      */
-    public static final function makeDBConn()
+    private static final function makeDBConn()
     {
         $returnVal = new mysqli("localhost", "root", "", "waken_chaingangfietsen");
 
@@ -131,7 +131,7 @@ final class DBI
             for($i = 0; $i < $rowAmount; $i++)
             {
                 $row = $data->fetch_assoc();
-                array_push($returnValue, new DBBike($row));
+                array_push($returnValue, new DBUser($row));
             }
 
             return $returnValue;
@@ -164,7 +164,40 @@ final class DBI
             for($i = 0; $i < $rowAmount; $i++)
             {
                 $row = $data->fetch_assoc();
-                array_push($returnValue, new DBBike($row));
+                array_push($returnValue, new DBReview($row));
+            }
+
+            return $returnValue;
+        }
+
+        // No data was pulled from the database
+        return null;
+    }
+
+    /*  Deze functie vraagt informatie op uit de database, daarna zet hij deze data om in een array van orders
+     *  String-$query staat voor de query die uitgevoerd word op de database
+     *  Deze functie returned een array van reviews
+     *  Deze functie word uitgevoerd door de gebruiker zelf
+     */
+    public static final function queryOrders($query)
+    {
+        $data = self::queryDB($query);
+
+        // The data could not be pulled from the database
+        if(is_null($data))
+            return null;
+
+        $rowAmount = $data->num_rows;
+
+        if($rowAmount > 0)
+        {
+            $returnValue = array();
+
+            // Construct the return value of bike[]
+            for($i = 0; $i < $rowAmount; $i++)
+            {
+                $row = $data->fetch_assoc();
+                array_push($returnValue, new DBOrder($row));
             }
 
             return $returnValue;

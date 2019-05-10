@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8f91c26-7f60-4a0b-bee9-f518ad351b74" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChainGang/private/classes/DBBike.php" beforeDir="false" afterPath="$PROJECT_DIR$/ChainGang/private/classes/DBBike.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChainGang/private/classes/DBOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/ChainGang/private/classes/DBOrder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChainGang/private/classes/DBUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/ChainGang/private/classes/DBUser.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChainGang/private/classes/dbitest.php" beforeDir="false" afterPath="$PROJECT_DIR$/ChainGang/private/classes/dbitest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChainGang/private/functions/dbfunctions.php" beforeDir="false" afterPath="$PROJECT_DIR$/ChainGang/private/functions/dbfunctions.php" afterDir="false" />
     </list>
@@ -58,37 +58,35 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="852" />
+          <entry key="php" value="1598" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="852" />
+          <entry key="PHP" value="1598" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="php" value="3" />
+          <entry key="php" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PHP" value="3" />
+          <entry key="PHP" value="5" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ChainGang/private/functions/dbfunctions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+            <state relative-caret-position="425">
+              <caret line="30" column="11" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
               <folding>
                 <element signature="n#logError#0;n#DBI#0;n#!!top" />
-                <element signature="n#queryUsers#0;n#DBI#0;n#!!top" />
-                <element signature="n#queryReviews#0;n#DBI#0;n#!!top" />
               </folding>
             </state>
           </provider>
@@ -97,17 +95,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ChainGang/private/classes/DBBike.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
+            <state relative-caret-position="425">
               <caret line="30" column="52" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ChainGang/private/classes/dbitest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="30" column="44" lean-forward="true" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+            <state relative-caret-position="221">
+              <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ChainGang/private/classes/DBOrder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ChainGang/private/classes/DBUser.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="29" column="5" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="29" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -136,9 +152,11 @@
         <option value="$PROJECT_DIR$/ChainGang/public/php/index.php" />
         <option value="$PROJECT_DIR$/ChainGang/public/stylesheets/temp.css" />
         <option value="$PROJECT_DIR$/ChainGang/public/index.php" />
-        <option value="$PROJECT_DIR$/ChainGang/private/functions/dbfunctions.php" />
         <option value="$PROJECT_DIR$/ChainGang/private/classes/DBBike.php" />
         <option value="$PROJECT_DIR$/ChainGang/private/classes/dbitest.php" />
+        <option value="$PROJECT_DIR$/ChainGang/private/classes/DBUser.php" />
+        <option value="$PROJECT_DIR$/ChainGang/private/classes/DBOrder.php" />
+        <option value="$PROJECT_DIR$/ChainGang/private/functions/dbfunctions.php" />
       </list>
     </option>
   </component>
@@ -235,6 +253,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SearchEverywhereHistoryKey" value="DBO&#9;FILE&#9;file://C:/Users/wiebe/Documents/GitHub/PHPChainGang/ChainGang/private/classes/DBOrder.php&#10;DBU&#9;FILE&#9;file://C:/Users/wiebe/Documents/GitHub/PHPChainGang/ChainGang/private/classes/DBUser.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -285,7 +304,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20300000" />
+    <option name="totallyTimeSpent" value="21750000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
@@ -351,29 +370,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChainGang/private/classes/DBOrder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChainGang/private/classes/DBUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
-          <folding>
-            <element signature="n#getDbIndex#0;n#User#0;n#!!top" />
-            <element signature="n#getName#0;n#User#0;n#!!top" />
-            <element signature="n#getGender#0;n#User#0;n#!!top" />
-            <element signature="n#getAge#0;n#User#0;n#!!top" />
-            <element signature="n#getEmail#0;n#User#0;n#!!top" />
-            <element signature="n#getPassword#0;n#User#0;n#!!top" />
-            <element signature="n#getUsername#0;n#User#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ChainGang/private/classes/DBReview.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -381,29 +377,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChainGang/private/functions/dbfunctions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-          <folding>
-            <element signature="n#logError#0;n#DBI#0;n#!!top" />
-            <element signature="n#queryUsers#0;n#DBI#0;n#!!top" />
-            <element signature="n#queryReviews#0;n#DBI#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ChainGang/private/classes/DBBike.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="425">
           <caret line="30" column="52" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ChainGang/private/classes/dbitest.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChainGang/private/classes/DBUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="29" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChainGang/private/classes/DBOrder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChainGang/private/functions/dbfunctions.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
-          <caret line="30" column="44" lean-forward="true" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+          <caret line="30" column="11" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
+          <folding>
+            <element signature="n#logError#0;n#DBI#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>

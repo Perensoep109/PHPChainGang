@@ -9,13 +9,14 @@
 include_once("../functions/dbfunctions.php");
 
 DBI::$logError = true;
-$mode = 1;
+$mode = 2;
 
 if($mode == 0)
 {
     for ($i = 0; $i < 2; $i++)
     {
-        DBI::queryDB("INSERT INTO allbikes (BIKE_NAME, BIKE_PRICE, BIKE_BRAND, BIKE_FRAMETYPE, BIKE_MATERIAL, BIKE_GENDER, BIKE_COLOR, BIKE_RELEASEYEAR) VALUES('Fiets', '10', 'Gazelle', 'Sport', 'Koper', 'M', 'Blue', '2002')");
+        //DBI::queryDB("INSERT INTO allbikes (BIKE_NAME, BIKE_PRICE, BIKE_BRAND, BIKE_FRAMETYPE, BIKE_MATERIAL, BIKE_GENDER, BIKE_COLOR, BIKE_RELEASEYEAR) VALUES('Fiets', '10', 'Gazelle', 'Sport', 'Koper', 'M', 'Blue', '2002')");
+        DBI::queryDB("INSERT INTO allusers (USER_NAME, USER_EMAIL, USER_AGE, USER_GENDER, USER_PASSWORD, USER_USERNAME) VALUES('Wiebe', '123@312mail.com', '17', 'A', 'Koper', 'SoepPeren')");
     }
 }
 
@@ -27,6 +28,19 @@ if($mode == 1)
     for($i = 0; $i < $bikeAmount; $i++)
     {
         echo $bikes[$i]->getName() . "<br>";
+    }
+}
+
+if($mode == 2)
+{
+    $users = DBI::queryUsers("SELECT * FROM allusers");
+
+    if(!is_null($users))
+    {
+        foreach ($users as $user)
+        {
+            echo $user->getName() . "<br>";
+        }
     }
 }
 
