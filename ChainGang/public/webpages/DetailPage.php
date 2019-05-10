@@ -16,15 +16,23 @@ $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 0")[0];
 
 <!DOCTYPE html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FietsShop</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
-    <!--Include header here-->
-    <?php include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/static/header.php")?>
-    <!--Page-->
     <div class="container" style="width: 1000px;">
-        <h1></h1>
+        <!--Include header here-->
+        <?php include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/static/header.php")?>
+
+        <!--Page-->
         <div class="row">
             <div id="carrousel" class="col-lg-8">
                 <h1>Carrousel</h1>
@@ -41,10 +49,10 @@ $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 0")[0];
                 <h1>Misschien wilt u ook</h1>
             </div>
         </div>
+
+        <!--Include footer here-->
+        
     </div>
-
-    <!--Include footer here-->
-
 
     <!--JQuery JS includes-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
