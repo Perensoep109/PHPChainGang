@@ -32,7 +32,7 @@ $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
     <div class="container">
         <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/header.php"?>
 
-        <?php echo "<h2><b>" . $bike->getBrand() . "</b></h2>"?>
+        <?php echo "<h2><b>" . $bike->getName() . "</b></h2>"?>
         <div class="row">
             <div id="fietsCarouselIndicator" class="col-lg-8">
                 <div id="fietsCarousel" class="carousel slide" data-ride="carousel">
