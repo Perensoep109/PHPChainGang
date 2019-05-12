@@ -28,7 +28,7 @@ class DBBike
         $this->material = $args['BIKE_MATERIAL'];
         $this->color = $args['BIKE_COLOR'];
         $this->releaseYear = $args['BIKE_RELEASEYEAR'];
-        $this->category = $args['BIKE_CATEGORY'];
+        $this->category = $args['BIKE_CATEGORY_ID'];
     }
 
     //=Getters & Setters=//
