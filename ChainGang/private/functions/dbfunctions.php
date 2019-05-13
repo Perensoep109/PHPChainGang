@@ -214,7 +214,6 @@ final class DBI
         // No data was pulled from the database
         return null;
     }
-
     /*  Deze functie vraagt informatie op uit de database, daarna zet hij deze data om in een array van bikes
  *  String-$query staat voor de query die uitgevoerd word op de database
  *  Deze functie returned een array van catogorieen
