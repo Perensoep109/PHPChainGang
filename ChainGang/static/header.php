@@ -1,24 +1,24 @@
 <div class="row" id="header_nav">
-    <div class="col-md-6"></div>
-    <div class="col-md-1 text-center">
+    <div class="col-lg-6"></div>
+    <div class="col-lg-1 text-center">
         <button type="button" class="btn btn-link">Help</button>
     </div>
-    <div class="col-md-2 text-center">
+    <div class="col-lg-2 text-center">
         <button type="button" class="btn btn-link">Over ons</button>
     </div>
-    <div class="col-md-1 text-center">
+    <div class="col-lg-1 text-center">
         <button type="button" class="btn btn-link">Contact</button>
     </div>
-    <div class="col-md-2 text-center">
+    <div class="col-lg-2 text-center">
         <button type="button" class="btn btn-link" data-toggle="modal" data-target=".login-modal">Login/Registeren</button>
 <!--        hier moet de login form komen-->
     </div>
 </div>
 <div class="row">
-    <div class="col-md-2">
+    <div class="col-lg-2">
         <h1 id="header_logo">FietsShop</h1>
     </div>
-    <div class="col-md-10 col-auto" id="header_SearchAndButton">
+    <div class="col-lg-10 col-auto" id="header_SearchAndButton">
         <div class="input-group">
             <div class="input-group-prepend">
                 <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
@@ -40,28 +40,28 @@
     </div>
 </div>
 <div class="row border" id="header_Bottom">
-    <div class="col-md-2 border text-center">
+    <div class="col-lg-2 border text-center">
         <button type="button" class="btn btn-link">Thuis</button>
     </div>
-    <div class="col-md-2 border text-center">
+    <div class="col-lg-2 border text-center">
         <button type="button" class="btn btn-link">Fietsen</button>
     </div>
-    <div class="col-md-2 border text-center">
+    <div class="col-lg-2 border text-center">
         <button type="button" class="btn btn-link">Mijn profiel</button>
     </div>
-    <div class="col-md-2 border text-center">
+    <div class="col-lg-2 border text-center">
         <button type="button" class="btn btn-link">Over ons</button>
 
     </div>
-    <div class="col-md-3 border"></div>
-    <div class="col-md-1 border">
+    <div class="col-lg-3 border"></div>
+    <div class="col-lg-1 border">
         <div class="dropdown">
             <button class="btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-lg-6">
                         <span class="badge badge-light" id='CartItemCount'>0</span>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-lg-6">
                         <i class="material-icons">shopping_cart</i>
                     </div>
                 </div>

@@ -17,40 +17,24 @@ class DBCate
     private $index, $name;
 
     //==Functions==//
-    /**
-     * DBCate constructor.
-     * @param $dbIndex
-     * @param $index
-     * @param $name
-     */
-    public function __construct($dbIndex, $index, $name)
+    public function __construct($args=[])
     {
-        $this->dbIndex = $dbIndex;
-        $this->index = $index;
-        $this->name = $name;
+        $this->dbIndex = $args['CATEGORY_ID'];
+        $this->index = $args['CATEGORY_INDEX'];
+        $this->name = $args['CATEGORY_NAME'];
+
     }
 
-    /**
-     * @return mixed
-     */
     public function getDbIndex()
     {
         return $this->dbIndex;
     }
 
-
-    /**
-     * @return mixed
-     */
     public function getIndex()
     {
         return $this->index;
     }
 
-
-    /**
-     * @return mixed
-     */
     public function getName()
     {
         return $this->name;
