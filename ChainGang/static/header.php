@@ -31,7 +31,10 @@
                     <a class="dropdown-item" href="#">Kinderen</a>
                 </div>
             </div>
-            <input type="text" class="form-control" aria-label="Text input with dropdown button">
+            <input type="text" class="form-control" id="SearchInput" aria-label="Text input with dropdown button">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="material-icons">search</i></button>
+            </div>
         </div>
 
     </div>
@@ -72,6 +75,9 @@
     <div class="modal fade login-modal" tabindex="-1" role="dialog" aria-labelledby="login-modal" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
                 <h1>LOGIN FORM HERE</h1>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac magna non urna fermentum cursus. Maecenas egestas egestas ipsum, eget consectetur eros imperdiet id. Nulla aliquam pulvinar ante, et auctor risus fermentum quis. Donec sit amet leo vel dolor consectetur finibus. Etiam ut faucibus nunc, ac semper metus. Phasellus varius vehicula suscipit. Cras quis neque in nisi facilisis suscipit.
 
