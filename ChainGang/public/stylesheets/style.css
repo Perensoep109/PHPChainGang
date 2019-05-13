@@ -20,4 +20,12 @@
 }
 /*De footer*/
 
+
+/*De Detail pagina */
+.detail_priceTag
+{
+    color: darkorange;
+    font-weight: bold;
+    font-size: 30px;
+}
 /*de catogorie pagina*/

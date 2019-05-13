@@ -22,8 +22,7 @@ $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
     <title>FietsShop</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../stylesheets/baseTemplate.css">
-    <link rel="stylesheet" href="../stylesheets/detailpageTemplate.css">
+    <link rel="stylesheet" href="../stylesheets/style.css">
 </head>
 <body>
     <!--Include header here-->
@@ -104,7 +103,7 @@ $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
                 ?>
                 </table>
                 <?php
-                    echo "<p class='priceTag col-lg-4'>€" . $bike->getPrice() . ",-
+                    echo "<p class='Detail_priceTag col-lg-4'>€" . $bike->getPrice() . ",-
                     <button type='button' class='btn btn-primary col-lg-4'>Bestellen!</button></p>
                     ";
                 ?>
