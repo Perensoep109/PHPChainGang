@@ -18,6 +18,9 @@
 #SearchInput {
     height: 44px;
 }
+#SearchButton{
+    margin-right:-14px;
+}
 /*De footer*/
 
 
