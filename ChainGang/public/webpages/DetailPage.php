@@ -1,4 +1,3 @@
-<html>
 <?php
 /**
  * Created by PhpStorm.
@@ -10,10 +9,17 @@
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php");
 
 DBI::$logError = true;
-
 $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
+
+// Redirect if the query didn't execute
+if($bike == null)
+{
+    header("Location: " . basename("$_SERVER[DOCUMENT_ROOT]/chaingang/public/webpages/ErrorPage.php"));
+    exit();
+}
 ?>
 
+<html>
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8" />
@@ -30,30 +36,40 @@ $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
 
     <!--Page-->
     <div class="container">
-        <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/header.php"?>
+        <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/header.php" ?>
 
-        <?php echo "<h2><b>" . $bike->getName() . "</b></h2>"?>
+        <?php echo "<h2><b>" . $bike->getName() . "</b></h2>" ?>
         <div class="row">
             <div id="fietsCarouselIndicator" class="col-lg-8">
                 <div id="fietsCarousel" class="carousel slide" data-ride="carousel">
+                    <?php
+                    //Prepare image data
+                    $imagePaths = $bike->getImagePaths();
+                    ?>
+
                     <!--Carousel indicators-->
-                    <ol class="carousel-indicators">
-                        <li data-target="#fietsCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#fietsCarousel" data-slide-to="1"></li>
-                        <li data-target="#fietsCarousel" data-slide-to="2"></li>
+                    <ol class='carousel-indicators'>
+                        <?php
+                        $imageAmount = count($imagePaths);
+                        if ($imageAmount > 6)
+                            $imageAmount = 6;
+
+                        for ($i = 0; $i < $imageAmount; $i++) {
+                            echo "<li data-target='#fietsCarousel' data-slide-to='" . $i . "'" . ($i == 0 ? "class='active'" : "") . "</li>";
+                        }
+                        ?>
                     </ol>
 
                     <!--Carousel inside-->
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <?php echo "<img class='d-block w-100' src='../images/cat1.jpg'>"?>
-                        </div>
-                        <div class="carousel-item">
-                            <?php echo "<img class='d-block w-100' src='../images/cat2.jpg'>"?>
-                        </div>
-                        <div class="carousel-item">
-                            <?php echo "<img class='d-block w-100' src='../images/cat3.jpg'>"?>
-                        </div>
+                        <?php
+                        for ($i = 0; $i < $imageAmount; $i++) {
+                            $path = "../" . $imagePaths[$i];
+                            echo ($i == 0 ? "<div class='carousel-item active'>" : "<div class='carousel-item'>")
+                                . "<img class='d-block w-100' src='$path'>"
+                                . "</div>";
+                        }
+                        ?>
                     </div>
 
                     <a class="carousel-control-prev" href="#fietsCarousel" role="button" data-slide="prev">
@@ -69,44 +85,44 @@ $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
 
             <div id="specifications" class="col-lg-4">
                 <table>
-                <?php
+                    <?php
                     echo "<tr>
-                            <th colspan='2'><h3><b>Specificaties<b><h3></th>
-                          </tr>
-                          <tr>
-                            <td>Merk </td>
-                            <td>" . $bike->getBrand() . "</td>
-                          </tr>
-                          <tr>
-                            <td>Categorie </td>
-                            <td> " . $bike->getCategory() . " </td>
-                          </tr>
-                          <tr>
-                            <td>Jaarta: </td>
-                            <td> " . $bike->getReleaseYear() . " </td>
-                          </tr>
-                          <tr>
-                            <td>Frametype </td>
-                            <td> " . $bike->getFrameType() . " </td>
-                          </tr>
-                          <tr>
-                            <td>Material </td>
-                            <td> " . $bike->getMaterial() . " </td>
-                          </tr>
-                          <tr>
-                            <td>Frametype </td>
-                            <td> " . $bike->getMaterial() . " </td>
-                          </tr>
-                          <tr>
-                            <td>Color </td>
-                            <td> " . $bike->getColor() . " </td>
-                          </tr>";
-                ?>
+                    <th colspan='2'><h3><b>Specificaties<b><h3></th>
+                  </tr>
+                  <tr>
+                    <td>Merk </td>
+                    <td>" . $bike->getBrand() . "</td>
+                  </tr>
+                  <tr>
+                    <td>Categorie </td>
+                    <td> " . $bike->getCategory() . " </td>
+                  </tr>
+                  <tr>
+                    <td>Jaarta: </td>
+                    <td> " . $bike->getReleaseYear() . " </td>
+                  </tr>
+                  <tr>
+                    <td>Frametype </td>
+                    <td> " . $bike->getFrameType() . " </td>
+                  </tr>
+                  <tr>
+                    <td>Material </td>
+                    <td> " . $bike->getMaterial() . " </td>
+                  </tr>
+                  <tr>
+                    <td>Frametype </td>
+                    <td> " . $bike->getMaterial() . " </td>
+                  </tr>
+                  <tr>
+                    <td>Color </td>
+                    <td> " . $bike->getColor() . " </td>
+                  </tr>";
+                    ?>
                 </table>
                 <?php
-                    echo "<p class='priceTag col-lg-4'>€" . $bike->getPrice() . ",-
-                    <button type='button' class='btn btn-primary col-lg-4'>Bestellen!</button></p>
-                    ";
+                echo "<p class='priceTag col-lg-4'>€" . $bike->getPrice() . ",-
+            <button type='button' class='btn btn-primary col-lg-4'>Bestellen!</button></p>
+            ";
                 ?>
             </div>
         </div>
@@ -119,7 +135,6 @@ $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
             </div>
         </div>
     </div>
-
     <!--Include footer here-->
 
 
