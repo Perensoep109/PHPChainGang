@@ -30,6 +30,7 @@ class DBBike
         $this->releaseYear = $args['BIKE_RELEASEYEAR'];
         $this->category = $args['BIKE_CATEGORY_ID'];
         $this->imagePaths = $this->splitImagePaths($args['BIKE_IMAGES']);
+        $this->description = $args['BIKE_DESCRIPTION']; 
     }
 
     private function splitImagePaths($images)
