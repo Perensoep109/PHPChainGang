@@ -6,7 +6,7 @@ include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.ph
 
 DBI::$logError = true;
 
-$review1 = DBI::queryReviews("select * from allreviews order by REVIEW_ID desc limit 1")[0];
+$reviews = DBI::queryReviews("select * from allreviews order by REVIEW_ID desc limit 3");
 
 ?>
 <head>
@@ -25,7 +25,7 @@ $review1 = DBI::queryReviews("select * from allreviews order by REVIEW_ID desc l
 <body>
 <div class="container">
     <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/header.php";
-    new Review($review1);?>
+    new Review($reviews);?>
     <!--<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
