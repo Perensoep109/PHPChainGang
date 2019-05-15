@@ -98,8 +98,9 @@ $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
             ?>
 
             <div id="specifications" class="col-lg-4">
-                <table>
-                <?php
+                <div id="spec-column" class="row">
+                    <table class="col-lg-12">
+                    <?php
                     echo "<tr>
                             <th colspan='2'><h3><b>Specificaties<b><h3></th>
                           </tr>
@@ -132,12 +133,14 @@ $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
                             <td> " . $bike->getColor() . " </td>
                           </tr>";
                 ?>
-                </table>
-                <?php
-                    echo "<p class='Detail_priceTag col-lg-4'>€" . $bike->getPrice() . ",-
-                    <button type='button' class='btn btn-primary col-lg-4'>Bestellen!</button></p>
-                    ";
-                ?>
+                    </table>
+
+                    <div class="row">
+                        <p class="detail_priceTag col-lg-6">€<?php echo $bike->getPrice() ?>,-</p>
+                        <button type="button" class="btn btn-primary col-lg-6"><b><i>Bestellen!</i></b></button>
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="row">
