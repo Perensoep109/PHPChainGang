@@ -18,7 +18,7 @@
     <div class="col-lg-2">
         <h1 id="header_logo">FietsShop</h1>
     </div>
-    <div class="col-lg-10 col-auto" id="header_SearchAndButton">
+    <div class="col-lg-10 some_div" id="header_SearchAndButton">
         <div class="input-group">
             <div class="input-group-prepend">
                 <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
@@ -33,7 +33,7 @@
             </div>
             <input type="text" class="form-control" id="SearchInput" aria-label="Text input with dropdown button">
             <div class="input-group-append">
-                <button class="btn btn-outline-secondary mb-lr-3" type="button" id="SearchButton"><i class="material-icons">search</i></button>
+                <button class="btn btn-outline-secondary" type="button" id="SearchButton"><i class="material-icons">search</i></button>
             </div>
         </div>
 

@@ -17,9 +17,13 @@
 }
 #SearchInput {
     height: 44px;
+    width: 740px;
+    margin:0px;
+    padding:0px;
 }
-#SearchButton{
-   /* margin-right:-14px;*/
+.some_div{
+    margin:0;
+    padding:0;
 }
 /*De footer*/
 
