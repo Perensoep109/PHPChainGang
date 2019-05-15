@@ -33,7 +33,7 @@
             </div>
             <input type="text" class="form-control" id="SearchInput" aria-label="Text input with dropdown button">
             <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" id="SearchButton"><i class="material-icons">search</i></button>
+                <button class="btn btn-outline-secondary mb-lr-3" type="button" id="SearchButton"><i class="material-icons">search</i></button>
             </div>
         </div>
 
