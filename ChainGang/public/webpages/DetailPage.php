@@ -81,7 +81,7 @@ $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
                             <td> " . $bike->getCategory() . " </td>
                           </tr>
                           <tr>
-                            <td>Jaarta: </td>
+                            <td>Jaartal: </td>
                             <td> " . $bike->getReleaseYear() . " </td>
                           </tr>
                           <tr>
@@ -90,10 +90,6 @@ $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
                           </tr>
                           <tr>
                             <td>Material </td>
-                            <td> " . $bike->getMaterial() . " </td>
-                          </tr>
-                          <tr>
-                            <td>Frametype </td>
                             <td> " . $bike->getMaterial() . " </td>
                           </tr>
                           <tr>
