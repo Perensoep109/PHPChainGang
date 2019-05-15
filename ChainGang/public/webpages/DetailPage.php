@@ -35,34 +35,58 @@ $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
         <div class="row">
             <div id="fietsCarouselIndicator" class="col-lg-8">
                 <div id="fietsCarousel" class="carousel slide" data-ride="carousel">
-                    <!--Carousel indicators-->
-                    <ol class="carousel-indicators">
-                        <li data-target="#fietsCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#fietsCarousel" data-slide-to="1"></li>
-                        <li data-target="#fietsCarousel" data-slide-to="2"></li>
-                    </ol>
+                    <?php
+                    // Prepare variables
+                    $imagePaths = $bike->getImagePaths();
+                    $imageAmount = count($imagePaths);
 
-                    <!--Carousel inside-->
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <?php echo "<img class='d-block w-100' src='../images/cat1.jpg'>"?>
-                        </div>
-                        <div class="carousel-item">
-                            <?php echo "<img class='d-block w-100' src='../images/cat2.jpg'>"?>
-                        </div>
-                        <div class="carousel-item">
-                            <?php echo "<img class='d-block w-100' src='../images/cat3.jpg'>"?>
-                        </div>
-                    </div>
+                    if($imageAmount > 6)
+                        $imageAmount = 6;
 
-                    <a class="carousel-control-prev" href="#fietsCarousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#fietsCarousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                    if($imageAmount > 0)
+                    {
+                        // Place indicators
+                        echo "<ol class='carousel-indicators'>";
+
+                        for ($i = 0; $i < $imageAmount; $i++)
+                            echo "<li data-target='#fietsCarousel' data-slide-to='$i'" . ($i == 0 ? "class='active'" : "") . "></li>";
+                        echo "</ol>";
+
+                        // Place images
+                        echo "<div class='carousel-inner'>";
+                        for ($i = 0; $i < $imageAmount; $i++)
+                        {
+                            $path = "../" . $imagePaths[$i];
+
+                            echo ($i == 0 ? "<div class='carousel-item active'>" : "<div class='carousel-item'>");
+                            echo "    <img class='d-block w-100' src='$path'>";
+                            echo "</div>";
+                        }
+
+                        if($imageAmount > 1)
+                        {
+                            ?>
+
+                            <a class="carousel-control-prev" href="#fietsCarousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#fietsCarousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+
+                            <?php
+                        }
+                    }
+                    else
+                    {
+                        echo "<img class='d-block w-100' src='../images/blobvis.jpg'>";
+                    }
+
+                    echo "</div>";
+
+                    ?>
                 </div>
             </div>
 
