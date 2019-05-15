@@ -29,6 +29,12 @@ class DBBike
         $this->color = $args['BIKE_COLOR'];
         $this->releaseYear = $args['BIKE_RELEASEYEAR'];
         $this->category = $args['BIKE_CATEGORY_ID'];
+        $this->imagePaths = $this->splitImagePaths($args['BIKE_IMAGES']);
+    }
+
+    private function splitImagePaths($images)
+    {
+        return explode(',', $images);
     }
 
     //=Getters & Setters=//
@@ -76,6 +82,11 @@ class DBBike
     public function getCategory()
     {
         return $this->category;
+    }
+
+    public function getImagePaths()
+    {
+        return $this->imagePaths;
     }
 }
 
