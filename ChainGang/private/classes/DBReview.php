@@ -24,6 +24,35 @@ class DBReview
         $this->text = $args['REVIEW_TEXT'];
         $this->timePlaced = $args['REVIEW_TIME_PLACED'];
     }
+
+    /**
+     * @return mixed
+     */
+    public function getDbIndex()
+    {
+        return $this->dbIndex;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUserID()
+    {
+        return $this->userID;
+    }
+
+
+    public function getText()
+    {
+        return $this->text;
+    }
+
+
+    public function getTimePlaced()
+    {
+        return $this->timePlaced;
+    }
+
 }
 
 ?>

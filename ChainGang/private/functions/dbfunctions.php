@@ -10,6 +10,10 @@ include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/DBBike.php");
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/DBUser.php");
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/DBReview.php");
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/DBOrder.php");
+include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/DBCate.php");
+//include_once("../classes/DBOrder.php");
+//include_once("../classes/DBReview.php");
+//include_once("../classes/DBUser.php");
 
 /* De DBI class staat voor, Data Base Interface
  * Deze klasse heeft een set aan statische functies, die overal uitgevoerd kunnen worden
@@ -51,7 +55,7 @@ final class DBI
     {
         echo "<div class='alert alert-danger' role='alert'>
                 <h1 class='errorLog'>$error</h1>
-              </div>";
+              </div>>";
     }
 
     /*  Deze functie vraagt informatie op uit de database, daarna zet hij deze data om in een array van orders
@@ -203,6 +207,38 @@ final class DBI
             {
                 $row = $data->fetch_assoc();
                 array_push($returnValue, new DBOrder($row));
+            }
+
+            return $returnValue;
+        }
+
+        // No data was pulled from the database
+        return null;
+    }
+    /*  Deze functie vraagt informatie op uit de database, daarna zet hij deze data om in een array van bikes
+ *  String-$query staat voor de query die uitgevoerd word op de database
+ *  Deze functie returned een array van catogorieen
+ *  Deze functie word uitgevoerd door de gebruiker zelf
+ */
+    public static final function queryCategories($query)
+    {
+        $data = self::queryDB($query);
+
+        // The data could not be pulled from the database
+        if($data == null)
+            return null;
+
+        $rowAmount = $data->num_rows;
+
+        if($rowAmount > 0)
+        {
+            $returnValue = array();
+
+            // Construct the return value of bike[]
+            for($i = 0; $i < $rowAmount; $i++)
+            {
+                $row = $data->fetch_assoc();
+                array_push($returnValue, new DBCate($row));
             }
 
             return $returnValue;
