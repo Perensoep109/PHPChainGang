@@ -6,17 +6,16 @@
  * Time: 1:40 PM
  */
 
-include_once("../functions/dbfunctions.php");
-
+include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php");
 DBI::$logError = true;
-$mode = 3;
+$mode = 4;
 
 if($mode == 0)
 {
     for ($i = 0; $i < 2; $i++)
     {
         //DBI::queryDB("INSERT INTO allbikes (BIKE_NAME, BIKE_PRICE, BIKE_BRAND, BIKE_FRAMETYPE, BIKE_MATERIAL, BIKE_GENDER, BIKE_COLOR, BIKE_RELEASEYEAR) VALUES('Fiets', '10', 'Gazelle', 'Sport', 'Koper', 'M', 'Blue', '2002')");
-        DBI::queryDB("INSERT INTO allusers (USER_NAME, USER_EMAIL, USER_AGE, USER_GENDER, USER_PASSWORD, USER_USERNAME) VALUES('Wiebe', '123@312mail.com', '17', 'A', 'Koper', 'SoepPeren')");
+        DBI::queryDB("INSERT INTO allusers (USER_NAME, USER_EMAIL, USER_AGE, USER_GENDER, USER_PASSWORD, USER_USERNAME) VALUES('Eugene', '123@312mail.com', '21', 'A', 'yeet', 'ppExtendus')");
     }
 }
 
@@ -51,6 +50,18 @@ if($mode == 3)
 
     foreach ($splittedStrings as $val)
         echo $val . "<br>";
+}
+if($mode == 4)
+{
+    $categories = DBI::queryCategories("SELECT * FROM allcategories");
+
+    if($categories != null)
+    {
+        foreach ($categories as $category)
+        {
+            echo $category->getName() . "<br>";
+        }
+    }
 }
 
 echo "Ran";

@@ -3,7 +3,7 @@
 /*De header*/
 #header_nav {
     border: black 1px solid;
-    background-color: #d3d3d3;
+    background-color: #f2f2f2;
 }
 
 #header_logo {
@@ -14,18 +14,27 @@
     padding-top: 7px;
     height: 55px;
 }
-
-#header_Bottom {
-    background-color: lightgray;
+#header_Bottom{
+    background-color: #ffffff;
+}
+#SearchInput {
+    height: 44px;
+}
+#SearchButton{
+    margin-right:-14px;
 }
 
 /*De footer*/
-#footer {
-
-}
-
 .text-center {
     text-align: center;
 }
 
+
+/*De Detail pagina */
+.detail_priceTag
+{
+    color: darkorange;
+    font-weight: bold;
+    font-size: 30px;
+}
 /*de catogorie pagina*/
