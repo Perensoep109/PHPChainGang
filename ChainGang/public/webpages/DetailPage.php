@@ -31,64 +31,71 @@ $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
     <div class="container">
         <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/header.php"?>
 
-        <?php echo "<h2><b>" . $bike->getBrand() . "</b></h2>"?>
+        <?php echo "<h2><b>" . $bike->getName() . "</b></h2>"?>
         <div class="row">
-            <div id="fietsCarouselIndicator" class="col-lg-8">
-                <div id="fietsCarousel" class="carousel slide" data-ride="carousel">
-                    <?php
-                    // Prepare variables
-                    $imagePaths = $bike->getImagePaths();
-                    $imageAmount = count($imagePaths);
+            <?php
+            // Prepare variables
+            $imagePaths = $bike->getImagePaths();
+            $imageAmount = count($imagePaths);
 
-                    if($imageAmount > 6)
-                        $imageAmount = 6;
+            // Fiets image carousel
+            if($imagePaths[0] != "")
+            {
+            ?>
+                <div id="fietsCarouselIndicator" class="col-lg-8">
+                    <div id="fietsCarousel" class="carousel slide" data-ride="carousel">
+                        <?php
+                        if($imageAmount > 6)
+                            $imageAmount = 6;
 
-                    if($imageAmount > 0)
-                    {
-                        // Place indicators
-                        echo "<ol class='carousel-indicators'>";
-
-                        for ($i = 0; $i < $imageAmount; $i++)
-                            echo "<li data-target='#fietsCarousel' data-slide-to='$i'" . ($i == 0 ? "class='active'" : "") . "></li>";
-                        echo "</ol>";
-
-                        // Place images
-                        echo "<div class='carousel-inner'>";
-                        for ($i = 0; $i < $imageAmount; $i++)
+                        if($imageAmount > 0)
                         {
-                            $path = "../" . $imagePaths[$i];
+                            // Place indicators
+                            echo "<ol class='carousel-indicators'>";
 
-                            echo ($i == 0 ? "<div class='carousel-item active'>" : "<div class='carousel-item'>");
-                            echo "    <img class='d-block w-100' src='$path'>";
-                            echo "</div>";
+                            for ($i = 0; $i < $imageAmount; $i++)
+                                echo "<li data-target='#fietsCarousel' data-slide-to='$i'" . ($i == 0 ? "class='active'" : "") . "></li>";
+                            echo "</ol>";
+
+                            // Place images
+                            echo "<div class='carousel-inner'>";
+                            for ($i = 0; $i < $imageAmount; $i++)
+                            {
+                                $path = "../" . $imagePaths[$i];
+
+                                echo ($i == 0 ? "<div class='carousel-item active'>" : "<div class='carousel-item'>");
+                                echo "<img class='d-block w-100' src='$path' alt='Dit plaatje kon niet worden geladen :('>";
+                                echo "</div>";
+                            }
+
+                            if($imageAmount > 1)
+                            {
+                                // Als er meer dan 1 plaatje voor dit product bestaat & ingeladen is, voeg de browse knoppen toe
+                                ?>
+                                <a class="carousel-control-prev" href="#fietsCarousel" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#fietsCarousel" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                                <?php
+                            }
                         }
 
-                        if($imageAmount > 1)
-                        {
-                            ?>
-
-                            <a class="carousel-control-prev" href="#fietsCarousel" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#fietsCarousel" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-
-                            <?php
-                        }
-                    }
-                    else
-                    {
-                        echo "<img class='d-block w-100' src='../images/blobvis.jpg'>";
-                    }
-
-                    echo "</div>";
-
-                    ?>
+                        echo "</div>";
+                        ?>
+                    </div>
                 </div>
-            </div>
+            <?php
+            }
+            else
+            {
+                // Geen plaatjes zijn gevonden. Display blobvis
+                echo "<img class='col-lg-8' src='../images/blobvis.jpg'>";
+            }
+            ?>
 
             <div id="specifications" class="col-lg-4">
                 <table>
