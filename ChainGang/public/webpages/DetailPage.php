@@ -129,14 +129,15 @@ if($bike == null)
         <div class="row">
             <div id="description" class="col-lg-8">
                 <h3><b>Omschrijving</b></h3>
-                <p><?php $bike->getDescription(); ?></p>
+                <p><?php echo $bike->getDescription(); ?></p>
             </div>
             <div id="recommendations" class="col-lg-4">
                 <h3><b>Misschien wilt u ook</b></h3>
             </div>
         </div>
+        <!--Include footer here-->
+        <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/footer.php" ?>
     </div>
-    <!--Include footer here-->
 
 
     <!--JQuery JS includes-->

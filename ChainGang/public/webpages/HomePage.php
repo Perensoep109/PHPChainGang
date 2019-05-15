@@ -16,13 +16,13 @@
 <body>
 <div class="container">
 <?php
-include_once('../static/header.php')
+include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/static/header.php")
 ?>
 
 <h1>code for home page here</h1>
 
 <?php
-include_once('../static/footer.php')
+include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/static/footer.php")
 ?>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

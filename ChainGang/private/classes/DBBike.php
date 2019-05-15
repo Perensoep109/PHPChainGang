@@ -14,7 +14,7 @@ class DBBike
 {
     //==Variables==//
     private $dbIndex;
-    private $name, $price, $brand, $releaseYear;
+    private $name, $price, $brand, $releaseYear, $description;
     private $frameType, $material, $color, $category;
 
     //==Functions==//
@@ -88,6 +88,11 @@ class DBBike
     public function getImagePaths()
     {
         return $this->imagePaths;
+    }
+
+    public function getDescription()
+    {
+        return $this->description;
     }
 }
 
