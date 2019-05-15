@@ -32,7 +32,7 @@ $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
         <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/header.php"?>
 
         <?php echo "<h2><b>" . $bike->getName() . "</b></h2>"?>
-        <div class="row">
+        <div class="row mb-lg-4">
             <?php
             // Prepare variables
             $imagePaths = $bike->getImagePaths();
@@ -42,7 +42,7 @@ $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
             if($imagePaths[0] != "")
             {
             ?>
-                <div id="fietsCarouselIndicator" class="col-lg-8">
+                <div id="mainFietsCarousel" class="col-lg-8 lg-mr-5">
                     <div id="fietsCarousel" class="carousel slide" data-ride="carousel">
                         <?php
                         if($imageAmount > 6)
@@ -98,14 +98,14 @@ $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
             ?>
 
             <div id="specifications" class="col-lg-4">
-                <div id="spec-column" class="row">
-                    <table class="col-lg-12">
+                <div id="spec-column" class="row mb-lg-5">
+                    <table class="table table-borderless col-lg-7 mb-lg-3">
                     <?php
                     echo "<tr>
                             <th colspan='2'><h3><b>Specificaties<b><h3></th>
                           </tr>
                           <tr>
-                            <td>Merk </td>
+                            <td>Merk</td>
                             <td>" . $bike->getBrand() . "</td>
                           </tr>
                           <tr>
@@ -113,7 +113,7 @@ $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
                             <td> " . $bike->getCategory() . " </td>
                           </tr>
                           <tr>
-                            <td>Jaartal: </td>
+                            <td>Jaartal </td>
                             <td> " . $bike->getReleaseYear() . " </td>
                           </tr>
                           <tr>
@@ -134,7 +134,7 @@ $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
                           </tr>";
                 ?>
                     </table>
-
+                    <div class="col-lg-5"></div>
                     <div class="row">
                         <p class="detail_priceTag col-lg-6">€<?php echo $bike->getPrice() ?>,-</p>
                         <button type="button" class="btn btn-primary col-lg-6"><b><i>Bestellen!</i></b></button>
