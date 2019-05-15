@@ -14,14 +14,17 @@
     padding-top: 7px;
     height: 55px;
 }
-#header_Bottom{
+
+#header_Bottom {
     background-color: #ffffff;
 }
+
 #SearchInput {
     height: 44px;
 }
-#SearchButton{
-    margin-right:-14px;
+
+#SearchButton {
+    margin-right: -14px;
 }
 
 /*De footer*/
@@ -29,12 +32,16 @@
     text-align: center;
 }
 
+hr.Properties {
+    border-top: 3px solid lightgrey;
+}
+
 
 /*De Detail pagina */
-.detail_priceTag
-{
+.detail_priceTag {
     color: darkorange;
     font-weight: bold;
     font-size: 30px;
 }
+
 /*de catogorie pagina*/
