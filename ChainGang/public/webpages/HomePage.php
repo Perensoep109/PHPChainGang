@@ -6,7 +6,7 @@ include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.ph
 
 DBI::$logError = true;
 
-$reviews = DBI::queryReviews("select * from allreviews order by REVIEW_ID desc limit 3");
+$reviews = DBI::queryReviews("select * from allreviews order by REVIEW_ID desc limit 4");
 
 ?>
 <head>
