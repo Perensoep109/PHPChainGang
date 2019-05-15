@@ -3,8 +3,13 @@
 
 class BikeProduct
 {
-    private $dbbike;
 
+    public function _construct()
+    {
+        echo "<div>
+
+</div>";
+    }
 
 
 }
