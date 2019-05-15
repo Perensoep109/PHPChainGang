@@ -32,3 +32,15 @@
     font-size: 30px;
 }
 /*de catogorie pagina*/
+
+/*de home page*/
+.carousel-item{
+    height: 100px;
+    width:100px;
+    border: black 2px solid;
+}
+/*review*/
+.user-icon{
+    width: 50px;
+    height: 50px;
+}

@@ -11,6 +11,7 @@ include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/DBUser.php");
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/DBReview.php");
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/DBOrder.php");
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/DBCate.php");
+include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/Review.php");
 //include_once("../classes/DBOrder.php");
 //include_once("../classes/DBReview.php");
 //include_once("../classes/DBUser.php");
