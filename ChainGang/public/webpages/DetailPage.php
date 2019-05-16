@@ -118,7 +118,11 @@ if($bike == null)
                             <td> " . $bike->getCategory() . " </td>
                           </tr>
                           <tr>
+<<<<<<< HEAD
                             <td>Jaartal </td>
+=======
+                            <td>Jaartal: </td>
+>>>>>>> EugenesWorkplace
                             <td> " . $bike->getReleaseYear() . " </td>
                           </tr>
                           <tr>
@@ -127,10 +131,6 @@ if($bike == null)
                           </tr>
                           <tr>
                             <td>Material </td>
-                            <td> " . $bike->getMaterial() . " </td>
-                          </tr>
-                          <tr>
-                            <td>Frametype </td>
                             <td> " . $bike->getMaterial() . " </td>
                           </tr>
                           <tr>

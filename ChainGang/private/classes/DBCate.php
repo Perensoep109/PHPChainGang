@@ -14,13 +14,12 @@ class DBCate
 {
     //==Variables==//
     private $dbIndex;
-    private $index, $name;
+    private $name;
 
     //==Functions==//
     public function __construct($args=[])
     {
         $this->dbIndex = $args['CATEGORY_ID'];
-        $this->index = $args['CATEGORY_INDEX'];
         $this->name = $args['CATEGORY_NAME'];
 
     }
@@ -28,11 +27,6 @@ class DBCate
     public function getDbIndex()
     {
         return $this->dbIndex;
-    }
-
-    public function getIndex()
-    {
-        return $this->index;
     }
 
     public function getName()
