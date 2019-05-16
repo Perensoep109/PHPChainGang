@@ -14,7 +14,7 @@ class DBUser
 {
     //==Variables==//
     private $dbIndex;
-    private $name, $gender, $age;
+    private $name, $gender, $age, $image;
     private $email, $password, $username;
 
     //==Functions==//
@@ -27,6 +27,7 @@ class DBUser
         $this->gender = $args['USER_GENDER'];
         $this->password = $args['USER_PASSWORD'];
         $this->username = $args['USER_USERNAME'];
+        $this->image = $args['USER_IMAGE'];
     }
 
     //=Getters & Setters=//
@@ -64,6 +65,10 @@ class DBUser
     public function getUsername()
     {
         return $this->username;
+    }
+    public function getImage()
+    {
+        return $this->image;
     }
 }
 

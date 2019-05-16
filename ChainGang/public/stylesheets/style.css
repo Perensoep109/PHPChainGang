@@ -59,14 +59,14 @@ hr.Properties {
 }
 /*review*/
 .user-icon{
-    width: 50px;
-    height: 50px;
+    width: 125px;
+    height: 125px;
 }
 .bubble
 {
     margin-top:10px;
     position: relative;
-    width: 1040px;
+    width: 900px;
     height: 80px;
     padding: 0px;
     background: #F2F2F2;
