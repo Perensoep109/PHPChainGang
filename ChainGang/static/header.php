@@ -18,7 +18,7 @@
     <div class="col-lg-2">
         <h1 id="header_logo">FietsShop</h1>
     </div>
-    <div class="col-lg-10 the_div_to_fix_the_negative_margin_what_wiebe_does_not_like" id="header_SearchAndButton">
+    <div class="col-lg-10 div_searchBar" id="header_SearchAndButton">
         <div class="input-group">
             <div class="input-group-prepend">
                 <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
