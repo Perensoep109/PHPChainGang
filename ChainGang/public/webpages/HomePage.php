@@ -7,7 +7,7 @@ include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/HTBfunctions.php
 
 DBI::$logError = true;
 
-$reviews = DBI::queryReviews("select * from allreviews order by REVIEW_ID desc limit 4");
+$reviews = DBI::queryReviews("select * from allreviews order by REVIEW_ID desc limit 2");
 
 ?>
 <head>
@@ -25,8 +25,42 @@ $reviews = DBI::queryReviews("select * from allreviews order by REVIEW_ID desc l
 </head>
 <body>
 <div class="container">
-    <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/header.php";
-    HTB::BuildReview($reviews);?>
+    <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/header.php";?>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="home_carousel">
+                    <div class="row">
+                        <div class="col-lg-6 home_carousel_left">
+                            <img class="home_carousel_image" src="https://via.placeholder.com/400x350?Text=slide1" >
+                        </div>
+                        <div class="col-lg-6 home_carousel_right">
+                                    <div class="row">
+                                        <h1 class="home_carousel_fiets_naam">Nieuwe Fietsje</h1>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="home_carousel">
+
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="home_carousel">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php HTB::BuildReview($reviews);?>
 
     <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/footer.php"?>
 </div>
