@@ -16,12 +16,31 @@
 <body>
 <div class="container">
     <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/header.php"?>
+
     <div id="cat_sidebar">
         <h3>Filters</h3>
+        <button type="button" class="btn btn-primary btn-lg">Filter!</button>
+        <h5>Frametype</h5>
+        <form action="">
+            <input type="radio" name="frametype" value="heren"> Herenfietsen<br>
+            <input type="radio" name="frametype" value="dames"> Damesfietsen<br>
+            <input type="radio" name="frametype" value="kinderen"> Kinderfietsen
+        </form>
+        <h5>Type fiets</h5>
+        <form action="">
+            <input type="checkbox" name="typefiets1" value="bakfiets"> Bakfietsen<br>
+            <input type="checkbox" name="typefiets2" value="hybridefiets"> Hybride fietsen<br>
+            <input type="checkbox" name="typefiets3" value="stadsfiets"> Stadsfietsen<br>
+            <input type="checkbox" name="typefiets4" value="transportfiets"> Transportfietsen
+        </form>
+        <h5>Merk</h5>
     </div>
+    <?php
+    include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/BikeProduct.php";
+    $bike = new BikeProduct();
+    $bike->_construct();
 
-
-    <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/footer.php"?>
+    include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/footer.php"?>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

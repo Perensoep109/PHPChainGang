@@ -45,6 +45,7 @@ hr.footer_Properties {
 }
 
 /*de catogorie pagina*/
-#cat_sidebar {
-
+#cat_sidebar h3 {
+    padding: 25px 0px;
 }
+
