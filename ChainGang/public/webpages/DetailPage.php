@@ -31,49 +31,81 @@ $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
     <div class="container">
         <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/header.php"?>
 
-        <?php echo "<h2><b>" . $bike->getBrand() . "</b></h2>"?>
-        <div class="row">
-            <div id="fietsCarouselIndicator" class="col-lg-8">
-                <div id="fietsCarousel" class="carousel slide" data-ride="carousel">
-                    <!--Carousel indicators-->
-                    <ol class="carousel-indicators">
-                        <li data-target="#fietsCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#fietsCarousel" data-slide-to="1"></li>
-                        <li data-target="#fietsCarousel" data-slide-to="2"></li>
-                    </ol>
+        <?php echo "<h2><b>" . $bike->getName() . "</b></h2>"?>
+        <div class="row mb-lg-4">
+            <?php
+            // Prepare variables
+            $imagePaths = $bike->getImagePaths();
+            $imageAmount = count($imagePaths);
 
-                    <!--Carousel inside-->
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <?php echo "<img class='d-block w-100' src='../images/cat1.jpg'>"?>
-                        </div>
-                        <div class="carousel-item">
-                            <?php echo "<img class='d-block w-100' src='../images/cat2.jpg'>"?>
-                        </div>
-                        <div class="carousel-item">
-                            <?php echo "<img class='d-block w-100' src='../images/cat3.jpg'>"?>
-                        </div>
+            // Fiets image carousel
+            if($imagePaths[0] != "")
+            {
+            ?>
+                <div id="mainFietsCarousel" class="col-lg-8 lg-mr-5">
+                    <div id="fietsCarousel" class="carousel slide" data-ride="carousel">
+                        <?php
+                        if($imageAmount > 6)
+                            $imageAmount = 6;
+
+                        if($imageAmount > 0)
+                        {
+                            // Place indicators
+                            echo "<ol class='carousel-indicators'>";
+
+                            for ($i = 0; $i < $imageAmount; $i++)
+                                echo "<li data-target='#fietsCarousel' data-slide-to='$i'" . ($i == 0 ? "class='active'" : "") . "></li>";
+                            echo "</ol>";
+
+                            // Place images
+                            echo "<div class='carousel-inner'>";
+                            for ($i = 0; $i < $imageAmount; $i++)
+                            {
+                                $path = "../" . $imagePaths[$i];
+
+                                echo ($i == 0 ? "<div class='carousel-item active'>" : "<div class='carousel-item'>");
+                                echo "<img class='d-block w-100' src='$path' alt='Dit plaatje kon niet worden geladen :('>";
+                                echo "</div>";
+                            }
+
+                            if($imageAmount > 1)
+                            {
+                                // Als er meer dan 1 plaatje voor dit product bestaat & ingeladen is, voeg de browse knoppen toe
+                                ?>
+                                <a class="carousel-control-prev" href="#fietsCarousel" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#fietsCarousel" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                                <?php
+                            }
+                        }
+
+                        echo "</div>";
+                        ?>
                     </div>
-
-                    <a class="carousel-control-prev" href="#fietsCarousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#fietsCarousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
                 </div>
-            </div>
+            <?php
+            }
+            else
+            {
+                // Geen plaatjes zijn gevonden. Display blobvis
+                echo "<img class='col-lg-8' src='../images/blobvis.jpg'>";
+            }
+            ?>
 
             <div id="specifications" class="col-lg-4">
-                <table>
-                <?php
+                <div id="spec-column" class="row mb-lg-5">
+                    <table class="table table-borderless col-lg-7 mb-lg-3">
+                    <?php
                     echo "<tr>
                             <th colspan='2'><h3><b>Specificaties<b><h3></th>
                           </tr>
                           <tr>
-                            <td>Merk </td>
+                            <td>Merk</td>
                             <td>" . $bike->getBrand() . "</td>
                           </tr>
                           <tr>
@@ -97,22 +129,27 @@ $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
                             <td> " . $bike->getColor() . " </td>
                           </tr>";
                 ?>
-                </table>
-                <?php
-                    echo "<p class='Detail_priceTag col-lg-4'>€" . $bike->getPrice() . ",-
-                    <button type='button' class='btn btn-primary col-lg-4'>Bestellen!</button></p>
-                    ";
-                ?>
+                    </table>
+                    <div class="col-lg-5"></div>
+                    <div class="row">
+                        <p class="detail_priceTag col-lg-6">€<?php echo $bike->getPrice() ?>,-</p>
+                        <button type="button" class="btn btn-primary col-lg-6"><b><i>Bestellen!</i></b></button>
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="row">
             <div id="description" class="col-lg-8">
                 <h3><b>Omschrijving</b></h3>
+                <p><?php echo $bike->getDescription(); ?></p>
             </div>
             <div id="recommendations" class="col-lg-4">
                 <h3><b>Misschien wilt u ook</b></h3>
             </div>
         </div>
+        <!--Include footer here-->
+        <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/footer.php" ?>
     </div>
 
     <!--Include footer here-->

@@ -14,7 +14,7 @@ class DBBike
 {
     //==Variables==//
     private $dbIndex;
-    private $name, $price, $brand, $releaseYear;
+    private $name, $price, $brand, $releaseYear, $description;
     private $frameType, $material, $color, $category;
 
     //==Functions==//
@@ -30,6 +30,7 @@ class DBBike
         $this->releaseYear = $args['BIKE_RELEASEYEAR'];
         $this->category = $args['BIKE_CATEGORY_ID'];
         $this->imagePaths = $this->splitImagePaths($args['BIKE_IMAGES']);
+        $this->description = $args['BIKE_DESCRIPTION']; 
     }
 
     private function splitImagePaths($images)
@@ -87,6 +88,11 @@ class DBBike
     public function getImagePaths()
     {
         return $this->imagePaths;
+    }
+
+    public function getDescription()
+    {
+        return $this->description;
     }
 }
 
