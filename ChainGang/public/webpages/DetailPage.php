@@ -11,7 +11,12 @@ include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.ph
 
 DBI::$logError = true;
 
-$bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
+$bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 2")[0];
+
+if($bike == null)
+{
+    header("Location: errorpage.php?123");
+}
 ?>
 
 <!DOCTYPE html>

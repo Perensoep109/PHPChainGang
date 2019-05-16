@@ -21,9 +21,9 @@
 </head>
 <body>
 <div class="container">
-    <?php include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/static/header.php") ?>
+    <?php include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/static/header.php"); ?>
     <h1>Iets ging verkeerd</h1>
-    <?php include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/static/footer.php") ?>
+    <?php include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/static/footer.php"); ?>
 </div>
 </body>
 </html>
