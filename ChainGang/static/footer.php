@@ -1,5 +1,5 @@
 <div id="footer">
-    <hr class="Properties">
+    <hr class="footer_Properties">
     <div class="row">
         <!--links for categorien en other-->
         <div class="col-lg-2">
@@ -20,8 +20,8 @@
         </div>
         <div class="col-lg-3">
             <!--social media links-->
-            <p class="text-center"><b>Volg ons op social media!</b></p>
-            <div class="text-center">
+            <p class="footer_text-center"><b>Volg ons op social media!</b></p>
+            <div class="footer_text-center">
                 <!-- fancypancy icoontjes met JQuery animatie-->
                 <a class="btn-floating btn-lg btn-fb" type="button" role="button"><i class="fab fa-facebook-f"></i></a>
                 <a class="btn-floating btn-lg btn-tw" type="button" role="button"><i class="fab fa-twitter"></i></a>

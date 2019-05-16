@@ -28,11 +28,11 @@
 }
 
 /*De footer*/
-.text-center {
+.footer_text-center {
     text-align: center;
 }
 
-hr.Properties {
+hr.footer_Properties {
     border-top: 3px solid lightgrey;
 }
 
@@ -45,3 +45,6 @@ hr.Properties {
 }
 
 /*de catogorie pagina*/
+#cat_sidebar {
+
+}

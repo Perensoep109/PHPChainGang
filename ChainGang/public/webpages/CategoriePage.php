@@ -16,7 +16,10 @@
 <body>
 <div class="container">
     <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/header.php"?>
-    <h1>code for categoriePage</h1>
+    <div id="cat_sidebar">
+        <h3>Filters</h3>
+    </div>
+
 
     <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/footer.php"?>
 </div>
