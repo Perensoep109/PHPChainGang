@@ -8,7 +8,7 @@ include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/HTBfunctions.php
 DBI::$logError = true;
 
 $reviews = DBI::queryReviews("select * from allreviews order by REVIEW_ID desc limit 2");
-$carosel_bikes = DBI::queryBikes("select * from allbikes order by BIKE_ID desc limit 3");
+$carousel_bikes = DBI::queryBikes("select * from allbikes order by BIKE_ID desc limit 3");
 
 ?>
 <head>
@@ -29,8 +29,22 @@ $carosel_bikes = DBI::queryBikes("select * from allbikes order by BIKE_ID desc l
     <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/header.php";?>
 
 
-<?php HTB::BuildCarosel($carosel_bikes)?>
-
+<?php HTB::BuildCarousel($carousel_bikes)?>
+    <hr>
+<div class="row nieuwsbrief_div alert alert-secondary">
+    <div class="col-lg-4">
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Schijf je in voor onze nieuwsbrief</label>
+                <input type="email" class="form-control" id="NieuwsBrief_Email" placeholder="Enter email">
+            </div>
+            <button type="submit" class="btn btn-primary container-fluid">Schijf je in</button>
+        </form>
+    </div>
+    <div class="col-lg-8 nieuwsbrief_text">
+        <h2>Altijd up-to-date met onze nieuwsbrief!</h2>
+    </div>
+</div>
     <?php HTB::BuildReview($reviews);?>
 
     <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/footer.php"?>

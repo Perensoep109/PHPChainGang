@@ -40,13 +40,22 @@ class HTB
 <hr>";
         } echo "</ul>";
     }
-public static function BuildCarosel($bikes){
+public static function BuildCarousel($bikes){
         $count = 0;
         echo "    <div id=\"carouselExampleIndicators\" class=\"carousel slide\" data-ride=\"carousel\">
         <ol class=\"carousel-indicators\">
-            <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"0\" class=\"active\"></li>
-            <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"1\"></li>
-            <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"2\"></li>
+        ";
+            foreach($bikes as $item){
+                if($count == 0){
+                    echo "<li data-target=\"#carouselExampleIndicators\" data-slide-to=\"0\" class=\"active\"></li>";
+                }
+                else {
+                    echo "       <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"". $count."\"></li>";
+                };
+                $count++;
+            };
+            $count = 0;
+            echo"
         </ol>
         <div class=\"carousel-inner\">";
         foreach($bikes as $item){
@@ -78,5 +87,10 @@ public static function BuildCarosel($bikes){
         }
         echo "        </div>
     </div>";
+}
+public static function BuildDropDownMenu($items){
+        foreach($items as $item){
+            echo "<a class=\"dropdown-item\" href=\"#\">".$item->getName()."</a> <hr>";
+        }
 }
 }

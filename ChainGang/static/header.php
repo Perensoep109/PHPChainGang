@@ -1,3 +1,10 @@
+<?php
+include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php");
+include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/HTBfunctions.php");
+
+DBI::$logError = true;
+$catogorys = DBI::queryCategories("select * from allcategories");
+?>
 <div class="row" id="header_nav">
     <div class="col-lg-6"></div>
     <div class="col-lg-1 text-center">
@@ -25,10 +32,7 @@
                         aria-haspopup="true" aria-expanded="false">Catogorieën
                 </button>
                 <div class="dropdown-menu">
-                    <!--                      Deze zullen moeten gegenereerd worden van de databases-->
-                    <a class="dropdown-item" href="#">Mannen</a>
-                    <a class="dropdown-item" href="#">Vrouwen</a>
-                    <a class="dropdown-item" href="#">Kinderen</a>
+                    <?php HTB::buildDropdownMenu($catogorys)?>
                 </div>
             </div>
             <input type="text" class="form-control" id="SearchInput" aria-label="Text input with dropdown button">

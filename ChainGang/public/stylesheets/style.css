@@ -84,6 +84,10 @@ hr.Properties {
     width: 400px;
 
 }
+/*nieuwsbrief*/
+.nieuwsbrief_text{
+    margin:auto;
+}
 /*review*/
 .user-icon{
     width: 125px;
