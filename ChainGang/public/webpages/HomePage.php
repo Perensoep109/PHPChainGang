@@ -44,6 +44,9 @@ $reviews = DBI::queryReviews("select * from allreviews order by REVIEW_ID desc l
                                     <div class="row">
                                         <h1 class="home_carousel_fiets_naam">Nieuwe Fietsje</h1>
                                     </div>
+                            <div class="row home_carousel_fiets_omschijving">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut euismod urna. Ut hendrerit maximus turpis. Fusce nec justo et est hendrerit vehicula ac sed ex. Phasellus id tincidunt nisl. Nam dictum id sem in porttitor. Mauris elementum dui odio, quis pharetra libero varius quis. Curabitur eu dictum nisl. Sed condimentum elit at sapien consequat dictum. Nam vulputate turpis tellus, non tempus enim finibus ut. Nullam bibendum non dui id fermentum. Sed at elementum enim, sit amet consectetur metus. Vestibulum non accumsan felis. Duis orci purus, mollis pretium leo eu, malesuada placerat sapien. Aliquam interdum pulvinar magna sed tincidunt. Fusce id nulla non odio finibus faucibus. Quisque orci tortor, tristique id neque sed, efficitur posuere ex.
+                            </div>
                         </div>
                     </div>
                 </div>

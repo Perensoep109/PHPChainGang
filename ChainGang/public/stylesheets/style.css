@@ -52,9 +52,6 @@ hr.Properties {
 /*de catogorie pagina*/
 
 /*de home page*/
-.home_blue_text{
-    color:blue;
-}
 .home_carousel{
     height: 450px;
     width:1110px;
@@ -66,20 +63,26 @@ hr.Properties {
     display:table-cell;
     vertical-align:middle;
     text-align:center;
-    border: 5px solid blue;
 }
 .home_carousel_right{
     height: 445px;
     display:table-cell;
     vertical-align:middle;
     text-align:center;
-    border: 5px solid red;
 }
 .home_carousel_image{
     margin-top:50px;
+    width: 400px;
+    height: 350px;
 }
 .home_carousel_fiets_naam{
     color:blue;
+    margin:auto;
+}
+.home_carousel_fiets_omschijving{
+    margin:auto;
+    width: 400px;
+
 }
 /*review*/
 .user-icon{
