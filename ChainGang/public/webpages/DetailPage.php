@@ -1,4 +1,3 @@
-<html>
 <?php
 /**
  * Created by PhpStorm.
@@ -9,16 +8,22 @@
 // Includes
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php");
 
+// Query bikes
 DBI::$logError = true;
+$bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
 
-$bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 2")[0];
+// Update the session
+if(session_status() != PHP_SESSION_ACTIVE)
+{
+    session_start();
+    if(!isset($_SESSION['RECENT_BIKES']))
+        $_SESSION['RECENT_BIKES'] = array();
+}
 
 if($bike == null)
-{
-    header("Location: errorpage.php?123");
-}
+    header("Location: errorpage.php");
 ?>
-
+<html>
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8" />
@@ -104,7 +109,7 @@ if($bike == null)
 
             <div id="specifications" class="col-lg-4">
                 <div id="spec-column" class="row mb-lg-5">
-                    <table class="table table-borderless col-lg-7 mb-lg-3">
+                    <table class="table table-bordered col-lg-7 mb-lg-3">
                     <?php
                     echo "<tr>
                             <th colspan='2'><h3><b>Specificaties<b><h3></th>
@@ -118,11 +123,7 @@ if($bike == null)
                             <td> " . $bike->getCategory() . " </td>
                           </tr>
                           <tr>
-<<<<<<< HEAD
-                            <td>Jaartal </td>
-=======
                             <td>Jaartal: </td>
->>>>>>> EugenesWorkplace
                             <td> " . $bike->getReleaseYear() . " </td>
                           </tr>
                           <tr>
@@ -142,7 +143,7 @@ if($bike == null)
                     <div class="col-lg-5"></div>
                     <div class="row">
                         <p class="detail_priceTag col-lg-6">€<?php echo $bike->getPrice() ?>,-</p>
-                        <button type="button" class="btn btn-primary col-lg-6"><b><i>Bestellen!</i></b></button>
+                        <button type="button" class="btn btn-primary btn-lg col-lg-6"><b><i>Bestellen!</i></b></button>
                     </div>
                 </div>
 
@@ -153,16 +154,27 @@ if($bike == null)
                 <h3><b>Omschrijving</b></h3>
                 <p><?php echo $bike->getDescription(); ?></p>
             </div>
-            <div id="recommendations" class="col-lg-4">
-                <h3><b>Misschien wilt u ook</b></h3>
+            <div id="recentbikes" class="col-lg-4">
+                <h3><b>Recent bekeken fietsen</b></h3>
+                <?php
+                // Log recently viewed bikes
+                $amount = count($_SESSION['RECENT_BIKES']);
+                $indexes = implode(',', $_SESSION['RECENT_BIKES']);
+                $recentBikes = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID IN ($indexes)");
+                foreach($recentBikes as $key => $value)
+                {
+                    if($indexes[$key] != $value->getDbIndex())
+                    {
+                        echo "inconsistent bike ID found, this bike does not exist anymore, and will be removed";
+                        
+                    }
+                }
+                ?>
             </div>
         </div>
         <!--Include footer here-->
         <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/footer.php" ?>
     </div>
-
-    <!--Include footer here-->
-
 
     <!--JQuery JS includes-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -170,3 +182,18 @@ if($bike == null)
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
+<?php
+    // Add this bike to the recently viewed bikes
+    $arrLength = count($_SESSION['RECENT_BIKES']);
+
+    if($arrLength >= 4)
+    {
+        array_pop($_SESSION['RECENT_BIKES']);
+        array_unshift($_SESSION['RECENT_BIKES'], $bike->getDbIndex());
+    }
+    else
+    {
+        array_unshift($_SESSION['RECENT_BIKES'], $bike->getDbIndex());
+    }
+
+?>
