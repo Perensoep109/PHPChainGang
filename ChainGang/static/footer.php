@@ -20,10 +20,13 @@
         </div>
         <div class="col-lg-3">
             <!--social media links-->
-            <p class="text-center"><b>Volg ons op social media!</b></p>
-            <div class="text-center">
-                <!-- fancypancy icoontjes met JQuery animatie-->
-                <i class="social fa fa-twitter-square" aria-hidden="true"></i>
+            <!-- fancypancy icoontjes met JQuery animatie-->
+            <p><b>Volg ons op social media!</b></p>
+            <div class="row col-lg-12">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-youtube"></a>
             </div>
         </div>
     </div>
