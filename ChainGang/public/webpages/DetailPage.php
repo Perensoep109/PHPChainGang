@@ -10,7 +10,10 @@ include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.ph
 
 // Query bikes
 DBI::$logError = true;
-$bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
+if(isset($_GET['ID']))
+    $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = " . $_GET['ID'])[0];
+else
+    $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
 
 // Update the session
 if(session_status() != PHP_SESSION_ACTIVE)
@@ -33,6 +36,7 @@ if($bike == null)
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
 </head>
 <body>
     <!--Include header here-->
@@ -140,7 +144,7 @@ if($bike == null)
                           </tr>";
                 ?>
                     </table>
-                    <div class="col-lg-5"></div>
+
                     <div class="row">
                         <p class="detail_priceTag col-lg-6">€<?php echo $bike->getPrice() ?>,-</p>
                         <button type="button" class="btn btn-primary btn-lg col-lg-6"><b><i>Bestellen!</i></b></button>
@@ -152,28 +156,33 @@ if($bike == null)
         <div class="row">
             <div id="description" class="col-lg-8">
                 <h3><b>Omschrijving</b></h3>
-                <p><?php echo $bike->getDescription(); ?></p>
+                <p><?php echo $bike->getDescription();?></p>
             </div>
             <div id="recentbikes" class="col-lg-4">
                 <h3><b>Recent bekeken fietsen</b></h3>
                 <?php
-                // Log recently viewed bikes
+
+                // Lees de hoeveelheid bekeken fieten en bereid de query voor.
                 $amount = count($_SESSION['RECENT_BIKES']);
                 $indexes = implode(',', $_SESSION['RECENT_BIKES']);
                 $recentBikes = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID IN ($indexes)");
-                foreach($recentBikes as $key => $value)
+
+                // Zet ze om naar klikbare HTML
+                if($recentBikes != null)
                 {
-                    if($indexes[$key] != $value->getDbIndex())
+                    foreach($recentBikes as $key => $value)
                     {
-                        echo "inconsistent bike ID found, this bike does not exist anymore, and will be removed";
-                        
+                        $href = $value->getDbIndex();
+                        $element = $value->getName() . " €" . $value->getPrice() . " " . $value->getDbIndex();
+
+                        echo "<a href='DetailPage.php?ID=$href'>$element</a><br>";
                     }
                 }
                 ?>
             </div>
         </div>
         <!--Include footer here-->
-        <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/footer.php" ?>
+        <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/footer.php"?>
     </div>
 
     <!--JQuery JS includes-->
@@ -183,17 +192,19 @@ if($bike == null)
 </body>
 </html>
 <?php
-    // Add this bike to the recently viewed bikes
-    $arrLength = count($_SESSION['RECENT_BIKES']);
-
-    if($arrLength >= 4)
+    if(!in_array($bike->getDbIndex(), $_SESSION['RECENT_BIKES']))
     {
-        array_pop($_SESSION['RECENT_BIKES']);
-        array_unshift($_SESSION['RECENT_BIKES'], $bike->getDbIndex());
-    }
-    else
-    {
-        array_unshift($_SESSION['RECENT_BIKES'], $bike->getDbIndex());
-    }
+        // Add this bike to the recently viewed bikes
+        $arrLength = count($_SESSION['RECENT_BIKES']);                             // Count how much bikes are recently viewed
 
+        if($arrLength > 3)                                                         // If more than 3 bikes are recently viewed, start shrinking back to 4
+        {
+            array_pop($_SESSION['RECENT_BIKES']);                           // Destroy last element in the array
+            array_unshift($_SESSION['RECENT_BIKES'], $bike->getDbIndex());  // Place the bike on this page, on the first position of the array
+        }
+        else
+        {
+            array_unshift($_SESSION['RECENT_BIKES'], $bike->getDbIndex());  // The array is not full enough, place this bike on the first spot in the array
+        }
+    }
 ?>

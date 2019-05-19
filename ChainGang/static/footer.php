@@ -23,10 +23,7 @@
             <p class="text-center"><b>Volg ons op social media!</b></p>
             <div class="text-center">
                 <!-- fancypancy icoontjes met JQuery animatie-->
-                <a class="btn-floating btn-lg btn-fb" type="button" role="button"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn-floating btn-lg btn-tw" type="button" role="button"><i class="fab fa-twitter"></i></a>
-                <a class="btn-floating btn-lg btn-gplus" type="button" role="button"><i
-                            class="fab fa-google-plus-g"></i></a>
+                <i class="social fa fa-twitter-square" aria-hidden="true"></i>
             </div>
         </div>
     </div>
