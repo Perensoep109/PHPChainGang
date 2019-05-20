@@ -18,7 +18,7 @@
 <div class="container">
     <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/header.php" ?>
 
-    <div id="cat_sidebar" class="row">
+    <div id="cat_sidebar">
         <h3>Filters</h3>
         <button type="button" class="btn btn-primary btn-lg">Filter!</button>
         <h5>Frametype</h5>
