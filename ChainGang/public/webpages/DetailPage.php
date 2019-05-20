@@ -1,4 +1,3 @@
-<html>
 <?php
 /**
  * Created by PhpStorm.
@@ -9,16 +8,26 @@
 // Includes
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php");
 
+// Query bikes
 DBI::$logError = true;
+if(isset($_GET['ID']))
+    $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = " . $_GET['ID'])[0];
+else
+    $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
 
-$bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 2")[0];
+// Update the session
+if(session_status() != PHP_SESSION_ACTIVE)
+{
+    session_start();
+    if(!isset($_SESSION['RECENT_BIKES']))
+        $_SESSION['RECENT_BIKES'] = array();
+}
 
 if($bike == null)
-{
-    header("Location: errorpage.php?123");
-}
+    header("Location: errorpage.php");
 ?>
 
+<html>
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8" />
@@ -28,6 +37,7 @@ if($bike == null)
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <!--Include header here-->
@@ -104,7 +114,7 @@ if($bike == null)
 
             <div id="specifications" class="col-lg-4">
                 <div id="spec-column" class="row mb-lg-5">
-                    <table class="table table-borderless col-lg-7 mb-lg-3">
+                    <table class="table table-bordered col-lg-7 mb-lg-3">
                     <?php
                     echo "<tr>
                             <th colspan='2'><h3><b>Specificaties<b><h3></th>
@@ -135,10 +145,10 @@ if($bike == null)
                           </tr>";
                 ?>
                     </table>
-                    <div class="col-lg-5"></div>
+
                     <div class="row">
                         <p class="detail_priceTag col-lg-6">€<?php echo $bike->getPrice() ?>,-</p>
-                        <button type="button" class="btn btn-primary col-lg-6"><b><i>Bestellen!</i></b></button>
+                        <button type="button" class="btn btn-primary btn-lg col-lg-6"><b><i>Bestellen!</i></b></button>
                     </div>
                 </div>
 
@@ -147,18 +157,34 @@ if($bike == null)
         <div class="row">
             <div id="description" class="col-lg-8">
                 <h3><b>Omschrijving</b></h3>
-                <p><?php echo $bike->getDescription(); ?></p>
+                <p><?php echo $bike->getDescription();?></p>
             </div>
-            <div id="recommendations" class="col-lg-4">
-                <h3><b>Misschien wilt u ook</b></h3>
+            <div id="recentbikes" class="col-lg-4">
+                <h3><b>Recent bekeken fietsen</b></h3>
+                <?php
+
+                // Lees de hoeveelheid bekeken fieten en bereid de query voor.
+                $amount = count($_SESSION['RECENT_BIKES']);
+                $indexes = implode(',', $_SESSION['RECENT_BIKES']);
+                $recentBikes = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID IN ($indexes)");
+
+                // Zet ze om naar klikbare HTML
+                if($recentBikes != null)
+                {
+                    foreach($recentBikes as $key => $value)
+                    {
+                        $href = $value->getDbIndex();
+                        $element = $value->getName() . " €" . $value->getPrice() . " " . $value->getDbIndex();
+
+                        echo "<a href='DetailPage.php?ID=$href'>$element</a><br>";
+                    }
+                }
+                ?>
             </div>
         </div>
         <!--Include footer here-->
-        <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/footer.php" ?>
+        <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/footer.php"?>
     </div>
-
-    <!--Include footer here-->
-
 
     <!--JQuery JS includes-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -166,3 +192,20 @@ if($bike == null)
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
+<?php
+    if(!in_array($bike->getDbIndex(), $_SESSION['RECENT_BIKES']))
+    {
+        // Add this bike to the recently viewed bikes
+        $arrLength = count($_SESSION['RECENT_BIKES']);                             // Count how much bikes are recently viewed
+
+        if($arrLength > 3)                                                         // If more than 3 bikes are recently viewed, start shrinking back to 4
+        {
+            array_pop($_SESSION['RECENT_BIKES']);                           // Destroy last element in the array
+            array_unshift($_SESSION['RECENT_BIKES'], $bike->getDbIndex());  // Place the bike on this page, on the first position of the array
+        }
+        else
+        {
+            array_unshift($_SESSION['RECENT_BIKES'], $bike->getDbIndex());  // The array is not full enough, place this bike on the first spot in the array
+        }
+    }
+?>

@@ -20,13 +20,13 @@
         </div>
         <div class="col-lg-3">
             <!--social media links-->
-            <p class="text-center"><b>Volg ons op social media!</b></p>
-            <div class="text-center">
-                <!-- fancypancy icoontjes met JQuery animatie-->
-                <a class="btn-floating btn-lg btn-fb" type="button" role="button"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn-floating btn-lg btn-tw" type="button" role="button"><i class="fab fa-twitter"></i></a>
-                <a class="btn-floating btn-lg btn-gplus" type="button" role="button"><i
-                            class="fab fa-google-plus-g"></i></a>
+            <!-- fancypancy icoontjes met JQuery animatie-->
+            <p><b>Volg ons op social media!</b></p>
+            <div class="row col-lg-12">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-youtube"></a>
             </div>
         </div>
     </div>

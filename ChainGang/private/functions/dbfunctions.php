@@ -216,10 +216,10 @@ final class DBI
         return null;
     }
     /*  Deze functie vraagt informatie op uit de database, daarna zet hij deze data om in een array van bikes
- *  String-$query staat voor de query die uitgevoerd word op de database
- *  Deze functie returned een array van catogorieen
- *  Deze functie word uitgevoerd door de gebruiker zelf
- */
+    *  String-$query staat voor de query die uitgevoerd word op de database
+    *  Deze functie returned een array van catogorieen
+    *  Deze functie word uitgevoerd door de gebruiker zelf
+    */
     public static final function queryCategories($query)
     {
         $data = self::queryDB($query);
