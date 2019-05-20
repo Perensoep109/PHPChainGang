@@ -95,9 +95,14 @@ hr.Properties {
 
 .cardbike {
     max-width: 250px;
+    text-decoration: none;
 }
 
-.cardbike_price {
+.cardbike_link {
+    text-decoration: none;
+}
+
+.cardbike_price p {
     font-weight: bold;
     color: coral;
 }
