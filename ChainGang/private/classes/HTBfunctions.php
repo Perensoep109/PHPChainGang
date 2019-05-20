@@ -67,7 +67,7 @@ public static function BuildCarousel($bikes){
                 <div class=\"home_carousel\">
                     <div class=\"row\">
                         <div class=\"col-lg-6 home_carousel_left\">
-                            <img class=\"home_carousel_image\" src=\"https://via.placeholder.com/400x350?Text=slide1\" >
+                            <img class=\"home_carousel_image\" src='../../public/images/cat1.jpg' >
                         </div>
                         <div class=\"col-lg-6 home_carousel_right\">
                                     <div class=\"row\">
