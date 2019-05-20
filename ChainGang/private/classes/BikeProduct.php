@@ -14,7 +14,7 @@ class BikeProduct
         ?>
         <div class="card-deck">
             <div class="card">
-                <img class="card-img-top" src="<?php echo $fiets->getImagePaths() ?>" alt="Card image cap">
+                <img class="card-img-top" src="<?php echo "../" . $fiets->getImagePaths()[0] ?>" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $fiets->getName() ?></h5>
                     <p class="card-text"><?php echo $fiets->getCategory() ?></p>
