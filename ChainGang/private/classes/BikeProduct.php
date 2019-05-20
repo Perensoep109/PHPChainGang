@@ -6,24 +6,21 @@ class BikeProduct
 {
 
     /*
-     * aanmaken van een bootstrap cart met data uit DB
+     * aanmaken van een bootstrap card met data uit de DB
      */
     public function __construct(DBBike $fiets)
     {
         ?>
-        <a href="DetailPage.php" class="cardbike_link">
             <div class="card cardbike">
                 <img class="card-img-top" src="<?php echo "../" . $fiets->getImagePaths()[0] ?>" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title"><?php echo $fiets->getName() ?></h5>
+                    <h5 class="card-title cardbike_nodeco"><?php echo $fiets->getName() ?></h5>
                     <p class="card-text cardbike_price">&euro;<?php echo $fiets->getPrice() ?></p>
                     <p class="card-text">
-                        <b>Omschrijving: </b><?php echo $string = substr($fiets->getDescription(), 0, 75); ?><a
-                                href="DetailPage.php"> ...read more</a></p>
+                        <b>Omschrijving: </b><?php echo $string = substr($fiets->getDescription(), 0, 75); ?>
+                        <a href="DetailPage.php"> ...read more</a></p>
                 </div>
             </div>
-        </a>
-
         <?php
     }
 
