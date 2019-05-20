@@ -1,7 +1,7 @@
 /*elke pagina krijgt een eigen gedeelte met prefix*/
 
 /*De header*/
-#header_nav{
+#header_nav {
     border: lightgrey 1px solid;
     background-color: #f2f2f2;
 }
@@ -22,14 +22,13 @@
 #SearchInput {
     height: 44px;
     width: 740px;
-    margin:0px;
-    padding:0px;
+    margin: 0px;
+    padding: 0px;
 }
 
-.div_searchBar
-{
-    margin:0;
-    padding:0;
+.div_searchBar {
+    margin: 0;
+    padding: 0;
 }
 
 /*De footer*/
@@ -46,8 +45,7 @@
     border-radius: 50%;
 }
 
-.fa:hover
-{
+.fa:hover {
     opacity: 0.7;
     color: white;
 }
@@ -64,15 +62,13 @@
     color: white;
 }
 
-.fa-instagram
-{
+.fa-instagram {
     padding: 7px 0 0 0;
     background: #125688;
     color: white;
 }
 
-.fa-youtube
-{
+.fa-youtube {
     padding: 7px 0 0 0;
     background: #bb0000;
     color: white;
@@ -91,52 +87,62 @@ hr.Properties {
 }
 
 /*de catogorie pagina*/
+.cat_sidebar h3 {
+    padding: 20px 0;
+}
 
 /*de home page*/
-.home_carousel{
+.home_carousel {
     height: 450px;
-    width:1110px;
+    width: 1110px;
     border: black 2px solid;
     background-color: lightgrey;
 }
-.home_carousel_left{
+
+.home_carousel_left {
     height: 445px;
-    display:table-cell;
-    vertical-align:middle;
-    text-align:center;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
 }
-.home_carousel_right{
+
+.home_carousel_right {
     height: 445px;
-    display:table-cell;
-    vertical-align:middle;
-    text-align:center;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
 }
-.home_carousel_image{
-    margin-top:50px;
+
+.home_carousel_image {
+    margin-top: 50px;
     width: 400px;
     height: 350px;
 }
-.home_carousel_fiets_naam{
-    color:blue;
-    margin:auto;
+
+.home_carousel_fiets_naam {
+    color: blue;
+    margin: auto;
 }
-.home_carousel_fiets_omschijving{
-    margin:auto;
+
+.home_carousel_fiets_omschijving {
+    margin: auto;
     width: 400px;
 
 }
+
 /*nieuwsbrief*/
-.nieuwsbrief_text{
-    margin:auto;
+.nieuwsbrief_text {
+    margin: auto;
 }
+
 /*review*/
-.user-icon{
+.user-icon {
     width: 125px;
     height: 125px;
 }
-.bubble
-{
-    margin-top:10px;
+
+.bubble {
+    margin-top: 10px;
     position: relative;
     width: 900px;
     height: 80px;
@@ -147,8 +153,7 @@ hr.Properties {
     border-radius: 10px;
 }
 
-.bubble:after
-{
+.bubble:after {
     content: '';
     position: absolute;
     border-style: solid;
