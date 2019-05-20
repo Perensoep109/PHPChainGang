@@ -7,8 +7,8 @@ include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/HTBfunctions.php
 
 DBI::$logError = true;
 
-$reviews = DBI::queryReviews("select * from allreviews order by REVIEW_ID desc limit 2");
-$carousel_bikes = DBI::queryBikes("select * from allbikes order by BIKE_ID desc limit 3");
+$reviews = DBI::queryReviews("SELECT * FROM allreviews ORDER BY REVIEW_ID DESC limit 2");
+$carousel_bikes = DBI::queryBikes("SELECT * FROM allbikes ORDER BY BIKE_ID DESC limit 3");
 
 ?>
 <head>
@@ -30,7 +30,7 @@ $carousel_bikes = DBI::queryBikes("select * from allbikes order by BIKE_ID desc 
 
 
 <?php HTB::BuildCarousel($carousel_bikes)?>
-    <hr>
+<hr>
 <div class="row nieuwsbrief_div alert alert-secondary">
     <div class="col-lg-4">
         <form>
