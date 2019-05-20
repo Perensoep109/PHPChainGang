@@ -12,8 +12,7 @@ class BikeProduct
     {
         //?ID=3
         ?>
-        <div class="card-deck">
-            <div class="card">
+            <div class="card cardbike">
                 <img class="card-img-top" src="<?php echo "../" . $fiets->getImagePaths()[0] ?>" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $fiets->getName() ?></h5>
@@ -23,7 +22,6 @@ class BikeProduct
                     </p>
                 </div>
             </div>
-        </div>
 
         <?php
     }

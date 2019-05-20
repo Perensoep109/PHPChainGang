@@ -91,6 +91,12 @@ hr.Properties {
     padding: 20px 0;
 }
 
+/*productcard */
+
+.cardbike {
+    max-width: 250px;
+}
+
 /*de home page*/
 .home_carousel {
     height: 450px;
