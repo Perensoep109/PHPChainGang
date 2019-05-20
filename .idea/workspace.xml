@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57ff74b9-6238-44ac-95cd-1ab054017f8d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChainGang/DBIUsageVoorbeeld.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ChainGang/private/classes/HTBfunctions.php" beforeDir="false" afterPath="$PROJECT_DIR$/ChainGang/private/classes/HTBfunctions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChainGang/public/webpages/HomePage.php" beforeDir="false" afterPath="$PROJECT_DIR$/ChainGang/public/webpages/HomePage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/i n d e x.php" beforeDir="false" afterPath="$PROJECT_DIR$/ChainGang/public/stylesheets/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,13 +54,13 @@
     <session id="-564768732">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="366" />
+          <entry key="php" value="503" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="3" />
-          <entry key="PHP" value="363" />
+          <entry key="PHP" value="500" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -84,10 +80,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ChainGang/public/webpages/DetailPage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="173" column="58" lean-forward="true" selection-start-line="173" selection-start-column="44" selection-end-line="173" selection-end-column="58" />
+            <state relative-caret-position="759">
+              <caret line="182" column="18" selection-start-line="182" selection-start-column="18" selection-end-line="182" selection-end-column="18" />
               <folding>
-                <element signature="e#13#94#0#PHP" expanded="true" />
+                <element signature="e#6#87#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -96,8 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ChainGang/public/webpages/HomePage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="31" column="43" lean-forward="true" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+            <state relative-caret-position="187">
+              <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -105,8 +101,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ChainGang/private/classes/HTBfunctions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="51" column="34" lean-forward="true" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+            <state relative-caret-position="272">
+              <caret line="64" column="38" selection-start-line="64" selection-start-column="37" selection-end-line="64" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ChainGang/static/footer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -267,7 +272,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26245000" />
+    <option name="totallyTimeSpent" value="26574000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
@@ -355,13 +360,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChainGang/DBIUsageVoorbeeld.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ChainGang/DBIUsageVoorbeeld.php" />
     <entry file="file://$PROJECT_DIR$/ChainGang/public/webpages/ErrorPage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -406,8 +405,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ChainGang/static/footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="39" lean-forward="true" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+        <state relative-caret-position="204">
+          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -420,25 +419,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ChainGang/public/webpages/DetailPage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="173" column="58" lean-forward="true" selection-start-line="173" selection-start-column="44" selection-end-line="173" selection-end-column="58" />
+        <state relative-caret-position="759">
+          <caret line="182" column="18" selection-start-line="182" selection-start-column="18" selection-end-line="182" selection-end-column="18" />
           <folding>
-            <element signature="e#13#94#0#PHP" expanded="true" />
+            <element signature="e#6#87#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ChainGang/public/webpages/HomePage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="31" column="43" lean-forward="true" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+        <state relative-caret-position="187">
+          <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ChainGang/private/classes/HTBfunctions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="51" column="34" lean-forward="true" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+        <state relative-caret-position="272">
+          <caret line="64" column="38" selection-start-line="64" selection-start-column="37" selection-end-line="64" selection-end-column="38" />
         </state>
       </provider>
     </entry>

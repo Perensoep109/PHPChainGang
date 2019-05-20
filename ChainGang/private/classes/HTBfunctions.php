@@ -41,28 +41,23 @@ class HTB
     public static function BuildCarousel($bikes)
     {
         $count = 0;
-        echo "    <div id=\"carouselExampleIndicators\" class=\"carousel slide\" data-ride=\"carousel\">
-        <ol class=\"carousel-indicators\">
-        ";
-            foreach($bikes as $item){
-                if($count == 0){
-                    echo "<li data-target=\"#carouselExampleIndicators\" data-slide-to=\"0\" class=\"active\"></li>";
-                }
-                else
-                {
-                    echo "       <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"". $count."\"></li>";
-                };
-                $count++;
+        echo "<div id='carouselExampleIndicators' class='carousel slide' data-ride='carousel'>";
+        echo "<ol class=\"carousel-indicators\">";
+        foreach($bikes as $count => $bike)
+        {
+            if($count == 0){
+                echo "<li data-target=\"#carouselExampleIndicators\" data-slide-to=\"0\" class=\"active\"></li>";
+            }
+            else
+            {
+                echo "<li data-target=\"#carouselExampleIndicators\" data-slide-to=\"". $count."\"></li>";
             };
-            $count = 0;
+        };
             echo"
         </ol>
-        <div class=\"carousel-inner\">";
+        <div class='carousel-inner'>";
         foreach($bikes as $count => $item){
-            echo"<div class=\"carousel-item ";
-                if($count == 0){
-                    echo "active";
-                };
+            echo "<div class='carousel-item " . ($count == 0 ? 'active' : '') . "'>"
                ?>
                 <div class='home_carousel'>
                     <div class='row'>
