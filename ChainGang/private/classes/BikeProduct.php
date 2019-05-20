@@ -15,11 +15,10 @@ class BikeProduct
             <img class="card-img-top" src="<?php echo "../" . $fiets->getImagePaths()[0] ?>" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title"><?php echo $fiets->getName() ?></h5>
-                <p class="card-text"><?php echo $string = substr($fiets->getDescription(), 0, 140); ?><a
-                            href="DetailPage.php"> ...read more</a></p>
+                <p class="card-text cardbike_price">&euro;<?php echo $fiets->getPrice() ?></p>
                 <p class="card-text">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </p>
+                    <b>Omschrijving: </b><?php echo $string = substr($fiets->getDescription(), 0, 75); ?><a
+                            href="DetailPage.php"> ...read more</a></p>
             </div>
         </div>
 

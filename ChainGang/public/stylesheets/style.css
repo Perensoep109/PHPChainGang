@@ -97,6 +97,11 @@ hr.Properties {
     max-width: 250px;
 }
 
+.cardbike_price {
+    font-weight: bold;
+    color: coral;
+}
+
 /*de home page*/
 .home_carousel {
     height: 450px;
