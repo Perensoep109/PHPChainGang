@@ -41,54 +41,59 @@ class HTB
     public static function BuildCarousel($bikes)
     {
         $count = 0;
-        echo "<div id='carouselExampleIndicators' class='carousel slide' data-ride='carousel'>";
-        echo "<ol class=\"carousel-indicators\">";
-        foreach($bikes as $count => $bike)
-        {
+        echo "<div id='carouselExampleIndicators' class='carousel slide' data-ride='carousel'>
+        <ol class='carousel-indicators'>
+        ";
+        foreach($bikes as $item){
             if($count == 0){
-                echo "<li data-target=\"#carouselExampleIndicators\" data-slide-to=\"0\" class=\"active\"></li>";
+                echo "<li data-target='#carouselExampleIndicators' data-slide-to='0' class='active'></li>";
             }
-            else
-            {
-                echo "<li data-target=\"#carouselExampleIndicators\" data-slide-to=\"". $count."\"></li>";
+            else {
+                echo "       <li data-target='#carouselExampleIndicators' data-slide-to='". $count."'></li>";
             };
+            $count++;
         };
-            echo"
+        $count = 0;
+        echo"
         </ol>
         <div class='carousel-inner'>";
-        foreach($bikes as $count => $item){
-            echo "<div class='carousel-item " . ($count == 0 ? 'active' : '') . "'>"
-               ?>
+        foreach($bikes as $item){
+            echo"<div class='carousel-item ";
+            if($count == 0){
+                echo "active";
+            };
+            echo "'>
                 <div class='home_carousel'>
                     <div class='row'>
                         <div class='col-lg-6 home_carousel_left'>
-                            <img class='home_carousel_image' src='../../public/images/cat1.jpg'>
+                            <img class='home_carousel_image' src='../../public/images/cat1.jpg' >
                         </div>
-
                         <div class='col-lg-6 home_carousel_right'>
                             <div class='row'>
-                                <h1 class='home_carousel_fiets_naam'> <?php $item->getName() ?></h1>
+                                <h1 class='home_carousel_fiets_naam'>".$item->getName()."</h1>
                             </div>
-
+                            
                             <div class='row home_carousel_fiets_omschijving'>
-                                <?php $item->getDescription() ?>
+                                ".$item->getDescription()."
                             </div>
-
-                            <div class='row'>
+                            <div class='row '>
                                 <button type='button' class='btn btn-primary'>Omschijving</button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>;
-            <?php
+            </div>";
+            $count++;
         }
         echo "</div>
-        </div>";
+    </div>";
     }
-public static function BuildDropDownMenu($items){
-        foreach($items as $item){
-            echo "<a class=\"dropdown-item\" href=\"#\">".$item->getName()."</a> <hr>";
+
+    public static function BuildDropDownMenu($items)
+    {
+        foreach($items as $item)
+        {
+            echo "<a class='dropdown-item' href='#'>".$item->getName()."</a> <hr>";
         }
-}
+    }
 }
