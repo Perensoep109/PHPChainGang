@@ -19,43 +19,64 @@
     <!--include header-->
     <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/header.php" ?>
 
-    <div id="cat_sidebar">
-        <h3>Filters</h3>
-        <button type="button" class="btn btn-primary btn-lg">Filter!</button>
-        <h5>Frametype</h5>
-        <form action="">
-            <input type="radio" name="frametype" value="heren"> Herenfietsen<br>
-            <input type="radio" name="frametype" value="dames"> Damesfietsen<br>
-            <input type="radio" name="frametype" value="kinderen"> Kinderfietsen
-        </form>
-        <h5>Type fiets</h5>
-        <form action="">
-            <input type="checkbox" name="typefiets1" value="bakfiets"> Bakfietsen<br>
-            <input type="checkbox" name="typefiets2" value="hybridefiets"> Hybride fietsen<br>
-            <input type="checkbox" name="typefiets3" value="stadsfiets"> Stadsfietsen<br>
-            <input type="checkbox" name="typefiets4" value="transportfiets"> Transportfietsen
-        </form>
-        <h5>Merk</h5>
-        <form action="">
-            <input type="checkbox" name="merkfiets1" value="Gazelle"> Bakfietsen<br>
-            <input type="checkbox" name="merkfiets2" value="Giant"> Hybride fietsen<br>
-            <input type="checkbox" name="merkfiets3" value="Pegasus"> Stadsfietsen<br>
-            <input type="checkbox" name="merkfiets4" value="Cortina"> Transportfietsen
-        </form>
-    </div>
+    <!--include database functions-->
     <?php
     include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/BikeProduct.php";
     include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php";
-    DBI::$logError = true;
-    $dbBike = DBI::queryBikes("select * from allbikes where BIKE_ID='1'")[0];
+    ?>
 
-    $bike = new BikeProduct($dbBike);
+    <div id="cat_sidebar">
+        <h3>Filters</h3>
+        <button type="button" class="btn btn-primary btn-lg">Filter!</button>
+        <div class="row">
+            <div class="col-lg-4">
+                <h5>Frametype</h5>
+                <form action="">
+                    <input type="radio" name="frametype" value="heren"> Herenfietsen<br>
+                    <input type="radio" name="frametype" value="dames"> Damesfietsen<br>
+                    <input type="radio" name="frametype" value="kinderen"> Kinderfietsen
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <h5>Type fiets</h5>
+                <form action="">
+                    <input type="checkbox" name="typefiets1" value="bakfiets"> Bakfietsen<br>
+                    <input type="checkbox" name="typefiets2" value="hybridefiets"> Hybride fietsen<br>
+                    <input type="checkbox" name="typefiets3" value="stadsfiets"> Stadsfietsen<br>
+                    <input type="checkbox" name="typefiets4" value="transportfiets"> Transportfietsen
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <h5>Merk</h5>
+                <form action="">
+                    <input type="checkbox" name="merkfiets1" value="Gazelle"> Bakfietsen<br>
+                    <input type="checkbox" name="merkfiets2" value="Giant"> Hybride fietsen<br>
+                    <input type="checkbox" name="merkfiets3" value="Pegasus"> Stadsfietsen<br>
+                    <input type="checkbox" name="merkfiets4" value="Cortina"> Transportfietsen
+                </form>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="cat_main">
+        <?php
+        DBI::$logError = true;
+        $dbBike = DBI::queryBikes("select * from allbikes where BIKE_ID='1'")[0];
 
-    /**
-     * include footer
-     */
-    include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/footer.php" ?>
+        $bike = new BikeProduct($dbBike);
+
+        /**
+         * include footer
+         */
+        include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/footer.php" ?>
+    </div>
+
 </div>
+<!--JQuery JS includes-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
