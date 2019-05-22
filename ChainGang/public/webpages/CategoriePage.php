@@ -16,6 +16,7 @@
 </head>
 <body>
 <div class="container">
+    <!--include header-->
     <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/header.php" ?>
 
     <div id="cat_sidebar">
@@ -50,6 +51,9 @@
 
     $bike = new BikeProduct($dbBike);
 
+    /**
+     * include footer
+     */
     include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/footer.php" ?>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
