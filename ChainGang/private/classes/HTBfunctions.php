@@ -2,10 +2,10 @@
 
 class HTB
 {
-    public static function BuildReview($dbReview)
+    public static function BuildReview($dbReviews)
     {
         echo "<ul class='list-unstyled'> <hr>";
-        foreach ($dbReview as $item) {
+        foreach ($dbReviews as $item) {
             $user = DBI::queryUsers('select * from allusers WHERE USER_ID = ' . $item->getUserID());
             echo "
         <li class='media'>
