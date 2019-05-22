@@ -7,6 +7,7 @@
  */
 // Includes
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php");
+include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/BikeProduct.php");
 
 // Query bikes
 DBI::$logError = true;
@@ -174,9 +175,8 @@ if($bike == null)
                     foreach($recentBikes as $key => $value)
                     {
                         $href = $value->getDbIndex();
-                        $element = $value->getName() . " €" . $value->getPrice() . " " . $value->getDbIndex();
-
-                        echo "<a href='DetailPage.php?ID=$href'>$element</a><br>";
+                        $element = $value->getName();
+                        echo "<a href='$href'>$element</a><br>";
                     }
                 }
                 ?>
