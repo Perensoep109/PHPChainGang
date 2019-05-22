@@ -1,6 +1,6 @@
 <?php
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php");
-include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/HTBfunctions.php");
+include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/HTBfunctions.php");
 
 DBI::$logError = true;
 $catogorys = DBI::queryCategories("select * from allcategories");

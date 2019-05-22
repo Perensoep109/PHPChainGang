@@ -3,7 +3,7 @@
 <?php
 // Includes
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php");
-include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/HTBfunctions.php");
+include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/HTBfunctions.php");
 
 DBI::$logError = true;
 
@@ -44,6 +44,11 @@ $carousel_bikes = DBI::queryBikes("select * from allbikes order by BIKE_ID desc 
     <div class="col-lg-8 nieuwsbrief_text">
         <h2>Altijd up-to-date met onze nieuwsbrief!</h2>
     </div>
+</div>
+<div>
+
+    <hr>
+        info over the company
 </div>
     <?php HTB::BuildReview($reviews);?>
 
