@@ -1,20 +1,17 @@
 <?php
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php");
-include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/HTBfunctions.php");
-
-DBI::$logError = true;
-$catogorys = DBI::queryCategories("select * from allcategories");
+include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/HTBfunctions.php");
 ?>
 <div class="row" id="header_nav">
     <div class="col-lg-6"></div>
     <div class="col-lg-1 text-center">
-        <button type="button" class="btn btn-link">Help</button>
+        <a href="#"><button type="button" class="btn btn-link">Help</button></a>
     </div>
     <div class="col-lg-2 text-center">
-        <button type="button" class="btn btn-link">Over ons</button>
+        <a href="#"><button type="button" class="btn btn-link">Over ons</button></a>
     </div>
     <div class="col-lg-1 text-center">
-        <button type="button" class="btn btn-link">Contact</button>
+        <a href="#"><button type="button" class="btn btn-link">Contact</button></a>
     </div>
     <div class="col-lg-2 text-center">
         <button type="button" class="btn btn-link" data-toggle="modal" data-target=".login-modal">Login/Registeren</button>
@@ -32,7 +29,9 @@ $catogorys = DBI::queryCategories("select * from allcategories");
                         aria-haspopup="true" aria-expanded="false">Catogorieën
                 </button>
                 <div class="dropdown-menu">
-                    <?php HTB::buildDropdownMenu($catogorys)?>
+                    <a class='dropdown-item' href='#'>Mannenfietsen</a><hr>
+                    <a class='dropdown-item' href='#'>Vrouwenfietsen</a> <hr>
+                    <a class='dropdown-item' href='#'>Kinderfietsen</a> <hr>
                 </div>
             </div>
             <input type="text" class="form-control" id="SearchInput" aria-label="Text input with dropdown button">

@@ -28,7 +28,7 @@ class DBBike
         $this->material = $args['BIKE_MATERIAL'];
         $this->color = $args['BIKE_COLOR'];
         $this->releaseYear = $args['BIKE_RELEASEYEAR'];
-        $this->category = $args['BIKE_CATEGORY_ID'];
+        $this->category = $args['BIKE_CATEGORY'];
         $this->imagePaths = $this->splitImagePaths($args['BIKE_IMAGES']);
         $this->description = $args['BIKE_DESCRIPTION'];
         $this->onSale = $args['BIKE_ON_SALE'];

@@ -26,7 +26,7 @@
                 <a href="#" class="fa fa-facebook"></a>
                 <a href="https://twitter.com/thecrimsonfuckr" class="fa fa-twitter"></a>
                 <a href="#" class="fa fa-instagram"></a>
-                <a href="https://www.youtube.com/watch?v=8Q0VipFkCM8" class="fa fa-youtube"></a>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="fa fa-youtube"></a>
             </div>
         </div>
     </div>

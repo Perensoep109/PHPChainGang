@@ -165,18 +165,20 @@ if($bike == null)
                 <?php
 
                 // Lees de hoeveelheid bekeken fieten en bereid de query voor.
-                $amount = count($_SESSION['RECENT_BIKES']);
-                $indexes = implode(',', $_SESSION['RECENT_BIKES']);
-                $recentBikes = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID IN ($indexes)");
+                $amount = sizeof($_SESSION['RECENT_BIKES']);
 
-                // Zet ze om naar klikbare HTML
-                if($recentBikes != null)
+                if($amount > 0)
                 {
-                    foreach($recentBikes as $key => $value)
-                    {
-                        $href = $value->getDbIndex();
-                        $element = $value->getName();
-                        echo "<a href='$href'>$element</a><br>";
+                    $indexes = implode(',', $_SESSION['RECENT_BIKES']);
+                    $recentBikes = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID IN ($indexes)");
+
+                    // Zet ze om naar klikbare HTML
+                    if ($recentBikes != null) {
+                        foreach ($recentBikes as $key => $value) {
+                            $href = $value->getDbIndex();
+                            $element = $value->getName();
+                            echo "<a href='$href'>$element</a><br>";
+                        }
                     }
                 }
                 ?>
