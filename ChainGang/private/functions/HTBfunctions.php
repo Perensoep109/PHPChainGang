@@ -70,7 +70,7 @@ class HTB
                         </div>
                         <div class='col-lg-6 home_carousel_right'>
                             <div class='row'>
-                                <h1 class='home_carousel_fiets_naam'>".$item->getName()."</h1>
+                                <h1 class='home_carousel_fiets_naam'>" .$item->getName()."</h1>
                             </div>
                             
                             <div class='row home_carousel_fiets_omschijving'>
@@ -87,13 +87,5 @@ class HTB
         }
         echo "</div>
     </div>";
-    }
-
-    public static function BuildDropDownMenu($items)
-    {
-        foreach($items as $item)
-        {
-            echo "<a class='dropdown-item' href='#'>".$item->getName()."</a> <hr>";
-        }
     }
 }

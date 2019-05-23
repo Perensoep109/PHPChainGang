@@ -7,6 +7,7 @@
  */
 // Includes
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php");
+include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/BikeProduct.php");
 
 // Query bikes
 DBI::$logError = true;
@@ -164,19 +165,20 @@ if($bike == null)
                 <?php
 
                 // Lees de hoeveelheid bekeken fieten en bereid de query voor.
-                $amount = count($_SESSION['RECENT_BIKES']);
-                $indexes = implode(',', $_SESSION['RECENT_BIKES']);
-                $recentBikes = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID IN ($indexes)");
+                $amount = sizeof($_SESSION['RECENT_BIKES']);
 
-                // Zet ze om naar klikbare HTML
-                if($recentBikes != null)
+                if($amount > 0)
                 {
-                    foreach($recentBikes as $key => $value)
-                    {
-                        $href = $value->getDbIndex();
-                        $element = $value->getName() . " €" . $value->getPrice() . " " . $value->getDbIndex();
+                    $indexes = implode(',', $_SESSION['RECENT_BIKES']);
+                    $recentBikes = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID IN ($indexes)");
 
-                        echo "<a href='DetailPage.php?ID=$href'>$element</a><br>";
+                    // Zet ze om naar klikbare HTML
+                    if ($recentBikes != null) {
+                        foreach ($recentBikes as $key => $value) {
+                            $href = $value->getDbIndex();
+                            $element = $value->getName();
+                            echo "<a href='$href'>$element</a><br>";
+                        }
                     }
                 }
                 ?>

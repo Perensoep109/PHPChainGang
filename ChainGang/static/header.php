@@ -1,20 +1,17 @@
 <?php
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php");
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/HTBfunctions.php");
-
-DBI::$logError = true;
-$catogorys = DBI::queryCategories("select * from allcategories");
 ?>
 <div class="row" id="header_nav">
     <div class="col-lg-6"></div>
     <div class="col-lg-1 text-center">
-        <button type="button" class="btn btn-link">Help</button>
+        <a href="../webpages/HelpPage.php"><button type="button" class="btn btn-link">Help</button></a>
     </div>
     <div class="col-lg-2 text-center">
-        <button type="button" class="btn btn-link">Over ons</button>
+        <a href="../webpages/AboutPage.php""><button type="button" class="btn btn-link">Over ons</button></a>
     </div>
     <div class="col-lg-1 text-center">
-        <button type="button" class="btn btn-link">Contact</button>
+        <a href="../webpages/ContactPage.php""><button type="button" class="btn btn-link">Contact</button></a>
     </div>
     <div class="col-lg-2 text-center">
         <button type="button" class="btn btn-link" data-toggle="modal" data-target=".login-modal">Login/Registeren</button>
@@ -23,7 +20,7 @@ $catogorys = DBI::queryCategories("select * from allcategories");
 </div>
 <div class="row">
     <div class="col-lg-2">
-        <h1 id="header_logo">FietsShop</h1>
+        <a href="../webpages/HomePage.php" class="no_link_dec"><h1 id="header_logo">FietsShop</h1></a>
     </div>
     <div class="col-lg-10 div_searchBar" id="header_SearchAndButton">
         <div class="input-group">
@@ -32,7 +29,9 @@ $catogorys = DBI::queryCategories("select * from allcategories");
                         aria-haspopup="true" aria-expanded="false">Catogorieën
                 </button>
                 <div class="dropdown-menu">
-                    <?php HTB::buildDropdownMenu($catogorys)?>
+                    <a class='dropdown-item' href='#'>Mannenfietsen</a><hr>
+                    <a class='dropdown-item' href='#'>Vrouwenfietsen</a> <hr>
+                    <a class='dropdown-item' href='#'>Kinderfietsen</a> <hr>
                 </div>
             </div>
             <input type="text" class="form-control" id="SearchInput" aria-label="Text input with dropdown button">
@@ -45,16 +44,16 @@ $catogorys = DBI::queryCategories("select * from allcategories");
 </div>
 <div class="row border" id="header_Bottom">
     <div class="col-lg-2 border text-center">
-        <button type="button" class="btn btn-link">Thuis</button>
+        <a href="../webpages/HomePage.php"><button type="button" class="btn btn-link">Thuis</button></a>
     </div>
     <div class="col-lg-2 border text-center">
-        <button type="button" class="btn btn-link">Fietsen</button>
+        <a href="../webpages/CategoriePage.php"><button type="button" class="btn btn-link">Fietsen</button></a>
     </div>
     <div class="col-lg-2 border text-center">
-        <button type="button" class="btn btn-link">Mijn profiel</button>
+        <a href="../webpages/ProfilePage.php"><button type="button" class="btn btn-link">Mijn profiel</button></a>
     </div>
     <div class="col-lg-2 border text-center">
-        <button type="button" class="btn btn-link">Over ons</button>
+        <a href="../webpages/AboutPage.php"><button type="button" class="btn btn-link">Over ons</button></a>
 
     </div>
     <div class="col-lg-3 border"></div>

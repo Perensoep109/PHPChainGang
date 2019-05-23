@@ -31,6 +31,33 @@
     padding: 0;
 }
 
+.no_link_dec:link
+{
+    text-decoration: none;
+    color: black;
+}
+
+.no_link_dec:visited
+{
+    text-decoration: none;
+    color: black;
+}
+
+
+.no_link_dec:hover
+{
+    text-decoration: none;
+    color: black;
+}
+
+
+.no_link_dec:active
+{
+    text-decoration: none;
+    color: black;
+}
+
+
 /*De footer*/
 .text-center {
     text-align: center;
@@ -176,4 +203,12 @@ hr.Properties {
     margin-left: -7px;
     top: -15px;
     left: 5%;
+}
+
+/* Contact pagina */
+
+.image
+{
+    max-width: 640px;
+    max-height: 360px;
 }
