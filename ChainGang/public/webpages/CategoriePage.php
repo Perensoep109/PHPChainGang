@@ -29,7 +29,7 @@
             <h3>Filters</h3>
             <button type="button" class="btn btn-primary btn-lg">Filter!</button>
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                     <h5>Frametype</h5>
                     <form action="">
                         <input type="radio" name="frametype" value="heren"> Herenfietsen<br>
@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                     <h5>Type fiets</h5>
                     <form action="">
                         <input type="checkbox" name="typefiets1" value="bakfiets"> Bakfietsen<br>
@@ -50,7 +50,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                     <h5>Merk</h5>
                     <form action="">
                         <input type="checkbox" name="merkfiets1" value="Gazelle"> Bakfietsen<br>
@@ -60,10 +60,10 @@
                     </form>
                 </div>
             </div>
-            <hr class="cat_rotate">
+            <hr>
         </div>
 
-        <div class="col-lg-6">
+        <div class="col-lg-4">
             <?php
             DBI::$logError = true;
             $dbBike = DBI::queryBikes("select * from allbikes where BIKE_ID='1'")[0];

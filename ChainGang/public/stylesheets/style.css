@@ -91,13 +91,15 @@ hr.Properties {
     padding: 20px 0;
 }
 
-.cat_main {
+.cat_sidebar {
+}
+
+.cat_sidebar hr{
 
 }
 
-.cat_rotate {
-    transform: rotate(90deg);
-    width: 100px;
+.cat_main {
+
 }
 
 /*productcard */
