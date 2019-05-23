@@ -45,10 +45,21 @@ $carousel_bikes = DBI::queryBikes("select * from allbikes order by BIKE_ID desc 
         <h2>Altijd up-to-date met onze nieuwsbrief!</h2>
     </div>
 </div>
-<div>
+<div class="row">
 
     <hr>
-        info over the company
+    <div class="col=4">
+
+        <img src="https://source.unsplash.com/400x300/?bikes">
+    </div>
+    <div class="col-6">
+
+
+        Al jaren de expert in 2e hands rijwielen. Alles wat u nodig heeft op één plek!
+        <br><br><br><br>
+        Fiets kopen? FietsShop!
+    </div>
+    <hr>
 </div>
     <?php HTB::BuildReview($reviews);?>
 

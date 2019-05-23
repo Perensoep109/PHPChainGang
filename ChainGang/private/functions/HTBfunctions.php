@@ -4,7 +4,7 @@ class HTB
 {
     public static function BuildReview($dbReview)
     {
-        echo "<ul class='list-unstyled'> <hr>";
+        echo "<ul class='list-unstyled'>";
         foreach ($dbReview as $item) {
             $user = DBI::queryUsers('select * from allusers WHERE USER_ID = ' . $item->getUserID());
             echo "
