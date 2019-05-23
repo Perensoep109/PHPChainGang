@@ -50,7 +50,7 @@ include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/HTBfunctions.p
         <a href="../webpages/CategoriePage.php"><button type="button" class="btn btn-link">Fietsen</button></a>
     </div>
     <div class="col-lg-2 border text-center">
-        <a href="../webpages/ProfielPage.php"><button type="button" class="btn btn-link">Mijn profiel</button></a>
+        <a href="../webpages/ProfilePage.php"><button type="button" class="btn btn-link">Mijn profiel</button></a>
     </div>
     <div class="col-lg-2 border text-center">
         <a href="../webpages/AboutPage.php"><button type="button" class="btn btn-link">Over ons</button></a>

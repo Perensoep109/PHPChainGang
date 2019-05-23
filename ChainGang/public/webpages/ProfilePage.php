@@ -17,9 +17,7 @@
 <body>
 <div class="container">
     <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/header.php"?>
-    <h1>Over ons</h1>
-    <br>
-    <p>Wij zijn een stel enthausiaste groenteplukkers uit het westland. Nu kun je weer verder met je leven nu je dit weet</p>
+    <h1>code goes here</h1>
 
     <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/footer.php"?>
 </div>
