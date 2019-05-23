@@ -91,12 +91,9 @@ hr.Properties {
     padding: 20px 0;
 }
 
-.cat_sidebar {
-
-}
-
-.cat_sidebar hr{
-
+.cat_sidebar hr {
+    width: 1px;
+    size: 500px;
 }
 
 .cat_main {

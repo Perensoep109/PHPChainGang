@@ -26,7 +26,7 @@
     include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php";
     ?>
     <div class="row">
-        <div id="cat_sidebar col-lg-8">
+        <div id="cat_sidebar col-lg-3">
             <h3>Filters</h3>
             <button type="button" class="btn btn-primary btn-lg">Filter!</button>
             <div class="row">
@@ -50,10 +50,12 @@
                     </form>
                 </div>
             </div>
+        </div>
+        <div class="row">
             <hr>
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-lg-9">
             <?php
             DBI::$logError = true;
             $dbBike = DBI::queryBikes("select * from allbikes where BIKE_ID='1'")[0];
