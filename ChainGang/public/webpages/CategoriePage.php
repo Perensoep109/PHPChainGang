@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -35,17 +36,6 @@
                         <input type="radio" name="frametype" value="heren"> Herenfietsen<br>
                         <input type="radio" name="frametype" value="dames"> Damesfietsen<br>
                         <input type="radio" name="frametype" value="kinderen"> Kinderfietsen
-                    </form>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <h5>Type fiets</h5>
-                    <form action="">
-                        <input type="checkbox" name="typefiets1" value="bakfiets"> Bakfietsen<br>
-                        <input type="checkbox" name="typefiets2" value="hybridefiets"> Hybride fietsen<br>
-                        <input type="checkbox" name="typefiets3" value="stadsfiets"> Stadsfietsen<br>
-                        <input type="checkbox" name="typefiets4" value="transportfiets"> Transportfietsen
                     </form>
                 </div>
             </div>
