@@ -7,7 +7,6 @@
  */
 // Includes
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php");
-include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/BikeProduct.php");
 
 // Query bikes
 DBI::$logError = true;
@@ -15,14 +14,6 @@ if(isset($_GET['ID']))
     $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = " . $_GET['ID'])[0];
 else
     $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
-
-// Update the session
-if(session_status() != PHP_SESSION_ACTIVE)
-{
-    session_start();
-    if(!isset($_SESSION['RECENT_BIKES']))
-        $_SESSION['RECENT_BIKES'] = array();
-}
 
 if($bike == null)
     header("Location: errorpage.php");
@@ -115,7 +106,7 @@ if($bike == null)
 
             <div id="specifications" class="col-lg-4">
                 <div id="spec-column" class="row mb-lg-5">
-                    <table class="table table-bordered col-lg-7 mb-lg-3">
+                    <table class="table table-bordered col-lg-12 mb-lg-3">
                     <?php
                     echo "<tr>
                             <th colspan='2'><h3><b>Specificaties<b><h3></th>
@@ -144,12 +135,12 @@ if($bike == null)
                             <td>Color </td>
                             <td> " . $bike->getColor() . " </td>
                           </tr>";
-                ?>
+                    ?>
                     </table>
 
                     <div class="row">
                         <p class="detail_priceTag col-lg-6">€<?php echo $bike->getPrice() ?>,-</p>
-                        <button type="button" class="btn btn-primary btn-lg col-lg-6"><b><i>Bestellen!</i></b></button>
+                        <a href="CartPage.php?add=<?php echo $bike->getDbIndex(); ?>" class="btn btn-primary btn-lg col-lg-6">Koop</a>
                     </div>
                 </div>
 
@@ -175,7 +166,7 @@ if($bike == null)
                     // Zet ze om naar klikbare HTML
                     if ($recentBikes != null) {
                         foreach ($recentBikes as $key => $value) {
-                            $href = $value->getDbIndex();
+                            $href = "DetailPage.php?ID=" . $value->getDbIndex();
                             $element = $value->getName();
                             echo "<a href='$href'>$element</a><br>";
                         }

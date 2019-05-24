@@ -212,3 +212,15 @@ hr.Properties {
     max-width: 640px;
     max-height: 360px;
 }
+
+/* Cart pagina */
+.cart_img_small
+{
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.table-no-top > thead > tr:first-child > th
+{
+    border: none;
+}
