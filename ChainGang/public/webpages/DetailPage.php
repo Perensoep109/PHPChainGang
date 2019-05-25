@@ -147,9 +147,11 @@ if($bike == null)
             </div>
         </div>
         <div class="row">
-            <div id="description" class="col-lg-8">
+            <div id="module" class="col-lg-8">
                 <h3><b>Omschrijving</b></h3>
-                <p><?php echo $bike->getDescription();?></p>
+
+                <p class="collapse" id="collapseExample" aria-expanded="false"><?php echo $bike->getDescription();?></p>
+                <a role="button" class="collapsed" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></a>
             </div>
             <div id="recentbikes" class="col-lg-4">
                 <h3><b>Recent bekeken fietsen</b></h3>
