@@ -113,7 +113,12 @@ hr.Properties {
     font-size: 30px;
 }
 
+
+
 /*de catogorie pagina*/
+.centered
+{
+}
 .cat_sidebar h3 {
     padding: 20px 0;
 }

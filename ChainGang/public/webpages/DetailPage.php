@@ -120,7 +120,7 @@ if($bike == null)
                             <td> " . $bike->getCategory() . " </td>
                           </tr>
                           <tr>
-                            <td>Jaartal: </td>
+                            <td>Jaartal </td>
                             <td> " . $bike->getReleaseYear() . " </td>
                           </tr>
                           <tr>
@@ -138,9 +138,9 @@ if($bike == null)
                     ?>
                     </table>
 
-                    <div class="row">
-                        <p class="detail_priceTag col-lg-6">€<?php echo $bike->getPrice() ?>,-</p>
-                        <a href="CartPage.php?add=<?php echo $bike->getDbIndex(); ?>" class="btn btn-primary btn-lg col-lg-6">Koop</a>
+                    <div class="row col-lg-12">
+                        <p class="detail_priceTag col-lg-12">€<?php echo $bike->getPrice() ?>,-</p>
+                        <a href="CartPage.php?add=<?php echo $bike->getDbIndex(); ?>" class="btn btn-primary btn-lg text-center">Koop</a>
                     </div>
                 </div>
 
@@ -150,7 +150,7 @@ if($bike == null)
             <div id="module" class="col-lg-8">
                 <h3><b>Omschrijving</b></h3>
 
-                <p class="collapse" id="collapseExample" aria-expanded="false"><?php echo $bike->getDescription();?></p>
+                <p class="collapse" id="collapseExample" aria-expanded="true"><?php echo $bike->getDescription();?></p>
                 <a role="button" class="collapsed" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></a>
             </div>
             <div id="recentbikes" class="col-lg-4">
