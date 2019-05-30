@@ -5,11 +5,30 @@
  * Date: 10/05/2019
  * Time: 14:31
  */
+
+function strposX($string, $char, $number)
+{
+    if($number == 1)
+        return strpos($string, $char);
+
+    else if($number > 1)
+    {
+        $pos = 0;
+
+        for($i = 0; $i < $number; $i++)
+        {
+            $pos = strpos($string, $char, $pos + 1);
+        }
+        return $pos;
+    }
+    else
+        return -1;
+}
+
 // Includes
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php");
 
 // Query bikes
-DBI::$logError = true;
 if(isset($_GET['ID']))
     $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = " . $_GET['ID'])[0];
 else
@@ -149,8 +168,14 @@ if($bike == null)
         <div class="row">
             <div id="module" class="col-lg-8">
                 <h3><b>Omschrijving</b></h3>
-
-                <p class="collapse" id="collapseExample" aria-expanded="true"><?php echo $bike->getDescription();?></p>
+                <?php
+                    $string = $bike->getDescription();
+                    $pos = strposX($string, '.', 1);
+                    $topDesc = substr($string, 0, $pos + 1);
+                    $bottomDesc = substr($string, $pos + 1);
+                ?>
+                <p><?php echo $topDesc;?></p>
+                <p class="collapse" id="collapseExample" aria-expanded="true"><?php echo $bottomDesc;?></p>
                 <a role="button" class="collapsed" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></a>
             </div>
             <div id="recentbikes" class="col-lg-4">
