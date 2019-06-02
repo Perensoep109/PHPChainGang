@@ -51,11 +51,9 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <hr>
-        </div>
 
-        <div class="col-lg-9">
+
+        <div class="col-lg-4 cat_main">
             <?php
             DBI::$logError = true;
             $dbBike = DBI::queryBikes("select * from allbikes where BIKE_ID='1'")[0];
