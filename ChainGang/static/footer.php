@@ -5,17 +5,17 @@
         <div class="col-lg-2">
             <ul class="list-unstyled">
                 <li><b>Categoriën</b></li>
-                <li><a href="*">Mannenfietsen</a></li>
-                <li><a href="*">Vrouwenfietsen</a></li>
-                <li><a href="*">Kinderfietsen</a></li>
+                <li><a href="CategoriePage.php?query=DavidMoetNogWatAanDezeQuirtleDoen">Mannenfietsen DAVID-QUERY</a></li>
+                <li><a href="CategoriePage.php?query=DavidMoetNogWatAanDezeQuirtleDoen">Vrouwenfietsen DAVID-QUERY</a></li>
+                <li><a href="CategoriePage.php?query=DavidMoetNogWatAanDezeQuirtleDoen">Kinderfietsen DAVID-QUERY</a></li>
             </ul>
         </div>
         <div class="col-lg-7">
             <ul class="list-unstyled">
                 <li><b>Other</b></li>
-                <li><a href="../webpages/HelpPage.php">Help</a></li>
-                <li><a href="../webpages/AboutPage.php">Over ons</a></li>
-                <li><a href="../webpages/ContactPage.php">Contact</a></li>
+                <li><a href=<?php echo "$_SERVER[DOCUMENT_ROOT]/public/webpages/HelpPage.php"?>>Help</a></li>
+                <li><a href=<?php echo "$_SERVER[DOCUMENT_ROOT]/public/webpages/HelpPage.php"?>>Over ons</a></li>
+                <li><a href=<?php echo "$_SERVER[DOCUMENT_ROOT]/public/webpages/HelpPage.php"?>>Contact</a></li>
             </ul>
         </div>
         <div class="col-lg-3">
@@ -26,7 +26,7 @@
                 <a href="#" class="fa fa-facebook"></a>
                 <a href="https://twitter.com/thecrimsonfuckr" class="fa fa-twitter"></a>
                 <a href="#" class="fa fa-instagram"></a>
-                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="fa fa-youtube"></a>
+                <a href="http://bitly.com/98K8eH" class="fa fa-youtube"></a>
             </div>
         </div>
     </div>

@@ -1,4 +1,22 @@
 <?php
+function strposX($string, $char, $number)
+{
+    if($number == 1)
+        return strpos($string, $char);
+
+    else if($number > 1)
+    {
+        $pos = 0;
+
+        for($i = 0; $i < $number; $i++)
+        {
+            $pos = strpos($string, $char, $pos + 1);
+        }
+        return $pos;
+    }
+    else
+        return -1;
+}
 
 class HTB
 {
@@ -89,3 +107,4 @@ class HTB
     </div>";
     }
 }
+?>

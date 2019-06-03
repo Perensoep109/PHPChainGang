@@ -1,7 +1,7 @@
 <?php
 
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php");
-include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/HTBfunctions.php");
+include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/functions.php");
 
 // Update the session
 if(session_status() != PHP_SESSION_ACTIVE)
@@ -39,7 +39,7 @@ if(session_status() != PHP_SESSION_ACTIVE)
         <div class="input-group">
             <div class="input-group-prepend">
                 <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">Catogorieën
+                        aria-haspopup="true" aria-expanded="false">Categorieën
                 </button>
                 <div class="dropdown-menu">
                     <a class='dropdown-item' href='#'>Mannenfietsen</a><hr>
@@ -49,7 +49,7 @@ if(session_status() != PHP_SESSION_ACTIVE)
             </div>
             <input type="text" class="form-control" id="SearchInput" aria-label="Text input with dropdown button">
             <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" id="SearchButton"><i class="material-icons">search</i></button>
+                <a href="CategoriePage.php?query=DavidMoetDitNogEvenFixenOokInDeFooter" type="button" class="btn btn-outline-secondary" type="button" id="SearchButton"><i class="material-icons">search</i></a>
             </div>
         </div>
 
