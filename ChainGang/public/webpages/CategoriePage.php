@@ -52,7 +52,6 @@
             </div>
         </div>
 
-
             <div class="col-lg-4 cat_main">
                 <?php
                 DBI::$logError = true;
@@ -60,7 +59,6 @@
                 $bike = new BikeProduct($dbBike);
                 ?>
             </div>
-
 
     </div>
 
