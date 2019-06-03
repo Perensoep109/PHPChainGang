@@ -4,6 +4,9 @@ class HTB
 {
     public static function BuildReview($dbReview)
     {
+        if(Sizeof($dbReview) > 0 ){
+
+
         echo "<ul class='list-unstyled'>";
         foreach ($dbReview as $item) {
             $user = DBI::queryUsers('select * from allusers WHERE USER_ID = ' . $item->getUserID());
@@ -37,6 +40,7 @@ class HTB
     <hr>";
         } echo "</ul>";
     }
+    }
 
     public static function BuildCarousel($bikes)
     {
@@ -58,6 +62,7 @@ class HTB
         </ol>
         <div class='carousel-inner'>";
         foreach($bikes as $item){
+            $desc = substr($item->getDescription(), 0, 600);
             echo"<div class='carousel-item ";
             if($count == 0){
                 echo "active";
@@ -74,7 +79,7 @@ class HTB
                             </div>
                             
                             <div class='row home_carousel_fiets_omschijving'>
-                                ".$item->getDescription()."
+                                ".$desc."
                             </div>
                             <div class='row '>
                                 <button type='button' class='btn btn-primary'>Omschijving</button>

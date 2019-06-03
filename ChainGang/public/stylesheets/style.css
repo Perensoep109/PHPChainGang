@@ -159,12 +159,14 @@ hr.Properties {
 
 .home_carousel_fiets_naam {
     color: blue;
-    margin: auto;
+
 }
 
 .home_carousel_fiets_omschijving {
-    margin: auto;
+
     width: 400px;
+    height:300px;
+    text-align: left;
 
 }
 
