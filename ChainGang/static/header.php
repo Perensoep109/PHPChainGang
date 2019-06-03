@@ -75,28 +75,17 @@ if(session_status() != PHP_SESSION_ACTIVE)
             <button class="btn">
                 <div class="row">
                     <div class="col-lg-6">
-                        <span class="badge badge-light" id='CartItemCount'><?php echo sizeof($_SESSION['CART_BIKES']); ?></span>
+                        <span class="badge badge-light" id='CartItemCount'><?php echo "" . (isset($_SESSION['CART_BIKES']) ? sizeof($_SESSION['CART_BIKES']) : "0"); ?></span>
                     </div>
                     <div class="col-lg-6">
                         <i class="material-icons">shopping_cart</i>
                     </div>
                 </div>
             </button>
-            <!--
-            <button class="btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <span class="badge badge-light" id='CartItemCount'><?php //echo sizeof($_SESSION['CART_BIKES']); ?></span>
-                    </div>
-                    <div class="col-lg-6">
-                        <i class="material-icons">shopping_cart</i>
-                    </div>
-                </div>
-            </button>
-            -->
         </a>
     </div>
-<!--    hieronder is de login form model-->
+
+    <!--hieronder is de login form model-->
     <div class="modal fade login-modal" tabindex="-1" role="dialog" aria-labelledby="login-modal" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
