@@ -46,6 +46,7 @@ $carousel_bikes = DBI::queryBikes("SELECT * FROM allbikes ORDER BY BIKE_ID DESC 
         <h2>Altijd up-to-date met onze nieuwsbrief!</h2>
     </div>
 </div>
+    <hr>
 <div class="row">
 
     <hr>
@@ -62,6 +63,7 @@ $carousel_bikes = DBI::queryBikes("SELECT * FROM allbikes ORDER BY BIKE_ID DESC 
     </div>
     <hr>
 </div>
+    <hr>
     <?php HTB::BuildReview($reviews);?>
 
     <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/footer.php"?>
