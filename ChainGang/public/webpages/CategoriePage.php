@@ -51,16 +51,37 @@
                 </div>
             </div>
         </div>
-
-            <div class="col-lg-4 cat_main">
+        <div class="col-lg-9">
+            <div class="row">
                 <?php
                 DBI::$logError = true;
                 $dbBike = DBI::queryBikes("select * from allbikes where BIKE_ID='1'")[0];
-                $bike = new BikeProduct($dbBike);
                 ?>
+
+                <div class="col-lg-4 cat_main">
+                    <?php
+
+                    $bike = new BikeProduct($dbBike);
+                    ?>
+                </div>
+                <div class="col-lg-4 cat_main">
+                    <?php
+
+                    $bike = new BikeProduct($dbBike);
+                    ?>
+                </div>
+                <div class="col-lg-4 cat_main">
+                    <?php
+
+                    $bike = new BikeProduct($dbBike);
+                    ?>
+                </div>
             </div>
 
+        </div>
+
     </div>
+
 
     <?php /*** include footer*/
     include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/footer.php" ?>
