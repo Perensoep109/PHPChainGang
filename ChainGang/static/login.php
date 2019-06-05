@@ -1,17 +1,9 @@
 <?php
-$_SESSION["loggedin"] = false;
-$_SESSION["id"] = null;
-$_SESSION["username"] = null;
+
 
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php");
 DBI::$logError = true;
 
-// Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)
-{
-    header("location: HomePage.php");
-    exit;
-}
 
 // Define variables and initialize with empty values
 $username = $password = "";

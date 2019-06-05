@@ -12,6 +12,10 @@ if(session_status() != PHP_SESSION_ACTIVE)
     {
         $_SESSION['RECENT_BIKES'] = array();
         $_SESSION['CART_BIKES'] = array();
+        $_SESSION["loggedin"] = false;
+        $_SESSION["id"] = null;
+        $_SESSION["username"] = null;
+
     }
 }
 
@@ -94,8 +98,8 @@ if(session_status() != PHP_SESSION_ACTIVE)
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <div class="row">
-                <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/login.php"?>
-                <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/register.php"?>
+               <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/login.php"?>
+              <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/register.php"?>
 
                 </div>
             </div>
