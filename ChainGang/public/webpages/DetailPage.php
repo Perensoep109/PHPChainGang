@@ -36,6 +36,7 @@ else
 
 if($bike == null)
     header("Location: errorpage.php");
+
 ?>
 
 <html>

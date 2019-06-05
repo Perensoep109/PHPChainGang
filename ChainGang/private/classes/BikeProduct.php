@@ -12,7 +12,7 @@ class BikeProduct
     {
         ?>
         <div class="card cardbike">
-            <a href="DetailPage.php">
+            <a href="DetailPage.php?ID=<?php echo $fiets->getDbIndex()?>">
                 <img class="card-img-top" src="<?php echo "../" . $fiets->getImagePaths()[0] ?>" alt="Card image cap">
             </a>
             <div class="card-body">

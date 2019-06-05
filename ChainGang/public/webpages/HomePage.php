@@ -4,11 +4,13 @@
 // Includes
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php");
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/HTBfunctions.php");
+include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/BikeProduct.php";
 
 DBI::$logError = true;
 
 $reviews = DBI::queryReviews("SELECT * FROM allreviews ORDER BY REVIEW_ID DESC limit 2");
 $carousel_bikes = DBI::queryBikes("SELECT * FROM allbikes ORDER BY BIKE_ID DESC limit 3");
+$card_bikes = DBI::queryBikes("SELECT * FROM allbikes ORDER BY BIKE_ID DESC limit 8");
 
 ?>
 <head>
@@ -47,6 +49,16 @@ $carousel_bikes = DBI::queryBikes("SELECT * FROM allbikes ORDER BY BIKE_ID DESC 
     </div>
 </div>
     <hr>
+    <div class="row mr-lg-3">
+    <?php
+    foreach ($card_bikes as $item)
+    {
+        echo "<div class='col-md-3'>";
+    new BikeProduct($item);
+    echo '</div>';
+    }?>
+    </div>
+
 <div class="row">
 
     <hr>
