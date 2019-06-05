@@ -42,9 +42,9 @@ if(session_status() != PHP_SESSION_ACTIVE)
                         aria-haspopup="true" aria-expanded="false">Catogorieën
                 </button>
                 <div class="dropdown-menu">
-                    <a class='dropdown-item' href='../webpages/CategoriePage.php?submit=Submit&frametype=heren&merkfiets=Pegasus'>Mannenfietsen</a><hr>
-                    <a class='dropdown-item' href='../webpages/CategoriePage.php?submit=Submit&frametype=dames&merkfiets=Gazelle'>Vrouwenfietsen</a> <hr>
-                    <a class='dropdown-item' href='../webpages/CategoriePage.php?submit=Submit&frametype=kinderen&merkfiets=Giant">Kinderfietsen'>Kinderfietsen</a> <hr>
+                    <a class='dropdown-item' href='../webpages/CategoriePage.php?submit=Submit&frametype=heren&merkfiets=Pegasus&laagsteprijs=20&hoogsteprijs=200'>Mannenfietsen</a><hr>
+                    <a class='dropdown-item' href='../webpages/CategoriePage.php?submit=Submit&frametype=dames&merkfiets=Gazelle&laagsteprijs=20&hoogsteprijs=200'>Vrouwenfietsen</a> <hr>
+                    <a class='dropdown-item' href='../webpages/CategoriePage.php?submit=Submit&frametype=kinderen&merkfiets=Giant">Kinderfietsen&laagsteprijs=20&hoogsteprijs=200'>Kinderfietsen</a> <hr>
                 </div>
             </div>
             <input type="text" class="form-control" id="SearchInput" aria-label="Text input with dropdown button">
