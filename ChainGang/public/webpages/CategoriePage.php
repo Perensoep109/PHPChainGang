@@ -3,12 +3,12 @@
 include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/BikeProduct.php";
 include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php";
 
-if (isset($_GET)) {
+if (isset($_GET["frametype"])) {
     $frametype = $_GET["frametype"];
     $merk = $_GET["merkfiets"];
 }
 DBI::$logError = true;
-$dbBikes = DBI::queryBikes("select * from allbikes where BIKE_FRAMETYPE='sloom' and BIKE_BRAND='Gazelle'");
+$dbBikes = DBI::queryBikes("select * from allbikes where BIKE_FRAMETYPE='$frametype' and BIKE_BRAND='$merk'");
 
 echo $frametype . $merk;
 ?>
@@ -40,31 +40,26 @@ echo $frametype . $merk;
     <div class="row">
         <div id="cat_sidebar col-lg-3">
             <h3 class="cat_hz_spacing">Filters</h3>
-            <form>
-                <button type="submit" class="btn btn-primary btn-lg">Filter!</button>
+            <form action="" method="get">
+                <button type="submit" name="submit" value="Submit" class="btn btn-primary btn-lg">Filter!</button>
+                <br><br>
+
+                <h5>Frametype</h5>
+
+                <input type="radio" name="frametype" value="heren"> Herenfietsen<br>
+                <input type="radio" name="frametype" value="dames"> Damesfietsen<br>
+                <input type="radio" name="frametype" value="kinderen"> Kinderfietsen<br>
+                <input type="radio" name="frametype" value="sloom"> Sloom<br><br>
+
+                <h5>Merk</h5>
+
+                <input type="checkbox" name="merkfiets" value="Gazelle"> Gazelle<br>
+                <input type="checkbox" name="merkfiets" value="Giant"> Giant<br>
+                <input type="checkbox" name="merkfiets" value="Pegasus"> Pegasus<br>
+                <input type="checkbox" name="merkfiets" value="Cortina"> Cortina<br><br>
             </form>
-            <div class="row">
-                <div class="col-lg-12">
-                    <h5>Frametype</h5>
-                    <form action="" method="get">
-                        <input type="radio" name="frametype" value="heren"> Herenfietsen<br>
-                        <input type="radio" name="frametype" value="dames"> Damesfietsen<br>
-                        <input type="radio" name="frametype" value="kinderen"> Kinderfietsen<br>
-                        <input type="radio" name="frametype" value="sloom"> Sloom
-                    </form>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <h5>Merk</h5>
-                    <form action="" method="get">
-                        <input type="checkbox" name="merkfiets" value="Gazelle"> Gazelle<br>
-                        <input type="checkbox" name="merkfiets" value="Giant"> Giant<br>
-                        <input type="checkbox" name="merkfiets" value="Pegasus"> Pegasus<br>
-                        <input type="checkbox" name="merkfiets" value="Cortina"> Cortina
-                    </form>
-                </div>
-            </div>
+
+
         </div>
         <div class="col-lg-1 cat_vc_ruler">
         </div>
