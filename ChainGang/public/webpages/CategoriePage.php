@@ -10,7 +10,6 @@ if (isset($_GET["frametype"])) {
 DBI::$logError = true;
 $dbBikes = DBI::queryBikes("select * from allbikes where BIKE_FRAMETYPE='$frametype' and BIKE_BRAND='$merk'");
 
-echo $frametype . $merk;
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +40,7 @@ echo $frametype . $merk;
         <div id="cat_sidebar col-lg-3">
             <h3 class="cat_hz_spacing">Filters</h3>
             <form action="" method="get">
-                <button type="submit" name="submit" value="Submit" class="btn btn-primary btn-lg">Filter!</button>
+                <button type="submit" name="submit" value="Submit" class="btn btn-primary btn-lg" >Filter!</button>
                 <br><br>
 
                 <h5>Frametype</h5>
@@ -49,16 +48,16 @@ echo $frametype . $merk;
                 <input type="radio" name="frametype" value="heren"> Herenfietsen<br>
                 <input type="radio" name="frametype" value="dames"> Damesfietsen<br>
                 <input type="radio" name="frametype" value="kinderen"> Kinderfietsen<br>
-                <input type="radio" name="frametype" value="sloom"> Sloom<br><br>
 
                 <h5>Merk</h5>
 
+                <input type="checkbox" name="merkfiets" value="*"> Alles<br>
                 <input type="checkbox" name="merkfiets" value="Gazelle"> Gazelle<br>
                 <input type="checkbox" name="merkfiets" value="Giant"> Giant<br>
                 <input type="checkbox" name="merkfiets" value="Pegasus"> Pegasus<br>
-                <input type="checkbox" name="merkfiets" value="Cortina"> Cortina<br><br>
-            </form>
+                <input type="checkbox" name="merkfiets" value="Cortina"> Cortina<br>
 
+            </form>
 
         </div>
         <div class="col-lg-1 cat_vc_ruler">
@@ -74,7 +73,6 @@ echo $frametype . $merk;
 
                     <div class="col-lg-4 cat_hz_spacing">
                         <?php
-
                         $bike = new BikeProduct($fiets);
                         ?>
                     </div>
