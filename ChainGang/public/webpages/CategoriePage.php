@@ -3,13 +3,12 @@
 include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/BikeProduct.php";
 include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php";
 
-if(isset($_GET))
-{
+if (isset($_GET)) {
     $frametype = $_GET["frametype"];
     $merk = $_GET["merkfiets"];
 }
 DBI::$logError = true;
-$dbBikes = DBI::queryBikes("select * from allbikes where BIKE_FRAMETYPE='$frametype' and BIKE_BRAND='$merk'");
+$dbBikes = DBI::queryBikes("select * from allbikes where BIKE_FRAMETYPE='sloom' and BIKE_BRAND='Gazelle'");
 ?>
 
 <!DOCTYPE html>
@@ -39,23 +38,24 @@ $dbBikes = DBI::queryBikes("select * from allbikes where BIKE_FRAMETYPE='$framet
     <div class="row">
         <div id="cat_sidebar col-lg-3">
             <h3 class="cat_hz_spacing">Filters</h3>
-            <form>
+            <form action="CategoriePage.php">
                 <button type="submit" class="btn btn-primary btn-lg">Filter!</button>
             </form>
             <div class="row">
                 <div class="col-lg-12">
                     <h5>Frametype</h5>
-                    <form action="" method="get">
+                    <form action="CategoriePage.php" method="get">
                         <input type="radio" name="frametype" value="heren"> Herenfietsen<br>
                         <input type="radio" name="frametype" value="dames"> Damesfietsen<br>
-                        <input type="radio" name="frametype" value="kinderen"> Kinderfietsen
+                        <input type="radio" name="frametype" value="kinderen"> Kinderfietsen<br>
+                        <input type="radio" name="frametype" value="sloom"> Sloom
                     </form>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <h5>Merk</h5>
-                    <form action="" method="get">
+                    <form action="CategoriePage.php" method="get">
                         <input type="checkbox" name="merkfiets" value="Gazelle"> Gazelle<br>
                         <input type="checkbox" name="merkfiets" value="Giant"> Giant<br>
                         <input type="checkbox" name="merkfiets" value="Pegasus"> Pegasus<br>
@@ -64,23 +64,25 @@ $dbBikes = DBI::queryBikes("select * from allbikes where BIKE_FRAMETYPE='$framet
                 </div>
             </div>
         </div>
-        <div class="col-lg-9">
+        <div class="col-lg-2">
+            //horizontal ruler
+        </div>
+        <div class="col-lg-7">
+
             <h2 class="cat_hz_spacing">Fietsen</h2>
             <div class="row">
-
 
                 <?php
                 foreach ($dbBikes as $fiets) {
                     ?>
 
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 cat_hz_spacing">
                         <?php
 
                         $bike = new BikeProduct($fiets);
                         ?>
                     </div>
                 <?php } ?>
-
 
             </div>
 
