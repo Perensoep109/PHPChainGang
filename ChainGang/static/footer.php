@@ -6,9 +6,9 @@
         <div class="col-lg-2">
             <ul class="list-unstyled">
                 <li><b>Categoriën</b></li>
-                <li><a href="*">Mannenfietsen</a></li>
-                <li><a href="*">Vrouwenfietsen</a></li>
-                <li><a href="*">Kinderfietsen</a></li>
+                <li><a href="../webpages/CategoriePage.php?submit=Submit&frametype=heren&merkfiets=Gazelle">Mannenfietsen</a></li>
+                <li><a href="../webpages/CategoriePage.php?submit=Submit&frametype=dames&merkfiets=">Vrouwenfietsen</a></li>
+                <li><a href="../webpages/CategoriePage.php?submit=Submit&frametype=kinderen&merkfiets=1=1">Kinderfietsen</a></li>
             </ul>
         </div>
         <div class="col-lg-7">
