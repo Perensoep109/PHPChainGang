@@ -6,25 +6,6 @@
  * Time: 14:31
  */
 
-function strposX($string, $char, $number)
-{
-    if($number == 1)
-        return strpos($string, $char);
-
-    else if($number > 1)
-    {
-        $pos = 0;
-
-        for($i = 0; $i < $number; $i++)
-        {
-            $pos = strpos($string, $char, $pos + 1);
-        }
-        return $pos;
-    }
-    else
-        return -1;
-}
-
 // Includes
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php");
 
@@ -171,13 +152,22 @@ if($bike == null)
                 <h3><b>Omschrijving</b></h3>
                 <?php
                     $string = $bike->getDescription();
-                    $pos = strposX($string, '.', 1);
+                    $pos = strposX($string, '.', 2);
                     $topDesc = substr($string, 0, $pos + 1);
-                    $bottomDesc = substr($string, $pos + 1);
+                    $bottomDesc = substr($string,$pos + 1);
+
+                    if($pos != null)
+                    {
+                        echo "<p>$topDesc</p>";
+                        echo "<p class='collapse' id='collapseExample' aria-expanded='true'>$bottomDesc</p>";
+                        echo "<a role='button' class='collapsed' data-toggle='collapse' href='#collapseExample' aria-expanded='false' aria-controls='collapseExample'></a>";
+                    }
+                    else
+                    {
+                        echo $string;
+                    }
+
                 ?>
-                <p><?php echo $topDesc;?></p>
-                <p class="collapse" id="collapseExample" aria-expanded="true"><?php echo $bottomDesc;?></p>
-                <a role="button" class="collapsed" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></a>
             </div>
             <div id="recentbikes" class="col-lg-4">
                 <h3><b>Recent bekeken fietsen</b></h3>
