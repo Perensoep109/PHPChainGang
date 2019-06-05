@@ -1,3 +1,17 @@
+<?php
+
+include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/BikeProduct.php";
+include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php";
+
+if(isset($_GET))
+{
+    $frametype = $_GET["frametype"];
+    $merk = $_GET["merkfiets"];
+}
+DBI::$logError = true;
+$dbBikes = DBI::queryBikes("select * from allbikes where BIKE_FRAMETYPE='$frametype' and BIKE_BRAND='$merk'");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,10 +35,7 @@
     <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/header.php" ?>
 
     <!--include database functions-->
-    <?php
-    include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/BikeProduct.php";
-    include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php";
-    ?>
+
     <div class="row">
         <div id="cat_sidebar col-lg-3">
             <h3 class="cat_hz_spacing">Filters</h3>
@@ -56,16 +67,10 @@
         <div class="col-lg-9">
             <h2 class="cat_hz_spacing">Fietsen</h2>
             <div class="row">
-                <?php
-                $frametype = $_GET["frametype"];
-                $merk = $_GET["merkfiets"];
 
-                DBI::$logError = true;
-                $dbBike = DBI::queryBikes("select * from allbikes where BIKE_FRAMETYPE='heren' and BIKE_BRAND='Gazelle'")[0];
-                ?>
 
                 <?php
-                foreach ($dbBike as $fiets) {
+                foreach ($dbBikes as $fiets) {
                     ?>
 
                     <div class="col-lg-4">
