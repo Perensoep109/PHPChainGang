@@ -31,28 +31,24 @@
     padding: 0;
 }
 
-.no_link_dec:link
-{
+.no_link_dec:link {
     text-decoration: none;
     color: black;
 }
 
-.no_link_dec:visited
-{
-    text-decoration: none;
-    color: black;
-}
-
-
-.no_link_dec:hover
-{
+.no_link_dec:visited {
     text-decoration: none;
     color: black;
 }
 
 
-.no_link_dec:active
-{
+.no_link_dec:hover {
+    text-decoration: none;
+    color: black;
+}
+
+
+.no_link_dec:active {
     text-decoration: none;
     color: black;
 }
@@ -114,13 +110,16 @@ hr.Properties {
 }
 
 
-
 /*de catogorie pagina*/
-.centered
-{
+
+.cat_hz_spacing {
+    padding: 15px 0;
 }
-.cat_sidebar h3 {
-    padding: 20px 0;
+
+.cat_vc_ruler {
+    height: auto;
+    border-left: 1px lightgrey solid;
+    margin: 30px 0 30px 100px;
 }
 
 #module {
@@ -137,7 +136,7 @@ hr.Properties {
     height: 40px !important;
 }
 
-#module a.collapsed:after  {
+#module a.collapsed:after {
     content: '+ Show More';
 }
 
@@ -236,21 +235,18 @@ hr.Properties {
 
 /* Contact pagina */
 
-.image
-{
+.image {
     max-width: 640px;
     max-height: 360px;
 }
 
 /* Cart pagina */
-.cart_img_small
-{
+.cart_img_small {
     max-width: 200px;
     max-height: 200px;
 }
 
-.table-no-top > thead > tr:first-child > th
-{
+.table-no-top > thead > tr:first-child > th {
     border: none;
 }
 

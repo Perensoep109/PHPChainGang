@@ -1,3 +1,4 @@
+
 <div id="footer">
     <hr class="Properties">
     <div class="row">
@@ -5,9 +6,9 @@
         <div class="col-lg-2">
             <ul class="list-unstyled">
                 <li><b>Categoriën</b></li>
-                <li><a href="CategoriePage.php?query=DavidMoetNogWatAanDezeQuirtleDoen">Mannenfietsen DAVID-QUERY</a></li>
-                <li><a href="CategoriePage.php?query=DavidMoetNogWatAanDezeQuirtleDoen">Vrouwenfietsen DAVID-QUERY</a></li>
-                <li><a href="CategoriePage.php?query=DavidMoetNogWatAanDezeQuirtleDoen">Kinderfietsen DAVID-QUERY</a></li>
+                <li><a href="../webpages/CategoriePage.php?submit=Submit&frametype=heren&merkfiets=Gazelle">Mannenfietsen</a></li>
+                <li><a href="../webpages/CategoriePage.php?submit=Submit&frametype=dames&merkfiets=">Vrouwenfietsen</a></li>
+                <li><a href="../webpages/CategoriePage.php?submit=Submit&frametype=kinderen&merkfiets=1=1">Kinderfietsen</a></li>
             </ul>
         </div>
         <div class="col-lg-7">
