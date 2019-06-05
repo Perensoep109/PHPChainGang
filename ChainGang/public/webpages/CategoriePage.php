@@ -6,9 +6,11 @@ include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.ph
 if (isset($_GET["frametype"])) {
     $frametype = $_GET["frametype"];
     $merk = $_GET["merkfiets"];
+    $maxPrijs = $_GET["hoogsteprijs"];
+    $minPrijs = $_GET["laagsteprijs"];
 }
 DBI::$logError = true;
-$dbBikes = DBI::queryBikes("select * from allbikes where BIKE_FRAMETYPE='$frametype' and BIKE_BRAND='$merk'");
+$dbBikes = DBI::queryBikes("select * from allbikes where BIKE_FRAMETYPE='$frametype' and BIKE_BRAND='$merk' and BIKE_PRICE BETWEEN $minPrijs and $maxPrijs");
 
 ?>
 
@@ -40,7 +42,7 @@ $dbBikes = DBI::queryBikes("select * from allbikes where BIKE_FRAMETYPE='$framet
         <div id="cat_sidebar col-lg-3">
             <h3 class="cat_hz_spacing">Filters</h3>
             <form action="" method="get">
-                <button type="submit" name="submit" value="Submit" class="btn btn-primary btn-lg" >Filter!</button>
+                <button type="submit" name="submit" value="Submit" class="btn btn-primary btn-lg">Filter!</button>
                 <br><br>
 
                 <h5>Frametype</h5>
@@ -51,14 +53,19 @@ $dbBikes = DBI::queryBikes("select * from allbikes where BIKE_FRAMETYPE='$framet
 
                 <h5>Merk</h5>
 
-                <input type="checkbox" name="merkfiets" value="*"> Alles<br>
+                <input type="checkbox" name="merkfiets" value="1=1"> Alles<br>
                 <input type="checkbox" name="merkfiets" value="Gazelle"> Gazelle<br>
                 <input type="checkbox" name="merkfiets" value="Giant"> Giant<br>
                 <input type="checkbox" name="merkfiets" value="Pegasus"> Pegasus<br>
-                <input type="checkbox" name="merkfiets" value="Cortina"> Cortina<br>
+                <input type="checkbox" name="merkfiets" value="Cortina"> Cortina<br><br>
+
+                <h5>Prijs</h5>
+                Van:<br>
+                €<input type="number" name="laagsteprijs" min="20" max="2000"><br>
+                Tot:<br>
+                €<input type="number" name="hoogsteprijs" min="20" max="2000">
 
             </form>
-
         </div>
         <div class="col-lg-1 cat_vc_ruler">
         </div>
