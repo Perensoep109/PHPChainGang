@@ -79,8 +79,11 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
+                <div class="row">
                 <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/login.php"?>
+                <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/register.php"?>
 
+                </div>
             </div>
                 </div>
         </div>
