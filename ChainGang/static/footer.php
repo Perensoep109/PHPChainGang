@@ -1,32 +1,32 @@
 <div id="footer">
-    <hr>
+    <hr class="Properties">
     <div class="row">
         <!--links for categorien en other-->
         <div class="col-lg-2">
             <ul class="list-unstyled">
-                <li>Categoriën</li>
-                <li><a href="*">Mannenfietsen</a></li>
-                <li><a href="*">Vrouwenfietsen</a></li>
-                <li><a href="*">Kinderfietsen</a></li>
+                <li><b>Categoriën</b></li>
+                <li><a href="CategoriePage.php?query=DavidMoetNogWatAanDezeQuirtleDoen">Mannenfietsen DAVID-QUERY</a></li>
+                <li><a href="CategoriePage.php?query=DavidMoetNogWatAanDezeQuirtleDoen">Vrouwenfietsen DAVID-QUERY</a></li>
+                <li><a href="CategoriePage.php?query=DavidMoetNogWatAanDezeQuirtleDoen">Kinderfietsen DAVID-QUERY</a></li>
             </ul>
         </div>
         <div class="col-lg-7">
             <ul class="list-unstyled">
-                <li>Other</li>
-                <li><a href="*">Help</a></li>
-                <li><a href="*">Over ons</a></li>
-                <li><a href="*">Contact</a></li>
+                <li><b>Other</b></li>
+                <li><a href=<?php echo "$_SERVER[DOCUMENT_ROOT]/public/webpages/HelpPage.php"?>>Help</a></li>
+                <li><a href=<?php echo "$_SERVER[DOCUMENT_ROOT]/public/webpages/HelpPage.php"?>>Over ons</a></li>
+                <li><a href=<?php echo "$_SERVER[DOCUMENT_ROOT]/public/webpages/HelpPage.php"?>>Contact</a></li>
             </ul>
         </div>
         <div class="col-lg-3">
             <!--social media links-->
-            <p class="text-center">Volg ons op social media!</p>
-            <div class="text-center">
-                <!-- fancypancy icoontjes met JQuery animatie-->
-                <a class="btn-floating btn-lg btn-fb" type="button" role="button"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn-floating btn-lg btn-tw" type="button" role="button"><i class="fab fa-twitter"></i></a>
-                <a class="btn-floating btn-lg btn-gplus" type="button" role="button"><i
-                            class="fab fa-google-plus-g"></i></a>
+            <!-- fancypancy icoontjes met JQuery animatie-->
+            <p><b>Volg ons op social media!</b></p>
+            <div class="row col-lg-12">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="https://twitter.com/thecrimsonfuckr" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="http://bitly.com/98K8eH" class="fa fa-youtube"></a>
             </div>
         </div>
     </div>

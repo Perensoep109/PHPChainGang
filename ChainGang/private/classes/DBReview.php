@@ -25,17 +25,11 @@ class DBReview
         $this->timePlaced = $args['REVIEW_TIME_PLACED'];
     }
 
-    /**
-     * @return mixed
-     */
     public function getDbIndex()
     {
         return $this->dbIndex;
     }
 
-    /**
-     * @return mixed
-     */
     public function getUserID()
     {
         return $this->userID;
@@ -56,3 +50,4 @@ class DBReview
 }
 
 ?>
+
