@@ -87,12 +87,9 @@ hr.Properties {
 }
 
 /*de catogorie pagina*/
-.cat_sidebar h3 {
-    padding: 20px 0;
-}
 
-.cat_main {
-    margin: 20px;
+.cat_hz_spacing {
+    padding: 15px 0;
 }
 
 /*productcard */

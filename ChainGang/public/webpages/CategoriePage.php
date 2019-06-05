@@ -27,12 +27,14 @@
     ?>
     <div class="row">
         <div id="cat_sidebar col-lg-3">
-            <h3>Filters</h3>
-            <button type="button" class="btn btn-primary btn-lg">Filter!</button>
+            <h3 class="cat_hz_spacing">Filters</h3>
+            <form>
+                <button type="submit" class="btn btn-primary btn-lg">Filter!</button>
+            </form>
             <div class="row">
                 <div class="col-lg-12">
                     <h5>Frametype</h5>
-                    <form action="">
+                    <form action="" method="get">
                         <input type="radio" name="frametype" value="heren"> Herenfietsen<br>
                         <input type="radio" name="frametype" value="dames"> Damesfietsen<br>
                         <input type="radio" name="frametype" value="kinderen"> Kinderfietsen
@@ -42,40 +44,39 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h5>Merk</h5>
-                    <form action="">
-                        <input type="checkbox" name="merkfiets1" value="Gazelle"> Bakfietsen<br>
-                        <input type="checkbox" name="merkfiets2" value="Giant"> Hybride fietsen<br>
-                        <input type="checkbox" name="merkfiets3" value="Pegasus"> Stadsfietsen<br>
-                        <input type="checkbox" name="merkfiets4" value="Cortina"> Transportfietsen
+                    <form action="" method="get">
+                        <input type="checkbox" name="merkfiets" value="Gazelle"> Gazelle<br>
+                        <input type="checkbox" name="merkfiets" value="Giant"> Giant<br>
+                        <input type="checkbox" name="merkfiets" value="Pegasus"> Pegasus<br>
+                        <input type="checkbox" name="merkfiets" value="Cortina"> Cortina
                     </form>
                 </div>
             </div>
         </div>
         <div class="col-lg-9">
+            <h2 class="cat_hz_spacing">Fietsen</h2>
             <div class="row">
                 <?php
+                $frametype = $_GET["frametype"];
+                $merk = $_GET["merkfiets"];
+
                 DBI::$logError = true;
-                $dbBike = DBI::queryBikes("select * from allbikes where BIKE_ID='1'")[0];
+                $dbBike = DBI::queryBikes("select * from allbikes where BIKE_FRAMETYPE='heren' and BIKE_BRAND='Gazelle'")[0];
                 ?>
 
-                <div class="col-lg-4 cat_main">
-                    <?php
-
-                    $bike = new BikeProduct($dbBike);
+                <?php
+                foreach ($dbBike as $fiets) {
                     ?>
-                </div>
-                <div class="col-lg-4 cat_main">
-                    <?php
 
-                    $bike = new BikeProduct($dbBike);
-                    ?>
-                </div>
-                <div class="col-lg-4 cat_main">
-                    <?php
+                    <div class="col-lg-4">
+                        <?php
 
-                    $bike = new BikeProduct($dbBike);
-                    ?>
-                </div>
+                        $bike = new BikeProduct($fiets);
+                        ?>
+                    </div>
+                <?php } ?>
+
+
             </div>
 
         </div>
