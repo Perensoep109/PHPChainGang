@@ -100,7 +100,21 @@ class HTB
                                 ".$desc."
                             </div>
                             <div class='row '>
-                                <button type='button' class='btn btn-primary'>Omschijving</button>
+                            <div class='col-4'>
+                                <button type='button' class='btn btn-primary btn-block'>Omschijving</button>
+                                </div>
+                                <div class='col-8 text-left'>
+                                ";
+            if($item->getOnSale() == 1)
+            {
+                echo "<h3> Van". $item->getPrice() ." Voor " . $item->getPrice() * 0.80 .   "</h3>";
+
+            }
+            else{
+                echo "<h3>" . $item->getPrice(). "</h3>";
+            }
+
+            echo" </div>
                             </div>
                         </div>
                     </div>
