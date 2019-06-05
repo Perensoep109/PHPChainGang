@@ -7,7 +7,7 @@ include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/functions.php"
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/functions.php");
 
 
-DBI::$logError = true;
+DBI::$logError = false;
 
 $reviews = DBI::queryReviews("SELECT * FROM allreviews ORDER BY REVIEW_ID DESC limit 2");
 $carousel_bikes = DBI::queryBikes("SELECT * FROM allbikes ORDER BY BIKE_ID DESC limit 3");
@@ -32,8 +32,12 @@ $card_bikes = DBI::queryBikes("SELECT * FROM allbikes ORDER BY BIKE_ID DESC limi
 <div class="container">
     <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/header.php";?>
 
-
-<?php HTB::BuildCarousel($carousel_bikes)?>
+    <?php
+    if($carousel_bikes != null)
+        HTB::BuildCarousel($carousel_bikes);
+    else
+        echo "Er konden geen fietsen worden geladen...";
+    ;?>
 <hr>
 <div class="row nieuwsbrief_div alert alert-secondary">
     <div class="col-lg-4">
@@ -52,11 +56,16 @@ $card_bikes = DBI::queryBikes("SELECT * FROM allbikes ORDER BY BIKE_ID DESC limi
     <hr>
     <div class="row mr-lg-3">
     <?php
-    foreach ($card_bikes as $item)
+    if($card_bikes != null) {
+        foreach ($card_bikes as $item) {
+            echo "<div class='col-md-3'>";
+            HTB::BuildBike($item);
+            echo '</div>';
+        }
+    }
+    else
     {
-        echo "<div class='col-md-3'>";
-        HTB::BuildBike($item);
-        echo '</div>';
+        echo "Er konden geen fietsen worden geladen.";
     }?>
     </div>
 
@@ -76,7 +85,13 @@ $card_bikes = DBI::queryBikes("SELECT * FROM allbikes ORDER BY BIKE_ID DESC limi
     <hr>
 </div>
     <hr class="col-lg-12">
-    <?php HTB::BuildReview($reviews);?>
+
+    <?php
+    if($reviews != null)
+        HTB::BuildReviews($reviews);
+    else
+        echo "Er konden geen reviews worden geladen...";
+    ;?>
 
     <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/footer.php"?>
 </div>

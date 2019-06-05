@@ -38,13 +38,13 @@ class HTB
         <?php
     }
 
-    public static function BuildReview($dbReview)
+    public static function BuildReviews($dbReviews)
     {
-        if(sizeof($dbReview) > 0 ){
+        if(sizeof($dbReviews) > 0 ){
 
 
         echo "<ul class='list-unstyled'>";
-        foreach ($dbReview as $item) {
+        foreach ($dbReviews as $item) {
             $user = DBI::queryUsers('select * from allusers WHERE USER_ID = ' . $item->getUserID());
             echo "
         <li class='media'>
