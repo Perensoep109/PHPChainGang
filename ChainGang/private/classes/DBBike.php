@@ -14,7 +14,7 @@ class DBBike
 {
     //==Variables==//
     private $dbIndex;
-    private $name, $price, $brand, $releaseYear, $description;
+    private $name, $price, $brand, $releaseYear, $description, $onSale;
     private $frameType, $material, $color, $category;
 
     //==Functions==//
@@ -28,9 +28,10 @@ class DBBike
         $this->material = $args['BIKE_MATERIAL'];
         $this->color = $args['BIKE_COLOR'];
         $this->releaseYear = $args['BIKE_RELEASEYEAR'];
-        $this->category = $args['BIKE_CATEGORY_ID'];
+        $this->category = $args['BIKE_CATEGORY'];
         $this->imagePaths = $this->splitImagePaths($args['BIKE_IMAGES']);
-        $this->description = $args['BIKE_DESCRIPTION']; 
+        $this->description = $args['BIKE_DESCRIPTION'];
+        $this->onSale = $args['BIKE_ON_SALE'];
     }
 
     private function splitImagePaths($images)
@@ -52,6 +53,9 @@ class DBBike
 
     public function getPrice()
     {
+        if($this->onSale)
+            return number_format($this->price - ((20 / 100) * $this->price), 2);
+
         return $this->price;
     }
 
@@ -93,6 +97,11 @@ class DBBike
     public function getDescription()
     {
         return $this->description;
+    }
+
+    public function getOnSale()
+    {
+        return $this->onSale;
     }
 }
 

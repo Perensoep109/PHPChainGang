@@ -31,6 +31,33 @@
     padding: 0;
 }
 
+.no_link_dec:link
+{
+    text-decoration: none;
+    color: black;
+}
+
+.no_link_dec:visited
+{
+    text-decoration: none;
+    color: black;
+}
+
+
+.no_link_dec:hover
+{
+    text-decoration: none;
+    color: black;
+}
+
+
+.no_link_dec:active
+{
+    text-decoration: none;
+    color: black;
+}
+
+
 /*De footer*/
 .text-center {
     text-align: center;
@@ -86,10 +113,34 @@ hr.Properties {
     font-size: 30px;
 }
 
+
+
 /*de catogorie pagina*/
 
 .cat_hz_spacing {
     padding: 15px 0;
+}
+
+#module {
+    width: 500px;
+}
+
+#module p.collapse[aria-expanded="false"] {
+    display: block;
+    height: 40px !important;
+    overflow: hidden;
+}
+
+#module p.collapsing[aria-expanded="false"] {
+    height: 40px !important;
+}
+
+#module a.collapsed:after  {
+    content: '+ Show More';
+}
+
+#module a:not(.collapsed):after {
+    content: '- Show Less';
 }
 
 /*productcard */
@@ -178,3 +229,24 @@ hr.Properties {
     top: -15px;
     left: 5%;
 }
+
+/* Contact pagina */
+
+.image
+{
+    max-width: 640px;
+    max-height: 360px;
+}
+
+/* Cart pagina */
+.cart_img_small
+{
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.table-no-top > thead > tr:first-child > th
+{
+    border: none;
+}
+

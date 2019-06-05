@@ -5,23 +5,34 @@
  * Date: 10/05/2019
  * Time: 14:31
  */
+
+function strposX($string, $char, $number)
+{
+    if($number == 1)
+        return strpos($string, $char);
+
+    else if($number > 1)
+    {
+        $pos = 0;
+
+        for($i = 0; $i < $number; $i++)
+        {
+            $pos = strpos($string, $char, $pos + 1);
+        }
+        return $pos;
+    }
+    else
+        return -1;
+}
+
 // Includes
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php");
 
 // Query bikes
-DBI::$logError = true;
 if(isset($_GET['ID']))
     $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = " . $_GET['ID'])[0];
 else
     $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
-
-// Update the session
-if(session_status() != PHP_SESSION_ACTIVE)
-{
-    session_start();
-    if(!isset($_SESSION['RECENT_BIKES']))
-        $_SESSION['RECENT_BIKES'] = array();
-}
 
 if($bike == null)
     header("Location: errorpage.php");
@@ -114,7 +125,7 @@ if($bike == null)
 
             <div id="specifications" class="col-lg-4">
                 <div id="spec-column" class="row mb-lg-5">
-                    <table class="table table-bordered col-lg-7 mb-lg-3">
+                    <table class="table table-bordered col-lg-12 mb-lg-3">
                     <?php
                     echo "<tr>
                             <th colspan='2'><h3><b>Specificaties<b><h3></th>
@@ -128,7 +139,7 @@ if($bike == null)
                             <td> " . $bike->getCategory() . " </td>
                           </tr>
                           <tr>
-                            <td>Jaartal: </td>
+                            <td>Jaartal </td>
                             <td> " . $bike->getReleaseYear() . " </td>
                           </tr>
                           <tr>
@@ -143,40 +154,49 @@ if($bike == null)
                             <td>Color </td>
                             <td> " . $bike->getColor() . " </td>
                           </tr>";
-                ?>
+                    ?>
                     </table>
 
-                    <div class="row">
-                        <p class="detail_priceTag col-lg-6">€<?php echo $bike->getPrice() ?>,-</p>
-                        <button type="button" class="btn btn-primary btn-lg col-lg-6"><b><i>Bestellen!</i></b></button>
+                    <div class="row col-lg-12">
+                        <p class="detail_priceTag col-lg-12">€<?php echo $bike->getPrice() ?>,-</p>
+                        <a href="CartPage.php?add=<?php echo $bike->getDbIndex(); ?>" class="btn btn-primary btn-lg text-center">Koop</a>
                     </div>
                 </div>
 
             </div>
         </div>
         <div class="row">
-            <div id="description" class="col-lg-8">
+            <div id="module" class="col-lg-8">
                 <h3><b>Omschrijving</b></h3>
-                <p><?php echo $bike->getDescription();?></p>
+                <?php
+                    $string = $bike->getDescription();
+                    $pos = strposX($string, '.', 1);
+                    $topDesc = substr($string, 0, $pos + 1);
+                    $bottomDesc = substr($string, $pos + 1);
+                ?>
+                <p><?php echo $topDesc;?></p>
+                <p class="collapse" id="collapseExample" aria-expanded="true"><?php echo $bottomDesc;?></p>
+                <a role="button" class="collapsed" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></a>
             </div>
             <div id="recentbikes" class="col-lg-4">
                 <h3><b>Recent bekeken fietsen</b></h3>
                 <?php
 
                 // Lees de hoeveelheid bekeken fieten en bereid de query voor.
-                $amount = count($_SESSION['RECENT_BIKES']);
-                $indexes = implode(',', $_SESSION['RECENT_BIKES']);
-                $recentBikes = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID IN ($indexes)");
+                $amount = sizeof($_SESSION['RECENT_BIKES']);
 
-                // Zet ze om naar klikbare HTML
-                if($recentBikes != null)
+                if($amount > 0)
                 {
-                    foreach($recentBikes as $key => $value)
-                    {
-                        $href = $value->getDbIndex();
-                        $element = $value->getName() . " €" . $value->getPrice() . " " . $value->getDbIndex();
+                    $indexes = implode(',', $_SESSION['RECENT_BIKES']);
+                    $recentBikes = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID IN ($indexes)");
 
-                        echo "<a href='DetailPage.php?ID=$href'>$element</a><br>";
+                    // Zet ze om naar klikbare HTML
+                    if ($recentBikes != null) {
+                        foreach ($recentBikes as $key => $value) {
+                            $href = "DetailPage.php?ID=" . $value->getDbIndex();
+                            $element = $value->getName();
+                            echo "<a href='$href'>$element</a><br>";
+                        }
                     }
                 }
                 ?>

@@ -1,16 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
-// Includes
-include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php");
-include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/HTBfunctions.php");
-
-DBI::$logError = true;
-
-$reviews = DBI::queryReviews("SELECT * FROM allreviews ORDER BY REVIEW_ID DESC limit 2");
-$carousel_bikes = DBI::queryBikes("SELECT * FROM allbikes ORDER BY BIKE_ID DESC limit 3");
-
-?>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -27,26 +16,11 @@ $carousel_bikes = DBI::queryBikes("SELECT * FROM allbikes ORDER BY BIKE_ID DESC 
 </head>
 <body>
 <div class="container">
-    <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/header.php";?>
+    <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/header.php"?>
 
-
-<?php HTB::BuildCarousel($carousel_bikes)?>
-<hr>
-<div class="row nieuwsbrief_div alert alert-secondary">
-    <div class="col-lg-4">
-        <form>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Schijf je in voor onze nieuwsbrief</label>
-                <input type="email" class="form-control" id="NieuwsBrief_Email" placeholder="Enter email">
-            </div>
-            <button type="submit" class="btn btn-primary container-fluid">Schijf je in</button>
-        </form>
-    </div>
-    <div class="col-lg-8 nieuwsbrief_text">
-        <h2>Altijd up-to-date met onze nieuwsbrief!</h2>
-    </div>
-</div>
-    <?php HTB::BuildReview($reviews);?>
+    <h1>Contact</h1>
+    <br>
+    <img class="image" src="../images/dragoncat.jpg">
 
     <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/footer.php"?>
 </div>

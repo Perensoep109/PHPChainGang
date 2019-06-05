@@ -14,9 +14,9 @@
         <div class="col-lg-7">
             <ul class="list-unstyled">
                 <li><b>Other</b></li>
-                <li><a href="*">Help</a></li>
-                <li><a href="*">Over ons</a></li>
-                <li><a href="*">Contact</a></li>
+                <li><a href="../webpages/HelpPage.php">Help</a></li>
+                <li><a href="../webpages/AboutPage.php">Over ons</a></li>
+                <li><a href="../webpages/ContactPage.php">Contact</a></li>
             </ul>
         </div>
         <div class="col-lg-3">
@@ -25,9 +25,9 @@
             <p><b>Volg ons op social media!</b></p>
             <div class="row col-lg-12">
                 <a href="#" class="fa fa-facebook"></a>
-                <a href="#" class="fa fa-twitter"></a>
+                <a href="https://twitter.com/thecrimsonfuckr" class="fa fa-twitter"></a>
                 <a href="#" class="fa fa-instagram"></a>
-                <a href="#" class="fa fa-youtube"></a>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="fa fa-youtube"></a>
             </div>
         </div>
     </div>
