@@ -3,8 +3,8 @@
 <?php
 // Includes
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php");
-include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/HTBfunctions.php");
-include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/BikeProduct.php";
+include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/functions.php");
+include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/BikeProduct.php");
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/functions.php");
 
 
