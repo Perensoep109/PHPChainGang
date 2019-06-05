@@ -12,10 +12,11 @@ if(session_status() != PHP_SESSION_ACTIVE)
     {
         $_SESSION['RECENT_BIKES'] = array();
         $_SESSION['CART_BIKES'] = array();
-        $_SESSION["loggedin"] = false;
-        $_SESSION["id"] = null;
-        $_SESSION["username"] = null;
+        $_SESSION['loggedin'] = false;
+        $_SESSION['id'] = null;
+        $_SESSION['username'] = null;
     }
+
 }
 
 ?>

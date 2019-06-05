@@ -10,6 +10,23 @@ include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.ph
 
 DBI::$logError = true;
 
+if(session_status() != PHP_SESSION_ACTIVE)
+{
+    session_start();
+    if(!isset($_SESSION['RECENT_BIKES']))
+    {
+        $_SESSION['RECENT_BIKES'] = array();
+        $_SESSION['CART_BIKES'] = array();
+        $_SESSION['loggedin'] = false;
+        $_SESSION['id'] = null;
+        $_SESSION['username'] = null;
+    }
+}
+
+if(!isset($_SESSION))
+{
+    print "kaas";
+}
 $dbIndex = $_SESSION['id'];
 
 $user = DBI::queryUsers("SELECT * FROM allusers WHERE USER_ID = '$dbIndex' ")[0];
