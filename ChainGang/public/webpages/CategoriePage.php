@@ -2,16 +2,24 @@
 
 include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php";
 
-if (isset($_GET["frametype"])) {
-    $frametype = $_GET["frametype"];
-    $merk = $_GET["merkfiets"];
-    $maxPrijs = $_GET["hoogsteprijs"];
-    $minPrijs = $_GET["laagsteprijs"];
+$frameType = ((isset($_GET['frametype']) && $_GET['frametype'] != "") ? " BIKE_FRAMETYPE = '" . $_GET['frametype'] . "'  AND " : "");
+$minPrice = ((isset($_GET['laagsteprijs']) && $_GET['laagsteprijs'] != "") ? " BIKE_PRICE > '" . $_GET['laagsteprijs'] . "'  AND " : "");
+$maxPrice = ((isset($_GET['hoogsteprijs']) && $_GET['hoogsteprijs'] != "") ? " BIKE_PRICE < '" . $_GET['hoogsteprijs'] . "'  AND " : "");
+$brand = ((isset($_GET['merkfiets']) && $_GET['merkfiets'] != "") ? " BIKE_BRAND = '" . $_GET['merkfiets'] . "'  AND " : "");
+$limit = ((isset($_GET['limit']) && $_GET['limit'] != "") ? $_GET['limit'] : 20);
+
+$query = "SELECT * FROM allbikes WHERE " . $frameType . $minPrice . $maxPrice . $brand . " LIMIT " . $limit;
+
+if(strpos($query, "AND") == false)
+    $query = "select * from allbikes LIMIT " . $limit;
+else
+{
+    $pos = strrpos($query, "AND");
+    $query = substr_replace($query, '', strrpos($query, "AND"), 3);
 }
 
-DBI::$logError = true;
-$dbBikes = DBI::queryBikes("select * from allbikes where BIKE_FRAMETYPE='$frametype' and BIKE_BRAND='$merk' and BIKE_PRICE BETWEEN $minPrijs and $maxPrijs");
-
+DBI::$logError = false;
+$dbBikes = DBI::queryBikes($query);
 ?>
 
 <!DOCTYPE html>
@@ -49,21 +57,23 @@ $dbBikes = DBI::queryBikes("select * from allbikes where BIKE_FRAMETYPE='$framet
 
                 <input type="radio" name="frametype" value="heren"> Herenfietsen<br>
                 <input type="radio" name="frametype" value="dames"> Damesfietsen<br>
-                <input type="radio" name="frametype" value="kinderen"> Kinderfietsen<br>
+                <input type="radio" name="frametype" value="lage instap"> Kinderfietsen<br>
 
                 <h5>Merk</h5>
 
-                <input type="checkbox" name="merkfiets" value="1=1"> Alles<br>
-                <input type="checkbox" name="merkfiets" value="Gazelle"> Gazelle<br>
-                <input type="checkbox" name="merkfiets" value="Giant"> Giant<br>
-                <input type="checkbox" name="merkfiets" value="Pegasus"> Pegasus<br>
-                <input type="checkbox" name="merkfiets" value="Cortina"> Cortina<br><br>
+                <input type="radio" name="merkfiets" value=""> Alles<br>
+                <input type="radio" name="merkfiets" value="Gazelle"> Gazelle<br>
+                <input type="radio" name="merkfiets" value="Giant"> Giant<br>
+                <input type="radio" name="merkfiets" value="Pegasus"> Pegasus<br>
+                <input type="radio" name="merkfiets" value="Cortina"> Cortina<br><br>
 
                 <h5>Prijs</h5>
                 Van:<br>
                 €<input type="number" name="laagsteprijs" min="20" max="2000"><br>
                 Tot:<br>
-                €<input type="number" name="hoogsteprijs" min="20" max="2000">
+                €<input type="number" name="hoogsteprijs" min="20" max="2000"><br>
+                Limit:<br>
+                ‏‏‎ ‏‏‎‎  ‏‏‎‏‏‎<input type="number" name="limit" min="1" max="40">
 
             </form>
         </div>
@@ -75,15 +85,24 @@ $dbBikes = DBI::queryBikes("select * from allbikes where BIKE_FRAMETYPE='$framet
             <div class="row">
 
                 <?php
-                foreach ($dbBikes as $fiets) {
-                    ?>
 
-                    <div class="col-lg-4 cat_hz_spacing">
-                        <?php
-                        HTB::BuildBike($fiets);
+                if($dbBikes != null)
+                {
+                    foreach ($dbBikes as $fiets) {
                         ?>
-                    </div>
-                <?php } ?>
+
+                        <div class="col-lg-4 cat_hz_spacing">
+                            <?php
+                            HTB::BuildBike($fiets);
+                            ?>
+                        </div>
+                    <?php }
+                }
+                else
+                {
+                    echo "Er zijn geen resultaten terug gekomen uit uw zoekfunctie";
+                }
+                ?>
 
             </div>
 

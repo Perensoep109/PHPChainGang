@@ -1,8 +1,8 @@
 <?php
 $conn = new mysqli("localhost", "root", "root", "waken_chaingangfietsen");
-$brands = ["Pinarello","Eddy Merckx","BMC","Trek","Specialized","Giant"];
+$brands = ["Gazelle","Giant","Pegasus","Cortina"];
 $names = ["Move","Verona","ID personal","Dayly Dutch","E Volution", "Fun Tornado","Cargo","Honey"];
-$cato = ["Mannen", "Vrouwen" , "Kinderen"];
+$cato = ["Bakfiets", "Racefiets" , "Stadsfiets"];
 $frametype = ["Dames", "Heren", "Lage instap"];
 $frameMateriaal = ["Metaal","hout", "plastic","carbon"];
 $colors = ["Rood","Geel","Blauw","Groen","Oranje","Aqua","Wit","Zwart"];
@@ -16,7 +16,7 @@ for($i = 0; $i < 30; $i++)
     $randframemateriaal = array_rand($frameMateriaal);
     $randcolor = array_rand($colors);
 
-    $bikeprice = 399.00;
+    $bikeprice = mt_rand(20, 2000);
     $bikebrand = $brands[$randbrand];
     $bikename = $bikebrand ." ". $names[$randname];
     $bikecatogory = $cato[$randcato];
