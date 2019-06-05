@@ -20,9 +20,27 @@ function strposX($string, $char, $number)
 
 class HTB
 {
+    public static function BuildBike($fiets)
+    {
+        ?>
+        <div class="card cardbike">
+            <a href="DetailPage.php?ID=<?php echo $fiets->getDbIndex()?>">
+                <img class="card-img-top" src="<?php echo "../" . $fiets->getImagePaths()[0] ?>" alt="Card image cap">
+            </a>
+            <div class="card-body">
+                <h5 class="card-title cardbike_nodeco"><?php echo $fiets->getName() ?></h5>
+                <p class="card-text cardbike_price">&euro;<?php echo $fiets->getPrice() ?></p>
+                <p class="card-text">
+                    <b>Omschrijving: </b><?php echo $string = substr($fiets->getDescription(), 0, 75); ?>
+                    <a href="DetailPage.php?ID=<?php echo $fiets->getDbIndex()?>"> ...read more</a></p>
+            </div>
+        </div>
+        <?php
+    }
+
     public static function BuildReview($dbReview)
     {
-        if(Sizeof($dbReview) > 0 ){
+        if(sizeof($dbReview) > 0 ){
 
 
         echo "<ul class='list-unstyled'>";
@@ -101,17 +119,16 @@ class HTB
                             </div>
                             <div class='row '>
                             <div class='col-4'>
-                                <a href='DetailPage.php?ID=". $item->getDbIndex(). "' type='button' class='btn btn-primary btn-block'>Omschijving</a>
+                                <a href='DetailPage.php?ID=". $item->getDbIndex(). "' type='button' class='btn btn-primary btn-block'>Details</a>
                                 </div>
                                 <div class='col-8 text-left'>
                                 ";
-            if($item->getOnSale() == 1)
+            if($item->getOnSale() == true)
             {
-                echo "<h3> Van ". $item->getPrice() ." voor " . $item->getPrice() * 0.80 .   "</h3>";
-
+                echo "<h3> Van €". $item->getPrice() ." voor €" . $item->getPrice() * 0.80 .   "</h3>";
             }
             else{
-                echo "<h3>" . $item->getPrice(). "</h3>";
+                echo "<h3>€" . $item->getPrice(). "</h3>";
             }
 
             echo" </div>

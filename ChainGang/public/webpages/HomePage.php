@@ -4,7 +4,6 @@
 // Includes
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php");
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/functions.php");
-include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/BikeProduct.php");
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/functions.php");
 
 
@@ -56,19 +55,18 @@ $card_bikes = DBI::queryBikes("SELECT * FROM allbikes ORDER BY BIKE_ID DESC limi
     foreach ($card_bikes as $item)
     {
         echo "<div class='col-md-3'>";
-    new BikeProduct($item);
-    echo '</div>';
+        HTB::BuildBike($item);
+        echo '</div>';
     }?>
     </div>
 
 <div class="row">
 
-    <hr>
-    <div class="col=4">
-
-        <img src="https://source.unsplash.com/400x300/?bikes">
+    <hr class="col-lg-12">
+    <div>
+        <img src="https://source.unsplash.com/400x300/?bikes" class="col-lg-4 img-size">
     </div>
-    <div class="col-6">
+    <div class="col-lg-6">
 
 
         Al jaren de expert in 2e hands rijwielen. Alles wat u nodig heeft op één plek!
@@ -77,7 +75,7 @@ $card_bikes = DBI::queryBikes("SELECT * FROM allbikes ORDER BY BIKE_ID DESC limi
     </div>
     <hr>
 </div>
-    <hr>
+    <hr class="col-lg-12">
     <?php HTB::BuildReview($reviews);?>
 
     <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/footer.php"?>

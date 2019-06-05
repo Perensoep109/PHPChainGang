@@ -250,3 +250,8 @@ hr.Properties {
     border: none;
 }
 
+.img-size
+{
+    min-width: 400px;
+    min-height: 300px;
+}

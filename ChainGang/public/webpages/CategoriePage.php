@@ -1,12 +1,12 @@
 <?php
 
-include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/BikeProduct.php";
 include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php";
 
 if (isset($_GET["frametype"])) {
     $frametype = $_GET["frametype"];
     $merk = $_GET["merkfiets"];
 }
+
 DBI::$logError = true;
 $dbBikes = DBI::queryBikes("select * from allbikes where BIKE_FRAMETYPE='$frametype' and BIKE_BRAND='$merk'");
 
@@ -73,7 +73,7 @@ $dbBikes = DBI::queryBikes("select * from allbikes where BIKE_FRAMETYPE='$framet
 
                     <div class="col-lg-4 cat_hz_spacing">
                         <?php
-                        $bike = new BikeProduct($fiets);
+                        HTB::BuildBike($fiets);
                         ?>
                     </div>
                 <?php } ?>

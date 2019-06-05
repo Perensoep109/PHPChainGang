@@ -14,9 +14,9 @@
         <div class="col-lg-7">
             <ul class="list-unstyled">
                 <li><b>Other</b></li>
-                <li><a href=<?php echo "$_SERVER[DOCUMENT_ROOT]/public/webpages/HelpPage.php"?>>Help</a></li>
-                <li><a href=<?php echo "$_SERVER[DOCUMENT_ROOT]/public/webpages/HelpPage.php"?>>Over ons</a></li>
-                <li><a href=<?php echo "$_SERVER[DOCUMENT_ROOT]/public/webpages/HelpPage.php"?>>Contact</a></li>
+                <li><a href="../webpages/HelpPage.php">Help</a></li>
+                <li><a href="../webpages/AboutPage.php">Over ons</a></li>
+                <li><a href="../webpages/ContactPage.php">Contact</a></li>
             </ul>
         </div>
         <div class="col-lg-3">
