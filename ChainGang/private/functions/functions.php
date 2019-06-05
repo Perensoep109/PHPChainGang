@@ -101,13 +101,13 @@ class HTB
                             </div>
                             <div class='row '>
                             <div class='col-4'>
-                                <button type='button' class='btn btn-primary btn-block'>Omschijving</button>
+                                <a href='DetailPage.php?ID=". $item->getDbIndex(). "' type='button' class='btn btn-primary btn-block'>Omschijving</a>
                                 </div>
                                 <div class='col-8 text-left'>
                                 ";
             if($item->getOnSale() == 1)
             {
-                echo "<h3> Van". $item->getPrice() ." Voor " . $item->getPrice() * 0.80 .   "</h3>";
+                echo "<h3> Van ". $item->getPrice() ." voor " . $item->getPrice() * 0.80 .   "</h3>";
 
             }
             else{
