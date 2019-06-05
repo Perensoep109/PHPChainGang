@@ -4,6 +4,7 @@ include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.ph
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/functions.php");
 
 // Update the session
+
 if(session_status() != PHP_SESSION_ACTIVE)
 {
     session_start();
@@ -21,10 +22,10 @@ if(session_status() != PHP_SESSION_ACTIVE)
         <a href="../webpages/HelpPage.php"><button type="button" class="btn btn-link">Help</button></a>
     </div>
     <div class="col-lg-2 text-center">
-        <a href="../webpages/AboutPage.php""><button type="button" class="btn btn-link">Over ons</button></a>
+        <a href="../webpages/AboutPage.php"><button type="button" class="btn btn-link">Over ons</button></a>
     </div>
     <div class="col-lg-1 text-center">
-        <a href="../webpages/ContactPage.php""><button type="button" class="btn btn-link">Contact</button></a>
+        <a href="../webpages/ContactPage.php"><button type="button" class="btn btn-link">Contact</button></a>
     </div>
     <div class="col-lg-2 text-center">
         <button type="button" class="btn btn-link" data-toggle="modal" data-target=".login-modal">Login/Registeren</button>
