@@ -38,7 +38,7 @@ $card_bikes = DBI::queryBikes("SELECT * FROM allbikes ORDER BY BIKE_ID DESC limi
     else
         echo "Er konden geen fietsen worden geladen...";
     ;?>
-<hr>
+    <hr>
 <div class="row nieuwsbrief_div alert alert-secondary">
     <div class="col-lg-4">
         <form>
@@ -54,7 +54,7 @@ $card_bikes = DBI::queryBikes("SELECT * FROM allbikes ORDER BY BIKE_ID DESC limi
     </div>
 </div>
     <hr>
-    <div class="row mr-lg-3">
+        <div class="row">
     <?php
     if($card_bikes != null) {
         foreach ($card_bikes as $item) {
@@ -68,10 +68,10 @@ $card_bikes = DBI::queryBikes("SELECT * FROM allbikes ORDER BY BIKE_ID DESC limi
         echo "Er konden geen fietsen worden geladen.";
     }?>
     </div>
-
+    <hr>
 <div class="row">
 
-    <hr class="col-lg-12">
+
     <div>
         <img src="https://source.unsplash.com/400x300/?bikes" class="col-lg-4 img-size">
     </div>
@@ -82,9 +82,9 @@ $card_bikes = DBI::queryBikes("SELECT * FROM allbikes ORDER BY BIKE_ID DESC limi
         <br><br><br><br>
         Fiets kopen? FietsShop!
     </div>
-    <hr>
 </div>
-    <hr class="col-lg-12">
+    <hr>
+
 
     <?php
     if($reviews != null)
