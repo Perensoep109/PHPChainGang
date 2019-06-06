@@ -95,7 +95,7 @@ if(session_status() != PHP_SESSION_ACTIVE)
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">X</span>
                 </button>
                 <div class="row">
                <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/login.php"?>
