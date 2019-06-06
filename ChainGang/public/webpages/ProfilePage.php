@@ -100,19 +100,27 @@ $user = DBI::queryUsers("SELECT * FROM allusers WHERE USER_ID = $dbIndex ")[0];
         </table>
 <?php
 
-$order = DBI::queryOrders("SELECT * FROM allorders WHERE ORDER_USER_ID = $dbIndex ")[0];
-$test = count($order);
+$orders = DBI::queryOrders("SELECT * FROM allorders WHERE ORDER_USER_ID = $dbIndex ");
+$test = count($orders);
 
-    if($order != null)
+$fietsen = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID");
+$test2 = count($fietsen);
+
+    if($orders != null)
     {
     echo "<table border='1'>";
-        echo "<tr> <th>Order ID</th> <th>Fiets</th> <th>Order status</th><th>Straatnaam</th> <th>Adress</th> <th>Postcode</th> <th>Besteld op</th></tr>";
+        echo "<tr> <th>Order ID</th> <th>Fiets</th><th>Fiets prijs</th> <th>Order status</th><th>Straatnaam</th> <th>Adress</th> <th>Postcode</th> <th>Besteld op</th></tr>";
 
-        for($i; $i < $test; $i++)
+
+        for($i = 0; $i < $test; $i++)
         {
-
-            echo "<tr>" . "<td>" . $order->getDbIndex() . "</td>" . "<td>" . "t" . "</td>" . "<td>" . $order->getState() . "</td>" . "<td>" . $order->getStreetname() . "</td>" . "<td>" . $order->getAdresNumber() . "</td>" . "<td>" . $order->getPostCode() . "</td>" . "<td>" . $order->getDate() . "</td>";
+            $order = $orders[$i];
+            for($x = 0; $x < $test2; $x++)
+            {
+                $fiets = $fietsen[$x];
+                echo "<tr>" . "<td>" . $order->getDbIndex() . "</td>" . "<td>" . $fiets->getName() . "</td>"."<td>" . "€" . $fiets->getPrice()."</td>" . "<td>" . $order->getState() . "</td>" . "<td>" . $order->getStreetname() . "</td>" . "<td>" . $order->getAdresNumber() . "</td>" . "<td>" . $order->getPostCode() . "</td>" . "<td>" . $order->getDate() . "</td>";
             }
+        }
             echo "</table>";
     }
 ?>
