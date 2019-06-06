@@ -29,7 +29,8 @@ if(!isset($_SESSION))
 }
 $dbIndex = $_SESSION['id'];
 
-$user = DBI::queryUsers("SELECT * FROM allusers WHERE USER_ID = '$dbIndex' ")[0];
+$user = DBI::queryUsers("SELECT * FROM allusers WHERE USER_ID = $dbIndex ")[0];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -97,7 +98,24 @@ $user = DBI::queryUsers("SELECT * FROM allusers WHERE USER_ID = '$dbIndex' ")[0]
             }
             ?>
         </table>
+<?php
 
+$order = DBI::queryOrders("SELECT * FROM allorders WHERE ORDER_USER_ID = $dbIndex ")[0];
+$test = count($order);
+
+    if($order != null)
+    {
+    echo "<table border='1'>";
+        echo "<tr> <th>Order ID</th> <th>Fiets</th> <th>Order status</th><th>Straatnaam</th> <th>Adress</th> <th>Postcode</th> <th>Besteld op</th></tr>";
+
+        for($i; $i < $test; $i++)
+        {
+
+            echo "<tr>" . "<td>" . $order->getDbIndex() . "</td>" . "<td>" . "t" . "</td>" . "<td>" . $order->getState() . "</td>" . "<td>" . $order->getStreetname() . "</td>" . "<td>" . $order->getAdresNumber() . "</td>" . "<td>" . $order->getPostCode() . "</td>" . "<td>" . $order->getDate() . "</td>";
+            }
+            echo "</table>";
+    }
+?>
     </div>
 <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/footer.php"?>
 
