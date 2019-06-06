@@ -160,19 +160,19 @@ hr.Properties {
 /*de home page*/
 .home_carousel {
     height: 450px;
-    width: 1110px;
     border: black 2px solid;
     background-color: lightgrey;
 }
 
 .home_carousel_left {
-    height: 445px;
+    width:600px;
     display: table-cell;
     vertical-align: middle;
     text-align: center;
 }
 
 .home_carousel_right {
+    width:600px;
     height: 445px;
     display: table-cell;
     vertical-align: middle;

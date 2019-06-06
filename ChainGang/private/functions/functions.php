@@ -81,7 +81,11 @@ class HTB
     public static function BuildCarousel($bikes)
     {
         $count = 0;
-        echo "<div id='carouselExampleIndicators' class='carousel slide' data-ride='carousel'>
+
+        echo "
+        <div class='row'>
+
+<div id='carouselExampleIndicators' class='carousel slide' data-ride='carousel'>
         <ol class='carousel-indicators'>
         ";
         foreach($bikes as $item){
@@ -107,7 +111,7 @@ class HTB
                 <div class='home_carousel'>
                     <div class='row'>
                         <div class='col-lg-6 home_carousel_left'>
-                            <img class='home_carousel_image' src='../../public/images/cat1.jpg' >
+                            <img class='home_carousel_image' src='/chaingang/public/".$item->getImagePaths()[1] ."' >
                         </div>
                         <div class='col-lg-6 home_carousel_right'>
                             <div class='row'>
@@ -140,6 +144,7 @@ class HTB
             $count++;
         }
         echo "</div>
+    </div>
     </div>";
     }
 }
