@@ -39,10 +39,10 @@ $user = DBI::queryUsers("SELECT * FROM allusers WHERE USER_ID = $dbIndex ")[0];
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>FietsShop</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../stylesheets/style.css">
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -98,6 +98,9 @@ $user = DBI::queryUsers("SELECT * FROM allusers WHERE USER_ID = $dbIndex ")[0];
             }
             ?>
         </table>
+    <hr>
+    <div class="table-no-top">
+        <h1>Bestellingen</h1>
 <?php
 
 $orders = DBI::queryOrders("SELECT * FROM allorders WHERE ORDER_USER_ID = $dbIndex ");
@@ -108,8 +111,8 @@ $test2 = count($fietsen);
 
     if($orders != null)
     {
-    echo "<table border='1'>";
-        echo "<tr> <th>Order ID</th> <th>Fiets</th><th>Fiets prijs</th> <th>Order status</th><th>Straatnaam</th> <th>Adress</th> <th>Postcode</th> <th>Besteld op</th></tr>";
+    echo "<table border='0' >";
+        echo "<thead class='bg-secondary' '> <tr> <th class='cellWidth'>Order ID</th> <th class='cellWidth'>Fiets</th><th class='cellWidth'>Fiets prijs</th> <th class='cellWidth'>Order status</th><th class='cellWidth'>Adress</th> <th class='cellWidth'>Postcode</th> <th class='cellWidth'>Besteld op</th></tr> </thead>";
 
 
         for($i = 0; $i < $test; $i++)
@@ -118,12 +121,13 @@ $test2 = count($fietsen);
             for($x = 0; $x < $test2; $x++)
             {
                 $fiets = $fietsen[$x];
-                echo "<tr>" . "<td>" . $order->getDbIndex() . "</td>" . "<td>" . $fiets->getName() . "</td>"."<td>" . "€" . $fiets->getPrice()."</td>" . "<td>" . $order->getState() . "</td>" . "<td>" . $order->getStreetname() . "</td>" . "<td>" . $order->getAdresNumber() . "</td>" . "<td>" . $order->getPostCode() . "</td>" . "<td>" . $order->getDate() . "</td>";
+                echo "<tr class='bg-light'>" . "<td class='cellWidth'>" . $order->getDbIndex() . "</td>" . "<td class='cellWidth'>" . $fiets->getName() . "</td>"."<td class='cellWidth'>" . "€" . $fiets->getPrice()."</td>" . "<td class='cellWidth'>" . $order->getState() . "</td>" . "<td class='cellWidth'>" . $order->getStreetname() . $order->getAdresNumber() . "</td>" . "<td class='cellWidth'>" . $order->getPostCode() . "</td>" . "<td class='cellWidth'>" . $order->getDate() . "</td>";
             }
         }
             echo "</table>";
     }
 ?>
+    </div>
     </div>
 <?php include_once "$_SERVER[DOCUMENT_ROOT]/chaingang/static/footer.php"?>
 
