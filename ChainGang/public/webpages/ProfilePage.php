@@ -111,8 +111,8 @@ $test2 = count($fietsen);
 
     if($orders != null)
     {
-    echo "<table border='0' >";
-        echo "<thead class='bg-secondary' '> <tr> <th class='cellWidth'>Order ID</th> <th class='cellWidth'>Fiets</th><th class='cellWidth'>Fiets prijs</th> <th class='cellWidth'>Order status</th><th class='cellWidth'>Adress</th> <th class='cellWidth'>Postcode</th> <th class='cellWidth'>Besteld op</th></tr> </thead>";
+    echo "<table border='1 collapse' >";
+        echo "<thead class='bg-secondary'> <tr> <th class='cellWidth'>Order ID</th> <th class='cellWidth'>Fiets</th><th class='cellWidth'>Fiets prijs</th> <th class='cellWidth'>Order status</th><th class='cellWidth'>Adress</th> <th class='cellWidth'>Postcode</th> <th class='cellWidth'>Besteld op</th></tr> </thead>";
 
 
         for($i = 0; $i < $test; $i++)
