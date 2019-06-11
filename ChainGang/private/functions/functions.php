@@ -20,9 +20,30 @@ function strposX($string, $char, $number)
 
 class HTB
 {
-    public static function BuildReview($dbReviews)
+    public static function BuildBike($fiets)
     {
-        echo "<ul class='list-unstyled'> <hr>";
+        ?>
+        <div class="card cardbike">
+            <a href="DetailPage.php?ID=<?php echo $fiets->getDbIndex()?>">
+                <img class="card-img-top" src="<?php echo "../" . $fiets->getImagePaths()[0] ?>" alt="Card image cap">
+            </a>
+            <div class="card-body">
+                <h5 class="card-title cardbike_nodeco"><?php echo $fiets->getName() ?></h5>
+                <p class="card-text cardbike_price">&euro;<?php echo $fiets->getPrice() ?></p>
+                <p class="card-text">
+                    <b>Omschrijving: </b><?php echo $string = substr($fiets->getDescription(), 0, 75); ?>
+                    <a href="DetailPage.php?ID=<?php echo $fiets->getDbIndex()?>"> ...read more</a></p>
+            </div>
+        </div>
+        <?php
+    }
+
+    public static function BuildReviews($dbReviews)
+    {
+        if(sizeof($dbReviews) > 0 ){
+
+
+        echo "<ul class='list-unstyled'>";
         foreach ($dbReviews as $item) {
             $user = DBI::queryUsers('select * from allusers WHERE USER_ID = ' . $item->getUserID());
             echo "
@@ -55,6 +76,7 @@ class HTB
     <hr>";
         } echo "</ul>";
     }
+    }
 
     public static function BuildCarousel($bikes)
     {
@@ -76,6 +98,7 @@ class HTB
         </ol>
         <div class='carousel-inner'>";
         foreach($bikes as $item){
+            $desc = substr($item->getDescription(), 0, 600);
             echo"<div class='carousel-item ";
             if($count == 0){
                 echo "active";
@@ -92,10 +115,23 @@ class HTB
                             </div>
                             
                             <div class='row home_carousel_fiets_omschijving'>
-                                ".$item->getDescription()."
+                                ".$desc."
                             </div>
                             <div class='row '>
-                                <button type='button' class='btn btn-primary'>Omschijving</button>
+                            <div class='col-4'>
+                                <a href='DetailPage.php?ID=". $item->getDbIndex(). "' type='button' class='btn btn-primary btn-block'>Details</a>
+                                </div>
+                                <div class='col-8 text-left'>
+                                ";
+            if($item->getOnSale() == true)
+            {
+                echo "<h3> Van €". $item->getPrice() ." voor €" . $item->getPrice() * 0.80 .   "</h3>";
+            }
+            else{
+                echo "<h3>€" . $item->getPrice(). "</h3>";
+            }
+
+            echo" </div>
                             </div>
                         </div>
                     </div>

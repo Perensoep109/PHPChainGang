@@ -8,15 +8,15 @@
 
 // Includes
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php");
+include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/functions.php");
 
 // Query bikes
 if(isset($_GET['ID']))
     $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = " . $_GET['ID'])[0];
-else
-    $bike = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID = 1")[0];
 
 if($bike == null)
     header("Location: errorpage.php");
+
 ?>
 
 <html>

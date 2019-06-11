@@ -47,14 +47,14 @@ if(session_status() != PHP_SESSION_ACTIVE)
                         aria-haspopup="true" aria-expanded="false">Categorieën
                 </button>
                 <div class="dropdown-menu">
-                    <a class='dropdown-item' href='#'>Mannenfietsen</a><hr>
-                    <a class='dropdown-item' href='#'>Vrouwenfietsen</a> <hr>
-                    <a class='dropdown-item' href='#'>Kinderfietsen</a> <hr>
+                    <a class='dropdown-item' href='../webpages/CategoriePage.php?frameType=heren'>Mannenfietsen</a><hr>
+                    <a class='dropdown-item' href='../webpages/CategoriePage.php?frameType=dames'>Vrouwenfietsen</a> <hr>
+                    <a class='dropdown-item' href='../webpages/CategoriePage.php?frameType=lage instap'>Kinderfietsen</a> <hr>
                 </div>
             </div>
             <input type="text" class="form-control" id="SearchInput" aria-label="Text input with dropdown button">
             <div class="input-group-append">
-                <a href="CategoriePage.php?query=DavidMoetDitNogEvenFixenOokInDeFooter" type="button" class="btn btn-outline-secondary" type="button" id="SearchButton"><i class="material-icons">search</i></a>
+                <a href="CategoriePage.php" type="button" class="btn btn-outline-secondary" type="button" id="SearchButton"><i class="material-icons">search</i></a>
             </div>
         </div>
 

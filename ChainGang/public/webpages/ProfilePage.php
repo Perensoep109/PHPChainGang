@@ -23,13 +23,11 @@ if(session_status() != PHP_SESSION_ACTIVE)
     }
 }
 
-if(!isset($_SESSION))
-{
-    print "kaas";
-}
 $dbIndex = $_SESSION['id'];
 
-$user = DBI::queryUsers("SELECT * FROM allusers WHERE USER_ID = $dbIndex ")[0];
+$user = null;
+if($dbIndex != null)
+    $user = DBI::queryUsers("SELECT * FROM allusers WHERE USER_ID = $dbIndex ")[0];
 
 ?>
 <!DOCTYPE html>
@@ -109,15 +107,16 @@ else
 {
     echo "Er zijn nog geen bestellingen";
 }
-$fietsen = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID");
-if($fietsen != null)
-{
-$test2 = count($fietsen);
-}
-else
-{
-    echo "Er zijn nog geen bestellingen";
-}
+    $fietsen = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID");
+    if($fietsen != null)
+    {
+    $test2 = count($fietsen);
+    }
+    else
+    {
+        echo "Er zijn nog geen bestellingen";
+    }
+
     if($orders != null)
     {
     echo "<table border='1 collapse' >";
