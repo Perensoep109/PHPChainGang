@@ -20,12 +20,12 @@ class DBOrder
     public function __construct($args=[])
     {
         $this->dbIndex = $args['ORDER_ID'];
-        $this->userID = $args['USER_ID'];
+        $this->userID = $args['ORDER_USER_ID'];
         $this->bikeArr = $this->convertBikeArr($args['ORDER_BIKES_ARR']);
         $this->state = $args['ORDER_STATE'];
         $this->date = $args['ORDER_DATE'];
         $this->streetName = $args['ORDER_STREETNAME'];
-        $this->adresNumber = $args['ORDER_ADRESS_NMBR'];
+        $this->adresNumber = $args['ORDER_ADRESS'];
         $this->postCode = $args['ORDER_POST_CODE'];
     }
 

@@ -80,6 +80,29 @@ final class DBI
         return $returnVal;
     }
 
+    /*  Deze functie vraagt informatie op uit de database
+     *  String-$query staat voor de query die uitgevoerd word op de database
+     *  Deze functie word uitgevoerd door de gebruiker zelf
+     */
+    public static final function queryVoid($query)
+    {
+        $dbConn = self::makeDBConn();
+
+        if($dbConn == null)
+            // The function crashed with an error, return nothing
+            return 0;
+
+        $dbConn->query($query);
+
+        if($dbConn->error)
+        {
+            if(self::$logError)
+                self::logError("ERROR: Querying data from DB threw an error: " . $dbConn->error);
+
+            return 0;
+        }
+    }
+
     /*  Deze functie vraagt informatie op uit de database, daarna zet hij deze data om in een array van bikes
      *  String-$query staat voor de query die uitgevoerd word op de database
      *  Deze functie returned een array van bikes
