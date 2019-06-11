@@ -6,17 +6,17 @@
         <div class="col-lg-2">
             <ul class="list-unstyled">
                 <li><b>Categoriën</b></li>
-                <li><a href="../webpages/CategoriePage.php?frameType=heren">Mannenfietsen</a></li>
-                <li><a href="../webpages/CategoriePage.php?frameType=dames"">Vrouwenfietsen</a></li>
-                <li><a href="../webpages/CategoriePage.php?frameType=lage instap"">Kinderfietsen</a></li>
+                <li><a href="*">Mannenfietsen</a></li>
+                <li><a href="*">Vrouwenfietsen</a></li>
+                <li><a href="*">Kinderfietsen</a></li>
             </ul>
         </div>
         <div class="col-lg-7">
             <ul class="list-unstyled">
                 <li><b>Other</b></li>
-                <li><a href="../webpages/HelpPage.php">Help</a></li>
-                <li><a href="../webpages/AboutPage.php">Over ons</a></li>
-                <li><a href="../webpages/ContactPage.php">Contact</a></li>
+                <li><a href="*">Help</a></li>
+                <li><a href="*">Over ons</a></li>
+                <li><a href="*">Contact</a></li>
             </ul>
         </div>
         <div class="col-lg-3">
@@ -25,9 +25,9 @@
             <p><b>Volg ons op social media!</b></p>
             <div class="row col-lg-12">
                 <a href="#" class="fa fa-facebook"></a>
-                <a href="https://twitter.com/thecrimsonfuckr" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-twitter"></a>
                 <a href="#" class="fa fa-instagram"></a>
-                <a href="http://bitly.com/98K8eH" class="fa fa-youtube"></a>
+                <a href="#" class="fa fa-youtube"></a>
             </div>
         </div>
     </div>

@@ -6,7 +6,7 @@ $frameType = ((isset($_GET['frametype']) && $_GET['frametype'] != "") ? " BIKE_F
 $minPrice = ((isset($_GET['laagsteprijs']) && $_GET['laagsteprijs'] != "") ? " BIKE_PRICE > '" . $_GET['laagsteprijs'] . "'  AND " : "");
 $maxPrice = ((isset($_GET['hoogsteprijs']) && $_GET['hoogsteprijs'] != "") ? " BIKE_PRICE < '" . $_GET['hoogsteprijs'] . "'  AND " : "");
 $brand = ((isset($_GET['merkfiets']) && $_GET['merkfiets'] != "") ? " BIKE_BRAND = '" . $_GET['merkfiets'] . "'  AND " : "");
-$limit = ((isset($_GET['limit']) && $_GET['limit'] != "") ? $_GET['limit'] : 20);
+$limit = ((isset($_GET['limit']) && $_GET['limit'] != "") ? $_GET['limit'] : 21);
 
 $query = "SELECT * FROM allbikes WHERE " . $frameType . $minPrice . $maxPrice . $brand . " LIMIT " . $limit;
 
