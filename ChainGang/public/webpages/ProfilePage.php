@@ -91,11 +91,8 @@ $user = DBI::queryUsers("SELECT * FROM allusers WHERE USER_ID = $dbIndex ")[0];
                             <td>Wachtwoord:</td>
                             <td> " . $user->getPassword() . " </td>
                           </tr>";
-            }
-            else
-            {
-             echo "Er is nog geen profiel beschikbaar";
-            }
+
+
             ?>
         </table>
     <hr>
@@ -104,11 +101,23 @@ $user = DBI::queryUsers("SELECT * FROM allusers WHERE USER_ID = $dbIndex ")[0];
 <?php
 
 $orders = DBI::queryOrders("SELECT * FROM allorders WHERE ORDER_USER_ID = $dbIndex ");
+if($orders != null)
+{
 $test = count($orders);
-
+}
+else
+{
+    echo "Er zijn nog geen bestellingen";
+}
 $fietsen = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID");
+if($fietsen != null)
+{
 $test2 = count($fietsen);
-
+}
+else
+{
+    echo "Er zijn nog geen bestellingen";
+}
     if($orders != null)
     {
     echo "<table border='1 collapse' >";
@@ -125,6 +134,11 @@ $test2 = count($fietsen);
             }
         }
             echo "</table>";
+    }
+    }
+    else
+    {
+        echo "Er is nog geen profiel beschikbaar";
     }
 ?>
     </div>
