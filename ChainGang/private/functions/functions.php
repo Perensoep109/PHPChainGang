@@ -127,13 +127,7 @@ class HTB
                                 </div>
                                 <div class='col-8 text-left'>
                                 ";
-            if($item->getOnSale() == true)
-            {
-                echo "<h3> Van €". $item->getPrice() ." voor €" . $item->getPrice() * 0.80 .   "</h3>";
-            }
-            else{
-                echo "<h3>€" . $item->getPrice(). "</h3>";
-            }
+                echo "<h3>" . $item->getPrice(). "</h3>";
 
             echo" </div>
                             </div>
