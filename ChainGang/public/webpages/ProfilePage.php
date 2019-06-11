@@ -101,34 +101,31 @@ if($dbIndex != null)
 $orders = DBI::queryOrders("SELECT * FROM allorders WHERE ORDER_USER_ID = $dbIndex ");
 if($orders != null)
 {
-$test = count($orders);
+    $orderAmount = count($orders);
 }
 else
-{
-    echo "Er zijn nog geen bestellingen";
-}
-    $fietsen = DBI::queryBikes("SELECT * FROM allbikes WHERE BIKE_ID");
-    if($fietsen != null)
-    {
-    $test2 = count($fietsen);
-    }
-    else
     {
         echo "Er zijn nog geen bestellingen";
     }
-
     if($orders != null)
     {
-    echo "<table border='1 collapse' >";
+        echo "<table border='1 collapse' >";
         echo "<thead class='bg-secondary'> <tr> <th class='cellWidth'>Order ID</th> <th class='cellWidth'>Fiets</th><th class='cellWidth'>Fiets prijs</th> <th class='cellWidth'>Order status</th><th class='cellWidth'>Adress</th> <th class='cellWidth'>Postcode</th> <th class='cellWidth'>Besteld op</th></tr> </thead>";
 
 
-        for($i = 0; $i < $test; $i++)
+        for($i = 0; $i < $orderAmount; $i++)
         {
             $order = $orders[$i];
-            for($x = 0; $x < $test2; $x++)
+            $fietsen = $order->getBikeArr();
+
+            if($fietsen == null)
+                continue;
+
+            $fietsAmount = count($fietsen);
+
+            for($j = 0; $j < $fietsAmount; $j++)
             {
-                $fiets = $fietsen[$x];
+                $fiets = $fietsen[$j];
                 echo "<tr class='bg-light'>" . "<td class='cellWidth'>" . $order->getDbIndex() . "</td>" . "<td class='cellWidth'>" . $fiets->getName() . "</td>"."<td class='cellWidth'>" . "€" . $fiets->getPrice()."</td>" . "<td class='cellWidth'>" . $order->getState() . "</td>" . "<td class='cellWidth'>" . $order->getStreetname() . $order->getAdresNumber() . "</td>" . "<td class='cellWidth'>" . $order->getPostCode() . "</td>" . "<td class='cellWidth'>" . $order->getDate() . "</td>";
             }
         }
