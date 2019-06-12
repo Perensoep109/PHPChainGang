@@ -8,6 +8,7 @@
 
 // Includes
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/dbfunctions.php");
+include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/functions/functions.php");
 
 // Query bikes
 if(isset($_GET['ID']))

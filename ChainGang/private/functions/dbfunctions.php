@@ -10,9 +10,6 @@ include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/DBBike.php");
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/DBUser.php");
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/DBReview.php");
 include_once("$_SERVER[DOCUMENT_ROOT]/chaingang/private/classes/DBOrder.php");
-//include_once("../classes/DBOrder.php");
-//include_once("../classes/DBReview.php");
-//include_once("../classes/DBUser.php");
 
 /* De DBI class staat voor, Data Base Interface
  * Deze klasse heeft een set aan statische functies, die overal uitgevoerd kunnen worden
@@ -81,6 +78,29 @@ final class DBI
         }
 
         return $returnVal;
+    }
+
+    /*  Deze functie vraagt informatie op uit de database
+     *  String-$query staat voor de query die uitgevoerd word op de database
+     *  Deze functie word uitgevoerd door de gebruiker zelf
+     */
+    public static final function queryVoid($query)
+    {
+        $dbConn = self::makeDBConn();
+
+        if($dbConn == null)
+            // The function crashed with an error, return nothing
+            return 0;
+
+        $dbConn->query($query);
+
+        if($dbConn->error)
+        {
+            if(self::$logError)
+                self::logError("ERROR: Querying data from DB threw an error: " . $dbConn->error);
+
+            return 0;
+        }
     }
 
     /*  Deze functie vraagt informatie op uit de database, daarna zet hij deze data om in een array van bikes
